@@ -59,6 +59,7 @@ public class SpringBootTeknisiApplication implements CommandLineRunner {
 		//System.out.println("Delete By ID");
 //		teknisiService.deleteById(3L);
 		
+//		hellow
 	}
 
 }
