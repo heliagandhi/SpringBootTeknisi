@@ -3,22 +3,40 @@ package com.Teknisi.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import io.swagger.annotations.ApiModelProperty;
+
+
 public class Teknisi implements Serializable {
 	private static final long serialVersionUID = 1L;
+	@ApiModelProperty(notes = "The database generated teknisi id")
 	private Long id;
+	@ApiModelProperty(notes = "The database generated teknisi phone")
 	private String phone;
+	@ApiModelProperty(notes = "The database generated teknisi name")
 	private String name;
+	@ApiModelProperty(notes = "The database generated teknisi nik")
 	private String nik;
+	@ApiModelProperty(notes = "The database generated teknisi address")
 	private String address;
+	@ApiModelProperty(notes = "The database generated teknisi email")
 	private String email;
+	@ApiModelProperty(notes = "The database generated teknisi city")
 	private String city;
+	@ApiModelProperty(notes = "The database generated teknisi postal_code")
 	private String postal_code;
+	@ApiModelProperty(notes = "The database generated teknisi last_login")
 	private Date last_login;
+	@ApiModelProperty(notes = "The database generated teknisi longitude")
 	private String longitude;
+	@ApiModelProperty(notes = "The database generated teknisi latitude")
 	private String latitude;
+	@ApiModelProperty(notes = "The database generated teknisi created_date")
 	private Date created_date;
+	@ApiModelProperty(notes = "The database generated teknisi created_by")
 	private String created_by;
+	@ApiModelProperty(notes = "The database generated teknisi update_date")
 	private Date update_date;
+	@ApiModelProperty(notes = "The database generated teknisi update_by")
 	private String update_by;
 	
 	
@@ -57,7 +75,6 @@ public class Teknisi implements Serializable {
 		this.id = id;
 	}
 
-
 	public String getPhone() {
 		return phone;
 	}
@@ -65,7 +82,6 @@ public class Teknisi implements Serializable {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-
 
 	public String getName() {
 		return name;
@@ -75,7 +91,6 @@ public class Teknisi implements Serializable {
 		this.name = name;
 	}
 
-
 	public String getNik() {
 		return nik;
 	}
@@ -83,7 +98,6 @@ public class Teknisi implements Serializable {
 	public void setNik(String nik) {
 		this.nik = nik;
 	}
-
 
 	public String getAddress() {
 		return address;
@@ -93,7 +107,6 @@ public class Teknisi implements Serializable {
 		this.address = address;
 	}
 
-
 	public String getEmail() {
 		return email;
 	}
@@ -101,7 +114,6 @@ public class Teknisi implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
 
 	public String getCity() {
 		return city;
@@ -111,7 +123,6 @@ public class Teknisi implements Serializable {
 		this.city = city;
 	}
 
-	
 	public String getPostal_code() {
 		return postal_code;
 	}
@@ -120,7 +131,6 @@ public class Teknisi implements Serializable {
 		this.postal_code = postal_code;
 	}
 
-	
 	public Date getLast_login() {
 		return last_login;
 	}
@@ -128,7 +138,6 @@ public class Teknisi implements Serializable {
 	public void setLast_login(Date last_login) {
 		this.last_login = last_login;
 	}
-
 
 	public String getLongitude() {
 		return longitude;
@@ -138,7 +147,6 @@ public class Teknisi implements Serializable {
 		this.longitude = longitude;
 	}
 
-
 	public String getLatitude() {
 		return latitude;
 	}
@@ -146,7 +154,6 @@ public class Teknisi implements Serializable {
 	public void setLatitude(String latitude) {
 		this.latitude = latitude;
 	}
-
 
 	public Date getCreated_date() {
 		return created_date;
@@ -156,7 +163,6 @@ public class Teknisi implements Serializable {
 		this.created_date = created_date;
 	}
 
-
 	public String getCreated_by() {
 		return created_by;
 	}
@@ -164,7 +170,6 @@ public class Teknisi implements Serializable {
 	public void setCreated_by(String created_by) {
 		this.created_by = created_by;
 	}
-
 
 	public Date getUpdate_date() {
 		return update_date;
@@ -174,7 +179,6 @@ public class Teknisi implements Serializable {
 		this.update_date = update_date;
 	}
 
-
 	public String getUpdate_by() {
 		return update_by;
 	}
@@ -182,11 +186,7 @@ public class Teknisi implements Serializable {
 	public void setUpdate_by(String update_by) {
 		this.update_by = update_by;
 	}
-
-
-//	public static long getSerialversionuid() {
-//		return serialVersionUID;
-//	}
+	
 	
 	
 	@Override
@@ -224,6 +224,5 @@ public class Teknisi implements Serializable {
 		builder.append(update_by);
 		builder.append("]");
 		return builder.toString();
-	}
-	
+	}	
 }

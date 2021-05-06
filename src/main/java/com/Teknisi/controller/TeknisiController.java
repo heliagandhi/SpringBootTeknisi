@@ -1,137 +1,99 @@
 package com.Teknisi.controller;
 
-//import java.io.File;
-//import java.io.FileOutputStream;
-//import java.io.IOException;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-//import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-//import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-//import org.springframework.web.multipart.MultipartFile;
 
 import com.Teknisi.exception.DataNotfoundException;
 import com.Teknisi.model.Teknisi;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.Teknisi.services.TeknisiService;
+
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
 @RestController
 public class TeknisiController {
 	private Logger logger = LoggerFactory.getLogger("SpringBootTeknisiApplication");
 	
+	@Autowired TeknisiService teknisiService;
 	
-	//get
-	@RequestMapping(value = "/teknis", method = RequestMethod.GET)
-	public ResponseEntity<Object> getTeknisi() {
-		Map<Long, Teknisi> teknisiRepo = new HashMap<>();
-		
-		Date teknisi_1_last_login = new Date();
-		Date teknisi_1_created_date = new Date();
-		Date teknisi_1_update_date = new Date();
-
-		Teknisi teknisi_1 = new Teknisi();
-		teknisi_1.setId(2L);
-		teknisi_1.setPhone("081294749377");
-		teknisi_1.setName("Tri");
-		teknisi_1.setNik("1999071900");
-		teknisi_1.setAddress("Jatiasih");
-		teknisi_1.setEmail("heliatgw@gmail.com");
-		teknisi_1.setCity("Bekasi");
-		teknisi_1.setPostal_code("17426");
-		teknisi_1.setLast_login(teknisi_1_last_login);
-		teknisi_1.setLongitude("150000");
-		teknisi_1.setLatitude("12300000");
-		teknisi_1.setCreated_date(teknisi_1_created_date);
-		teknisi_1.setCreated_by("Daniel");
-		teknisi_1.setUpdate_date(teknisi_1_update_date);
-		teknisi_1.setUpdate_by("Najoan");
-//		teknisiRepo.put(teknisi_1.getId(), teknisi_1);
-		teknisiRepo.put(teknisi_1.getId(), teknisi_1);
-
-		return new ResponseEntity<>(teknisiRepo.values(), HttpStatus.OK);
+	@ApiOperation(value = "View all teknisi", response = Iterable.class, tags = "teknisi")
+	@ApiResponses(value = { 
+			@ApiResponse(code = 200, message = "Suceess|OK"),
+			@ApiResponse(code = 401, message = "not authorized!"), 
+			@ApiResponse(code = 403, message = "forbidden!!!"),
+			@ApiResponse(code = 404, message = "not found!!!") })
+	
+	@RequestMapping(value = "/teknisi", method = RequestMethod.GET)
+	public ResponseEntity<Object> retrieveAll() {
+		List<Teknisi> listTeknisi = teknisiService.showAllTeknisi();
+		return new ResponseEntity<>(listTeknisi, HttpStatus.OK);
 	}
 	
-	
-	@RequestMapping(value = "/teknis/{id}", method = RequestMethod.GET)
-	public ResponseEntity<Object> get(@PathVariable("id") String id) {
+	@ApiOperation(value = "View teknisi by ID", response = Teknisi.class, tags = "teknisi")
+	@ApiResponses(value = { 
+			@ApiResponse(code = 200, message = "Suceess|OK"),
+			@ApiResponse(code = 401, message = "not authorized!"), 
+			@ApiResponse(code = 403, message = "forbidden!!!"),
+			@ApiResponse(code = 404, message = "not found!!!") })
+	@RequestMapping(value = "/teknisi/{id}", method = RequestMethod.GET)
+	public ResponseEntity<Object> retrieveById(@PathVariable("id") Long id) {
 		logger.debug("Get with id : " + id);
-		if(id.equalsIgnoreCase("1")) throw new DataNotfoundException();
-		
-		Date teknisi_1_last_login = new Date();
-		Date teknisi_1_created_date = new Date();
-		Date teknisi_1_update_date = new Date();
-		
-		Teknisi teknisi_1 = new Teknisi();
-		teknisi_1.setId(2L);
-		teknisi_1.setPhone("081294749377");
-		teknisi_1.setName("Tri");
-		teknisi_1.setNik("1999071900");
-		teknisi_1.setAddress("Jatiasih");
-		teknisi_1.setEmail("heliatgw@gmail.com");
-		teknisi_1.setCity("Bekasi");
-		teknisi_1.setPostal_code("17426");
-		teknisi_1.setLast_login(teknisi_1_last_login);
-		teknisi_1.setLongitude("150000");
-		teknisi_1.setLatitude("12300000");
-		teknisi_1.setCreated_date(teknisi_1_created_date);
-		teknisi_1.setCreated_by("Daniel");
-		teknisi_1.setUpdate_date(teknisi_1_update_date);
-		teknisi_1.setUpdate_by("Najoan");
-		
-		return new ResponseEntity<>(teknisi_1, HttpStatus.OK);
+		if(id.equals(null)) throw new DataNotfoundException();
+		Teknisi teknisi = teknisiService.getTeknisiById(id);
+		return new ResponseEntity<>(teknisi, HttpStatus.OK);
 	}
 	
 	
 	//delete
-	@RequestMapping(value = "/teknis/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Object> delete(@PathVariable("id") String id) {
-		logger.debug("Delete with id : " + id);
-		return new ResponseEntity<>("Teknis is deleted successsfully", HttpStatus.OK);
+	@ApiOperation(value = "Delete an teknisi", response = Teknisi.class, tags = "teknisi")
+	@ApiResponses(value = { 
+			@ApiResponse(code = 200, message = "Suceess|OK"),
+			@ApiResponse(code = 401, message = "not authorized!"), 
+			@ApiResponse(code = 403, message = "forbidden!!!"),
+			@ApiResponse(code = 404, message = "not found!!!") })
+	@RequestMapping(value = "/teknisi/delete/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Object> delete(@PathVariable("id") Long id) {
+		teknisiService.deleteById(id);
+		return new ResponseEntity<>(teknisiService, HttpStatus.OK);
 	}
 	
 	
 	//post
-	@RequestMapping(value = "/teknis", method = RequestMethod.POST)
-	public ResponseEntity<Object> add(@RequestBody Teknisi teknisi_1) {
-		try {
-			logger.debug("Input : "+new ObjectMapper().writeValueAsString(teknisi_1));
-		} catch (JsonProcessingException jsonProcessingException) {
-			logger.error("Error : "+jsonProcessingException.getLocalizedMessage());
-		}
-		return new ResponseEntity<>("Teknisi is created successsfully", HttpStatus.OK);
+	@ApiOperation(value = "Create an teknisi", response = Teknisi.class, tags = "teknisi")
+	@ApiResponses(value = { 
+			@ApiResponse(code = 200, message = "Suceess|OK"),
+			@ApiResponse(code = 401, message = "not authorized!"), 
+			@ApiResponse(code = 403, message = "forbidden!!!"),
+			@ApiResponse(code = 404, message = "not found!!!") })
+	@RequestMapping(value = "/teknis/create", method = RequestMethod.POST)
+	public ResponseEntity<Object> createTeknisi(@RequestBody Teknisi teknisi) {
+		teknisiService.insert(teknisi);
+		return new ResponseEntity<>(teknisiService, HttpStatus.OK);
 	}
 	
 	
-//	@RequestMapping(value = "/upload", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-//	public String fileUpload(@RequestParam("file") MultipartFile file) throws IOException {
-//		File convertFile = new File(file.getOriginalFilename());
-//		convertFile.createNewFile();
-//		FileOutputStream fout = new FileOutputStream(convertFile);
-//		fout.write(file.getBytes());
-//		fout.close();
-//		return "File is upload successfully";
-//	}
-	
-	
 	//put
-	@RequestMapping(value = "/teknis", method = RequestMethod.PUT)
-	public ResponseEntity<Object> update(@RequestBody Teknisi teknisi_1) {
-		try {
-			logger.debug("Input : "+new ObjectMapper().writeValueAsString(teknisi_1));
-		} catch (JsonProcessingException jsonProcessingException) {
-			logger.error("Error : "+jsonProcessingException.getLocalizedMessage());
-		}
-		return new ResponseEntity<>("Teknisi is updated successsfully", HttpStatus.OK);
+	@ApiOperation(value = "Update an teknisi", response = Teknisi.class, tags = "teknisi")
+	@ApiResponses(value = { 
+			@ApiResponse(code = 200, message = "Suceess|OK"),
+			@ApiResponse(code = 401, message = "not authorized!"), 
+			@ApiResponse(code = 403, message = "forbidden!!!"),
+			@ApiResponse(code = 404, message = "not found!!!") })
+	@RequestMapping(value = "/teknis/update", method = RequestMethod.PUT)
+	public ResponseEntity<Object> updateTeknisi(@RequestBody Teknisi teknisi) {
+		teknisiService.updateTeknisi(teknisi);
+		return new ResponseEntity<>(teknisiService, HttpStatus.OK);
 	}
 	
 	
