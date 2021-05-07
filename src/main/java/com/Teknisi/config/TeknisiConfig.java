@@ -29,7 +29,7 @@ public class TeknisiConfig {
 
 	private ApiInfo apiEndInfo() {
 		return new ApiInfoBuilder().title("Spring Boot Teknisi")
-			    .description("Teknsi Swagger")
+			    .description("Teknisi Swagger")
 			    .build()
 			    ;
 	}

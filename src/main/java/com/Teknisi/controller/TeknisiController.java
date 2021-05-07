@@ -65,7 +65,7 @@ public class TeknisiController {
 	@RequestMapping(value = "/teknisi/delete/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Object> delete(@PathVariable("id") Long id) {
 		teknisiService.deleteById(id);
-		return new ResponseEntity<>(teknisiService, HttpStatus.OK);
+		return new ResponseEntity<>("Teknisi deleted successsfully", HttpStatus.OK);
 	}
 	
 	
@@ -79,7 +79,7 @@ public class TeknisiController {
 	@RequestMapping(value = "/teknis/create", method = RequestMethod.POST)
 	public ResponseEntity<Object> createTeknisi(@RequestBody Teknisi teknisi) {
 		teknisiService.insert(teknisi);
-		return new ResponseEntity<>(teknisiService, HttpStatus.OK);
+		return new ResponseEntity<>("Teknisi created successsfully", HttpStatus.OK);
 	}
 	
 	
@@ -93,10 +93,7 @@ public class TeknisiController {
 	@RequestMapping(value = "/teknis/update", method = RequestMethod.PUT)
 	public ResponseEntity<Object> updateTeknisi(@RequestBody Teknisi teknisi) {
 		teknisiService.updateTeknisi(teknisi);
-		return new ResponseEntity<>(teknisiService, HttpStatus.OK);
+		return new ResponseEntity<>("Teknisi updated successsfully", HttpStatus.OK);
 	}
 	
-	
-	
 }
-

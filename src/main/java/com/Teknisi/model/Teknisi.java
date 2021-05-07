@@ -3,40 +3,42 @@ package com.Teknisi.model;
 import java.io.Serializable;
 import java.util.Date;
 
+//import org.springframework.data.annotation.CreatedDate;
+
 import io.swagger.annotations.ApiModelProperty;
 
 
 public class Teknisi implements Serializable {
 	private static final long serialVersionUID = 1L;
-	@ApiModelProperty(notes = "The database generated teknisi id")
+	@ApiModelProperty(notes = "The database generated teknisi id", name = "id", required = true, example = "10")
 	private Long id;
-	@ApiModelProperty(notes = "The database generated teknisi phone")
+	@ApiModelProperty(notes = "The database generated teknisi phone", name = "phone", required = true, example = "081294749377")
 	private String phone;
-	@ApiModelProperty(notes = "The database generated teknisi name")
+	@ApiModelProperty(notes = "The database generated teknisi name", name = "name", required = true, example = "Dika")
 	private String name;
-	@ApiModelProperty(notes = "The database generated teknisi nik")
+	@ApiModelProperty(notes = "The database generated teknisi nik", name = "nik", required = true, example = "2006042600")
 	private String nik;
-	@ApiModelProperty(notes = "The database generated teknisi address")
+	@ApiModelProperty(notes = "The database generated teknisi address", name = "address", required = true, example = "Jatiasih")
 	private String address;
-	@ApiModelProperty(notes = "The database generated teknisi email")
+	@ApiModelProperty(notes = "The database generated teknisi email", name = "email", required = true, example = "dika@gmail.com")
 	private String email;
-	@ApiModelProperty(notes = "The database generated teknisi city")
+	@ApiModelProperty(notes = "The database generated teknisi city", name = "city", required = true, example = "Bekasi")
 	private String city;
-	@ApiModelProperty(notes = "The database generated teknisi postal_code")
+	@ApiModelProperty(notes = "The database generated teknisi postal_code", name = "postal_code", required = true, example = "17426")
 	private String postal_code;
-	@ApiModelProperty(notes = "The database generated teknisi last_login")
+	@ApiModelProperty(notes = "The database generated teknisi last_login", name = "last_login", required = true)
 	private Date last_login;
-	@ApiModelProperty(notes = "The database generated teknisi longitude")
+	@ApiModelProperty(notes = "The database generated teknisi longitude", name = "logitudinal", required = true, example = "100000")
 	private String longitude;
-	@ApiModelProperty(notes = "The database generated teknisi latitude")
+	@ApiModelProperty(notes = "The database generated teknisi latitude", name = "latitude", required = true, example = "12300")
 	private String latitude;
-	@ApiModelProperty(notes = "The database generated teknisi created_date")
+	@ApiModelProperty(notes = "The database generated teknisi created_date", name = "created_date", required = true)
 	private Date created_date;
-	@ApiModelProperty(notes = "The database generated teknisi created_by")
+	@ApiModelProperty(notes = "The database generated teknisi created_by", name = "created_by", required = true, example = "user")
 	private String created_by;
-	@ApiModelProperty(notes = "The database generated teknisi update_date")
+	@ApiModelProperty(notes = "The database generated teknisi update_date", name = "update_date", required = true)
 	private Date update_date;
-	@ApiModelProperty(notes = "The database generated teknisi update_by")
+	@ApiModelProperty(notes = "The database generated teknisi update_by", name = "update_by", required = true, example = "admin")
 	private String update_by;
 	
 	
@@ -60,10 +62,10 @@ public class Teknisi implements Serializable {
 		this.last_login = last_login;
 		this.longitude = longitude;
 		this.latitude = latitude;
-		this.created_date = created_date;
-		this.created_by = created_by;
-		this.update_date = update_date;
-		this.update_by = update_by;
+//		this.created_date = created_date;
+//		this.created_by = created_by;
+//		this.update_date = update_date;
+//		this.update_by = update_by;
 	}
 
 
