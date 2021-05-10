@@ -35,3 +35,4 @@ public class TeknisiConfig {
 	}
 	
 }
+//.apis(Predicates.not(RequestHandlerSelectors.basePackage("org.springframework.boot"))).build();

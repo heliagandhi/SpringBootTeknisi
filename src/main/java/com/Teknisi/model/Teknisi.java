@@ -2,54 +2,100 @@ package com.Teknisi.model;
 
 import java.io.Serializable;
 import java.util.Date;
-
-//import org.springframework.data.annotation.CreatedDate;
+import java.util.Set;
 
 import io.swagger.annotations.ApiModelProperty;
+
+import javax.persistence.OneToMany;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.PastOrPresent;
+import javax.validation.constraints.Pattern;
 
 
 public class Teknisi implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@ApiModelProperty(notes = "The database generated teknisi id", name = "id", required = true, example = "10")
+	@Max(value = 1000, message = "ID should not be greater than 1000")
 	private Long id;
+	
 	@ApiModelProperty(notes = "The database generated teknisi phone", name = "phone", required = true, example = "081294749377")
+	@Pattern(regexp = "^[\\d]{1,13}$", message = "Phone should not be greater than 13")
 	private String phone;
+	
 	@ApiModelProperty(notes = "The database generated teknisi name", name = "name", required = true, example = "Dika")
+	@Max(value = 50, message = "Name should not be greater than 50")
+	@Pattern(regexp = "^[\\p{Alnum}]{1,32}$") // ^[A-Za-z0-9]+$ / ^[A-Za-z0-9]*$
 	private String name;
+	
 	@ApiModelProperty(notes = "The database generated teknisi nik", name = "nik", required = true, example = "2006042600")
+	@Max(value = 16, message = "NIK should not be greater than 16")
 	private String nik;
+	
 	@ApiModelProperty(notes = "The database generated teknisi address", name = "address", required = true, example = "Jatiasih")
+	@Max(value = 50, message = "Address should not be greater than 50")
+	@Pattern(regexp = "^[\\p{Alnum}]{1,32}$")
 	private String address;
+	
 	@ApiModelProperty(notes = "The database generated teknisi email", name = "email", required = true, example = "dika@gmail.com")
+	@Pattern(regexp = "^[A-Za-z0-9+_.-]+@(.+)$")
 	private String email;
+	
 	@ApiModelProperty(notes = "The database generated teknisi city", name = "city", required = true, example = "Bekasi")
+	@Max(value = 50, message = "City should not be greater than 50")
+	@Pattern(regexp = "^[\\p{Alnum}]{1,32}$")
 	private String city;
+	
 	@ApiModelProperty(notes = "The database generated teknisi postal_code", name = "postal_code", required = true, example = "17426")
+	@Max(value = 5, message = "Postal code should not be greater than 5")
 	private String postal_code;
+	
 	@ApiModelProperty(notes = "The database generated teknisi last_login", name = "last_login", required = true)
+	@PastOrPresent
 	private Date last_login;
+	
 	@ApiModelProperty(notes = "The database generated teknisi longitude", name = "logitudinal", required = true, example = "100000")
 	private String longitude;
+	
 	@ApiModelProperty(notes = "The database generated teknisi latitude", name = "latitude", required = true, example = "12300")
 	private String latitude;
+	
 	@ApiModelProperty(notes = "The database generated teknisi created_date", name = "created_date", required = true)
+	@PastOrPresent
 	private Date created_date;
+	
+	@NotBlank
 	@ApiModelProperty(notes = "The database generated teknisi created_by", name = "created_by", required = true, example = "user")
 	private String created_by;
+	
 	@ApiModelProperty(notes = "The database generated teknisi update_date", name = "update_date", required = true)
+	@PastOrPresent
 	private Date update_date;
+	
+	@NotBlank
 	@ApiModelProperty(notes = "The database generated teknisi update_by", name = "update_by", required = true, example = "admin")
 	private String update_by;
+	
+	@OneToMany(mappedBy="teknisi_id")
+	private Set<Request> request;
 	
 	
 	public Teknisi(){
 		
 	}
+	
 
-
-	public Teknisi(Long id, String phone, String name, String nik, String address, String email, String city,
-			String postal_code, Date last_login, String longitude, String latitude, Date created_date,
-			String created_by, Date update_date, String update_by) {
+	public Teknisi(@Max(value = 1000, message = "ID should not be greater than 1000") Long id,
+			@Pattern(regexp = "^[\\d]{1,13}$", message = "Phone should not be greater than 13") String phone,
+			@Max(value = 50, message = "Name should not be greater than 50") @Pattern(regexp = "^[\\p{Alnum}]{1,32}$") String name,
+			@Max(value = 16, message = "NIK should not be greater than 16") String nik,
+			@Max(value = 50, message = "Address should not be greater than 50") @Pattern(regexp = "^[\\p{Alnum}]{1,32}$") String address,
+			@Pattern(regexp = "^[A-Za-z0-9+_.-]+@(.+)$") String email,
+			@Max(value = 50, message = "City should not be greater than 50") @Pattern(regexp = "^[\\p{Alnum}]{1,32}$") String city,
+			@Max(value = 5, message = "Postal code should not be greater than 5") String postal_code,
+			@PastOrPresent Date last_login, String longitude, String latitude, @PastOrPresent Date created_date,
+			@NotBlank String created_by, @PastOrPresent Date update_date, @NotBlank String update_by,
+			Set<Request> request) {
 		super();
 		this.id = id;
 		this.phone = phone;
@@ -66,6 +112,7 @@ public class Teknisi implements Serializable {
 //		this.created_by = created_by;
 //		this.update_date = update_date;
 //		this.update_by = update_by;
+		this.request = request;
 	}
 
 
@@ -189,8 +236,16 @@ public class Teknisi implements Serializable {
 		this.update_by = update_by;
 	}
 	
-	
-	
+//	public Set<Request> getRequest() {
+//		return request;
+//	}
+//
+//
+//	public void setRequest(Set<Request> request) {
+//		this.request = request;
+//	}
+
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -224,6 +279,8 @@ public class Teknisi implements Serializable {
 		builder.append(update_date);
 		builder.append(", update_by=");
 		builder.append(update_by);
+		builder.append(", request=");
+		builder.append(request);
 		builder.append("]");
 		return builder.toString();
 	}	
