@@ -10,4 +10,5 @@ public interface TeknisiService {
 	void deleteById(Long id);
 	void updateTeknisi(Teknisi teknisi);
 	Teknisi getTeknisiById(long id);
+	boolean TeknisiIdExists(long id);
 }

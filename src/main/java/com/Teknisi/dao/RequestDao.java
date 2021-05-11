@@ -10,4 +10,5 @@ public interface RequestDao {
 	int deleteById(String request_id);
 	void updateRequest(Request request);
 	public Request findRequestById(String request_id);
+	boolean RequestIdExists(String request_id);
 }

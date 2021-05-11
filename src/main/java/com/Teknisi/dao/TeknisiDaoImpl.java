@@ -182,4 +182,13 @@ public class TeknisiDaoImpl extends JdbcDaoSupport implements TeknisiDao{
 		
 	}
 
+
+	@Override
+	public boolean TeknisiIdExists(long id) {
+		String sql = "select count(*) from teknisi where id = ? limit 1";
+	    @SuppressWarnings("deprecation")
+		long count = getJdbcTemplate().queryForObject(sql, new Object[] { id }, Long.class);
+		return count > 0;
+	}
+
 }

@@ -10,4 +10,5 @@ public interface RequestService {
 	void deleteById(String request_id);
 	void updateRequest(Request request);
 	Request getRequestById(String request_id);
+	boolean RequestIdExists(String request_id);
 }

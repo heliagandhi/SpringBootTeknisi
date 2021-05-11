@@ -33,8 +33,8 @@ public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
 	@Override
 	public List<Request> getAllRequest() {
 		String query =
-				"SELECT r.request_id, r.merchant_name, r.address, r.city, r.postal_code, r.phone, r.pic, t.id, r.created_date,"
-				+ "r.created_by, r.update_date, r.update_by from request r right join teknisi t on r.teknisi_id = t.id";
+				"SELECT request_id, merchant_name, address, city, postal_code, phone, pic, teknisi_id, created_date,"
+				+ "created_by, update_date, update_by from request";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		List<Request> requestList = new ArrayList<Request>();
 
@@ -49,7 +49,7 @@ public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
 			request.setPostal_code(String.valueOf(requestColumn.get("postal_code")));
 			request.setPhone(String.valueOf(requestColumn.get("phone")));
 			request.setPic(String.valueOf(requestColumn.get("pic")));
-//			request.setTeknisi_id(Integer.parseInt(requestColumn.get("teknisi_id").toString()));
+			request.setTeknisi_id(Integer.parseInt(requestColumn.get("teknisi_id").toString()));
 			request.setCreated_date((Date)(requestColumn.get("created_date")));
 			request.setCreated_by(String.valueOf(requestColumn.get("created_by")));
 			request.setUpdate_date((Date)(requestColumn.get("update_date")));
@@ -73,7 +73,7 @@ public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
 	     		request.getPhone(), request.getPic(), request.getTeknisi_id(), created_date, created_by, request.getUpdate_date(),
 	     		request.getUpdate_by()
 	     		});
-	} //(SELECT teknisi_id FROM teknisi WHERE teknisi_id = ?)
+	}
 
 	
 	@Override
@@ -118,7 +118,7 @@ public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
 				request.setPostal_code(rs.getString("postal_code"));
 				request.setPhone(rs.getString("phone"));
 				request.setPic(rs.getString("pic"));
-//				request.setTeknisi_id(rs.getInt("teknisi_id"));
+				request.setTeknisi_id(rs.getInt("teknisi_id"));
 				request.setCreated_date(rs.getDate("created_date"));
 				request.setCreated_by(rs.getString("created_by"));
 				request.setUpdate_date(rs.getDate("update_date"));
@@ -127,5 +127,15 @@ public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
 			}});
 		return request;
 	}
+
+
+	@Override
+	public boolean RequestIdExists(String request_id) {
+		String sql = "select count(*) from request where request_id= ? limit 1";
+	    @SuppressWarnings("deprecation")
+		long count = getJdbcTemplate().queryForObject(sql, new Object[] { request_id }, Long.class);
+		return count > 0;
+	}
+	
 
 }

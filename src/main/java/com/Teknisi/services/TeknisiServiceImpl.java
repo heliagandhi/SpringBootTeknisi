@@ -42,5 +42,11 @@ public class TeknisiServiceImpl implements TeknisiService{
 		
 	}
 
+
+	@Override
+	public boolean TeknisiIdExists(long id) {
+		return teknisiDao.TeknisiIdExists(id);
+	}
+
 }
 

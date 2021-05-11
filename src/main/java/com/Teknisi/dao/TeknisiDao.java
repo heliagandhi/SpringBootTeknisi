@@ -9,4 +9,5 @@ public interface TeknisiDao {
 	int deleteById(Long id);
 	void updateTeknisi(Teknisi teknisi);
 	public Teknisi findTeknisiById(long id);
+	boolean TeknisiIdExists(long id);
 }

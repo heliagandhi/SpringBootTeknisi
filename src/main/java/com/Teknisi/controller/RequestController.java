@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.Teknisi.exception.DataNotfoundException;
 import com.Teknisi.model.Request;
 import com.Teknisi.services.RequestService;
+import com.Teknisi.services.TeknisiService;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -29,6 +30,8 @@ public class RequestController {
 	private Logger logger = LoggerFactory.getLogger("SpringBootTeknisiApplication");
 	
 	@Autowired RequestService requestService;
+	
+	@Autowired TeknisiService teknisiService;
 	
 	@ApiOperation(value = "View all request")
 	@ApiResponses(value = { 
@@ -67,8 +70,14 @@ public class RequestController {
 			@ApiResponse(code = 404, message = "not found!!!") })
 	@RequestMapping(value = "/request/create", method = RequestMethod.POST)
 	public ResponseEntity<Object> createRequest(@Valid @RequestBody Request request, final BindingResult bindingResult) {
-		requestService.insert(request);
-		return new ResponseEntity<>("request created successsfully", HttpStatus.OK);
+		String request_id = request.getRequest_id();
+		long teknisi_id = request.getTeknisi_id();
+		if(requestService.RequestIdExists(request_id) != true && teknisiService.TeknisiIdExists(teknisi_id) == true && request.getRequest_id() != null) {
+			requestService.insert(request);
+			return new ResponseEntity<>("Request Created Successsfully", HttpStatus.OK);
+		}else {
+			return new ResponseEntity<>("teknisi_id is not listed on the teknisi table", HttpStatus.BAD_REQUEST);
+		}
 	}
 	
 	
@@ -80,8 +89,14 @@ public class RequestController {
 			@ApiResponse(code = 404, message = "not found!!!") })
 	@RequestMapping(value = "/request/update", method = RequestMethod.PUT)
 	public ResponseEntity<Object> updateRequest(@Valid @RequestBody Request request, final BindingResult bindingResult) {
-		requestService.updateRequest(request);
-		return new ResponseEntity<>("Request updated successsfully", HttpStatus.OK);
+		String request_id = request.getRequest_id();
+		long teknisi_id = request.getTeknisi_id();
+		if(requestService.RequestIdExists(request_id) == true && teknisiService.TeknisiIdExists(teknisi_id) == true && request.getRequest_id() != null) {
+			requestService.updateRequest(request);
+			return new ResponseEntity<>("Request Updated Successsfully", HttpStatus.OK);
+		}else {
+			return new ResponseEntity<>("teknisi_id is not listed on the teknisi table", HttpStatus.BAD_REQUEST);
+		}
 	}
 	
 	
@@ -94,7 +109,7 @@ public class RequestController {
 	@RequestMapping(value = "/request/delete/{request_id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Object> delete(@PathVariable("request_id") String request_id) {
 		requestService.deleteById(request_id);
-		return new ResponseEntity<>("Teknisi deleted successsfully", HttpStatus.OK);
+		return new ResponseEntity<>("Request deleted successsfully", HttpStatus.OK);
 	}
 	
 }

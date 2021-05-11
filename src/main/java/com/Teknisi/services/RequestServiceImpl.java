@@ -44,4 +44,10 @@ public class RequestServiceImpl implements RequestService {
 		
 	}
 
+
+	@Override
+	public boolean RequestIdExists(String request_id) {
+		return requestDao.RequestIdExists(request_id);
+	}
+
 }
