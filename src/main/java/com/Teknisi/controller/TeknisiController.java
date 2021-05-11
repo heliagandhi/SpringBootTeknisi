@@ -32,9 +32,9 @@ public class TeknisiController {
 	
 	@Autowired TeknisiService teknisiService;
 	
-	@ApiOperation(value = "View all teknisi", response = Iterable.class, tags = "teknisi")
+	@ApiOperation(value = "View all teknisi")
 	@ApiResponses(value = { 
-			@ApiResponse(code = 200, message = "Suceess|OK"),
+			@ApiResponse(code = 200, message = "Suceess|OK", response = Iterable.class),
 			@ApiResponse(code = 401, message = "not authorized!"), 
 			@ApiResponse(code = 403, message = "forbidden!!!"),
 			@ApiResponse(code = 404, message = "not found!!!") })
@@ -45,9 +45,9 @@ public class TeknisiController {
 		return new ResponseEntity<>(listTeknisi, HttpStatus.OK);
 	}
 	
-	@ApiOperation(value = "View teknisi by ID", response = Teknisi.class, tags = "teknisi")
+	@ApiOperation(value = "View teknisi by ID")
 	@ApiResponses(value = { 
-			@ApiResponse(code = 200, message = "Suceess|OK"),
+			@ApiResponse(code = 200, message = "Suceess|OK", response = Teknisi.class),
 			@ApiResponse(code = 401, message = "not authorized!"), 
 			@ApiResponse(code = 403, message = "forbidden!!!"),
 			@ApiResponse(code = 404, message = "not found!!!") })
@@ -61,7 +61,7 @@ public class TeknisiController {
 	
 	
 	//delete
-	@ApiOperation(value = "Delete an teknisi", response = Teknisi.class, tags = "teknisi")
+	@ApiOperation(value = "Delete an teknisi")
 	@ApiResponses(value = { 
 			@ApiResponse(code = 200, message = "Suceess|OK"),
 			@ApiResponse(code = 401, message = "not authorized!"), 
@@ -75,7 +75,7 @@ public class TeknisiController {
 	
 	
 	//post
-	@ApiOperation(value = "Create an teknisi", response = Teknisi.class, tags = "teknisi")
+	@ApiOperation(value = "Create an teknisi")
 	@ApiResponses(value = { 
 			@ApiResponse(code = 200, message = "Suceess|OK"),
 			@ApiResponse(code = 401, message = "not authorized!"), 
@@ -83,13 +83,17 @@ public class TeknisiController {
 			@ApiResponse(code = 404, message = "not found!!!") })
 	@RequestMapping(value = "/teknis/create", method = RequestMethod.POST)
 	public ResponseEntity<Object> createTeknisi(@Valid @RequestBody Teknisi teknisi, final BindingResult bindingResult) {
-		teknisiService.insert(teknisi);
-		return new ResponseEntity<>("Teknisi created successsfully", HttpStatus.OK);
+		if (teknisi != null && teknisi.getId() > 0) {
+			teknisiService.insert(teknisi);
+			return new ResponseEntity<>("Teknisi Created Successsfully", HttpStatus.OK);
+		}else {
+			return new ResponseEntity<>("Teknisi ID already exist", HttpStatus.BAD_REQUEST);
+		}
 	}
 	
 	
 	//put
-	@ApiOperation(value = "Update an teknisi", response = Teknisi.class, tags = "teknisi")
+	@ApiOperation(value = "Update an teknisi")
 	@ApiResponses(value = { 
 			@ApiResponse(code = 200, message = "Suceess|OK"),
 			@ApiResponse(code = 401, message = "not authorized!"), 
@@ -97,27 +101,13 @@ public class TeknisiController {
 			@ApiResponse(code = 404, message = "not found!!!") })
 	@RequestMapping(value = "/teknis/update", method = RequestMethod.PUT)
 	public ResponseEntity<Object> updateTeknisi(@Valid @RequestBody Teknisi teknisi, final BindingResult bindingResult) {
-		teknisiService.updateTeknisi(teknisi);
-		return new ResponseEntity<>("Teknisi updated successsfully", HttpStatus.OK);
+		if (teknisi != null && teknisi.getId() > 0) {
+			teknisiService.updateTeknisi(teknisi);
+			return new ResponseEntity<>("Teknisi Updated Successsfully", HttpStatus.OK);
+		}else {
+			return new ResponseEntity<>("Teknisi ID did not exist", HttpStatus.BAD_REQUEST);
+		}
 	}
 	
-	
-	
-	
-	//BARU
-	
-//	@Autowired RequestService requestService;
-//	
-//	@ApiOperation(value = "Create an request", response = Teknisi.class, tags = "request")
-//	@ApiResponses(value = { 
-//			@ApiResponse(code = 200, message = "Suceess|OK"),
-//			@ApiResponse(code = 401, message = "not authorized!"), 
-//			@ApiResponse(code = 403, message = "forbidden!!!"),
-//			@ApiResponse(code = 404, message = "not found!!!") })
-//	@RequestMapping(value = "/request/create", method = RequestMethod.POST)
-//	public ResponseEntity<Object> createRequest(@Valid @RequestBody Request request, final BindingResult bindingResult) {
-//		requestService.insert(request);
-//		return new ResponseEntity<>("request created successsfully", HttpStatus.OK);
-//	}
 	
 }

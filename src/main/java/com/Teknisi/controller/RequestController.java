@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.Teknisi.exception.DataNotfoundException;
 import com.Teknisi.model.Request;
-import com.Teknisi.model.Teknisi;
 import com.Teknisi.services.RequestService;
 
 import io.swagger.annotations.ApiOperation;
@@ -31,10 +30,9 @@ public class RequestController {
 	
 	@Autowired RequestService requestService;
 	
-	
-	@ApiOperation(value = "View all request", response = Iterable.class, tags = "request")
+	@ApiOperation(value = "View all request")
 	@ApiResponses(value = { 
-			@ApiResponse(code = 200, message = "Suceess|OK"),
+			@ApiResponse(code = 200, message = "Suceess|OK", response = Iterable.class),
 			@ApiResponse(code = 401, message = "not authorized!"), 
 			@ApiResponse(code = 403, message = "forbidden!!!"),
 			@ApiResponse(code = 404, message = "not found!!!") })
@@ -46,13 +44,13 @@ public class RequestController {
 	}
 	
 	
-	@ApiOperation(value = "View request by ID", response = Request.class, tags = "request")
+	@ApiOperation(value = "View request by ID")
 	@ApiResponses(value = { 
-			@ApiResponse(code = 200, message = "Suceess|OK"),
+			@ApiResponse(code = 200, message = "Suceess|OK", response = Request.class),
 			@ApiResponse(code = 401, message = "not authorized!"), 
 			@ApiResponse(code = 403, message = "forbidden!!!"),
 			@ApiResponse(code = 404, message = "not found!!!") })
-	@RequestMapping(value = "/request/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/request/{request_id}", method = RequestMethod.GET)
 	public ResponseEntity<Object> retrieveById(@PathVariable("request_id") String request_id) {
 		logger.debug("Get with id : " + request_id);
 		if(request_id.equals(null)) throw new DataNotfoundException();
@@ -61,7 +59,7 @@ public class RequestController {
 	}
 	
 	
-	@ApiOperation(value = "Create an request", response = Request.class, tags = "request")
+	@ApiOperation(value = "Create an request")
 	@ApiResponses(value = { 
 			@ApiResponse(code = 200, message = "Suceess|OK"),
 			@ApiResponse(code = 401, message = "not authorized!"), 
@@ -74,7 +72,7 @@ public class RequestController {
 	}
 	
 	
-	@ApiOperation(value = "Update an request", response = Request.class, tags = "request")
+	@ApiOperation(value = "Update an request")
 	@ApiResponses(value = { 
 			@ApiResponse(code = 200, message = "Suceess|OK"),
 			@ApiResponse(code = 401, message = "not authorized!"), 
@@ -87,7 +85,7 @@ public class RequestController {
 	}
 	
 	
-	@ApiOperation(value = "Delete an request", response = Teknisi.class, tags = "request")
+	@ApiOperation(value = "Delete an request")
 	@ApiResponses(value = { 
 			@ApiResponse(code = 200, message = "Suceess|OK"),
 			@ApiResponse(code = 401, message = "not authorized!"), 

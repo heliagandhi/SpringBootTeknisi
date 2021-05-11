@@ -6,6 +6,8 @@ import java.util.Set;
 
 import io.swagger.annotations.ApiModelProperty;
 
+//import javax.persistence.CascadeType;
+//import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
@@ -76,7 +78,7 @@ public class Teknisi implements Serializable {
 	@ApiModelProperty(notes = "The database generated teknisi update_by", name = "update_by", required = true, example = "admin")
 	private String update_by;
 	
-	@OneToMany(mappedBy="teknisi_id")
+	@OneToMany(mappedBy="teknisidata")
 	private Set<Request> request;
 	
 	
@@ -93,9 +95,7 @@ public class Teknisi implements Serializable {
 			@Pattern(regexp = "^[A-Za-z0-9+_.-]+@(.+)$") String email,
 			@Max(value = 50, message = "City should not be greater than 50") @Pattern(regexp = "^[\\p{Alnum}]{1,32}$") String city,
 			@Max(value = 5, message = "Postal code should not be greater than 5") String postal_code,
-			@PastOrPresent Date last_login, String longitude, String latitude, @PastOrPresent Date created_date,
-			@NotBlank String created_by, @PastOrPresent Date update_date, @NotBlank String update_by,
-			Set<Request> request) {
+			@PastOrPresent Date last_login, String longitude, String latitude) {
 		super();
 		this.id = id;
 		this.phone = phone;
@@ -108,11 +108,6 @@ public class Teknisi implements Serializable {
 		this.last_login = last_login;
 		this.longitude = longitude;
 		this.latitude = latitude;
-//		this.created_date = created_date;
-//		this.created_by = created_by;
-//		this.update_date = update_date;
-//		this.update_by = update_by;
-		this.request = request;
 	}
 
 
@@ -235,15 +230,14 @@ public class Teknisi implements Serializable {
 	public void setUpdate_by(String update_by) {
 		this.update_by = update_by;
 	}
-	
-//	public Set<Request> getRequest() {
-//		return request;
-//	}
-//
-//
-//	public void setRequest(Set<Request> request) {
-//		this.request = request;
-//	}
+
+	public Set<Request> getRequest() {
+		return request;
+	}
+
+	public void setRequest(Set<Request> request) {
+		this.request = request;
+	}
 
 
 	@Override

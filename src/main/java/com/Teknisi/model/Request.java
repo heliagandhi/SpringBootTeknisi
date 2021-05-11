@@ -22,12 +22,12 @@ public class Request {
 	private String merchant_name;
 	
 	@ApiModelProperty(notes = "The database generated request address", name = "address", required = true, example = "Malabar")
-	@Max(value = 50, message = "Address should not be greater than 50")
+	@Max(value = 140, message = "Address should not be greater than 140")
 	@Pattern(regexp = "^[\\p{Alnum}]{1,32}$")
 	private String address;
 	
 	@ApiModelProperty(notes = "The database generated request city", name = "city", required = true, example = "Bogor")
-	@Max(value = 50, message = "City should not be greater than 50")
+	@Max(value = 25, message = "City should not be greater than 25")
 	@Pattern(regexp = "^[\\p{Alnum}]{1,32}$")
 	private String city;
 	
@@ -43,9 +43,13 @@ public class Request {
 	@Pattern(regexp = "^[A-Za-z0-9]{1,50}$", message = "Phone should not be greater than 50")
 	private String pic;
 	
+	@ApiModelProperty(notes = "The database generated request teknisi_id", name = "teknisi_id", required = true, example = "10")
+	@Max(value = 1000, message = "ID should not be greater than 1000")
+	private int teknisi_id;
+	
 	@ManyToOne
-	@JoinColumn(name="id", nullable=false)
-	private Teknisi teknisi_id;
+	@JoinColumn(name="teknisi_id", referencedColumnName = "id", nullable=false, insertable=false, updatable=false)
+	private Teknisi teknisidata;
 	
 	@ApiModelProperty(notes = "The database generated request created_date", name = "created_date", required = true)
 	@PastOrPresent
@@ -69,13 +73,12 @@ public class Request {
 
 	public Request(@Max(value = 1000, message = "ID should not be greater than 1000") String request_id,
 			@Max(value = 50, message = "Name should not be greater than 50") @Pattern(regexp = "^[\\p{Alnum}]{1,32}$") String merchant_name,
-			@Max(value = 50, message = "Address should not be greater than 50") @Pattern(regexp = "^[\\p{Alnum}]{1,32}$") String address,
-			@Max(value = 50, message = "City should not be greater than 50") @Pattern(regexp = "^[\\p{Alnum}]{1,32}$") String city,
+			@Max(value = 140, message = "Address should not be greater than 140") @Pattern(regexp = "^[\\p{Alnum}]{1,32}$") String address,
+			@Max(value = 25, message = "City should not be greater than 25") @Pattern(regexp = "^[\\p{Alnum}]{1,32}$") String city,
 			@Max(value = 5, message = "Postal code should not be greater than 5") String postal_code,
 			@Pattern(regexp = "^[\\d]{1,13}$", message = "Phone should not be greater than 13") String phone,
 			@Pattern(regexp = "^[A-Za-z0-9]{1,50}$", message = "Phone should not be greater than 50") String pic,
-			Teknisi teknisi_id, @PastOrPresent Date created_date, @NotBlank String created_by,
-			@PastOrPresent Date update_date, @NotBlank String update_by) {
+			@Max(value = 1000, message = "ID should not be greater than 1000") int teknisi_id) {
 		super();
 		this.request_id = request_id;
 		this.merchant_name = merchant_name;
@@ -85,10 +88,6 @@ public class Request {
 		this.phone = phone;
 		this.pic = pic;
 		this.teknisi_id = teknisi_id;
-//		this.created_date = created_date;
-//		this.created_by = created_by;
-//		this.update_date = update_date;
-//		this.update_by = update_by;
 	}
 
 
@@ -96,93 +95,126 @@ public class Request {
 		return request_id;
 	}
 
+
 	public void setRequest_id(String request_id) {
 		this.request_id = request_id;
 	}
+
 
 	public String getMerchant_name() {
 		return merchant_name;
 	}
 
+
 	public void setMerchant_name(String merchant_name) {
 		this.merchant_name = merchant_name;
 	}
+
 
 	public String getAddress() {
 		return address;
 	}
 
+
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
 
 	public String getCity() {
 		return city;
 	}
 
+
 	public void setCity(String city) {
 		this.city = city;
 	}
+
 
 	public String getPostal_code() {
 		return postal_code;
 	}
 
+
 	public void setPostal_code(String postal_code) {
 		this.postal_code = postal_code;
 	}
+
 
 	public String getPhone() {
 		return phone;
 	}
 
+
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+
 
 	public String getPic() {
 		return pic;
 	}
 
+
 	public void setPic(String pic) {
 		this.pic = pic;
 	}
 
-	public Teknisi getTeknisi_id() {
+
+	public int getTeknisi_id() {
 		return teknisi_id;
 	}
 
-	public void setTeknisi_id(Teknisi teknisi_id) {
+
+	public void setTeknisi_id(int teknisi_id) {
 		this.teknisi_id = teknisi_id;
 	}
+
+
+	public Teknisi getTeknisidata() {
+		return teknisidata;
+	}
+
+
+	public void setTeknisidata(Teknisi teknisidata) {
+		this.teknisidata = teknisidata;
+	}
+
 
 	public Date getCreated_date() {
 		return created_date;
 	}
 
+
 	public void setCreated_date(Date created_date) {
 		this.created_date = created_date;
 	}
+
 
 	public String getCreated_by() {
 		return created_by;
 	}
 
+
 	public void setCreated_by(String created_by) {
 		this.created_by = created_by;
 	}
+
 
 	public Date getUpdate_date() {
 		return update_date;
 	}
 
+
 	public void setUpdate_date(Date update_date) {
 		this.update_date = update_date;
 	}
 
+
 	public String getUpdate_by() {
 		return update_by;
 	}
+
 
 	public void setUpdate_by(String update_by) {
 		this.update_by = update_by;
@@ -208,6 +240,8 @@ public class Request {
 		builder.append(pic);
 		builder.append(", teknisi_id=");
 		builder.append(teknisi_id);
+		builder.append(", teknisidata=");
+		builder.append(teknisidata);
 		builder.append(", created_date=");
 		builder.append(created_date);
 		builder.append(", created_by=");
@@ -219,5 +253,10 @@ public class Request {
 		builder.append("]");
 		return builder.toString();
 	}
+	
+	
+
+	
+	
 	
 }
