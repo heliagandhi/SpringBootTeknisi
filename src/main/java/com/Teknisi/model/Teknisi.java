@@ -31,7 +31,6 @@ import io.swagger.annotations.ApiModelProperty;
 public class Teknisi implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
-
 	@ApiModelProperty(notes = "ID of the Teknisi", name = "id", required = true, example = "10")
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,7 +39,6 @@ public class Teknisi implements Serializable{
 	@Max(value = 1000, message = "ID should not be greater than 1000")
 	private Long id;
 	
-
 	@ApiModelProperty(notes = "Phone of the Teknisi", name = "phone", required = true, example = "081294749377")
 	@Column(name="phone")
 	@NotBlank(message = "Phone cannot be blank")
