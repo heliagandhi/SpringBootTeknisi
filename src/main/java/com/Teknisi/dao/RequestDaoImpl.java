@@ -58,45 +58,8 @@ public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
 		}
 		return requestList;
 	}
-
 	
-	@Override
-	public void insert(Request request) {
-		String query = 
-	    		 "INSERT INTO request( request_id, merchant_name, address, city, postal_code, phone, pic, teknisi_id, created_date,"
-	    		 + " created_by, update_date, update_by) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" ;
-	     Date created_date = new Date();
-		 String created_by = "Merchant";
-	     getJdbcTemplate()
-	     	.update(query, new Object[]{
-	     		request.getRequest_id(), request.getMerchant_name(), request.getAddress(), request.getCity(), request.getPostal_code(),
-	     		request.getPhone(), request.getPic(), request.getTeknisi_id(), created_date, created_by, request.getUpdate_date(),
-	     		request.getUpdate_by()
-	     		});
-	}
-
 	
-	@Override
-	public int deleteById(String request_id) {
-		return getJdbcTemplate().update("delete from request where request_id = ?", request_id);
-	}
-
-	
-	@Override
-	public void updateRequest(Request request) {
-		String query = "update request set merchant_name=? , address=? , city=?, postal_code=?, phone=?, pic=?, "
-				+ "teknisi_id=?, update_date=?, update_by=? where request_id = ?";
-		Date update_date = new Date();
-		String update_by = "Admine";
-		getJdbcTemplate()
-     	.update(query, new Object[]{
-     		request.getMerchant_name(), request.getAddress(), request.getCity(), request.getPostal_code(), request.getPhone(),
-     		request.getPic(), request.getTeknisi_id(), update_date,
-     		update_by, request.getRequest_id()
-     		});
-	}
-	
-
 	@Override
 	public Request findRequestById(String request_id) {
 		String query =
@@ -126,6 +89,43 @@ public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
 				return request;
 			}});
 		return request;
+	}
+
+	
+	@Override
+	public void insert(Request request) {
+		String query = 
+	    		 "INSERT INTO request( request_id, merchant_name, address, city, postal_code, phone, pic, teknisi_id, created_date,"
+	    		 + " created_by, update_date, update_by) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" ;
+	     Date created_date = new Date();
+		 String created_by = "Merchant";
+	     getJdbcTemplate()
+	     	.update(query, new Object[]{
+	     		request.getRequest_id(), request.getMerchant_name(), request.getAddress(), request.getCity(), request.getPostal_code(),
+	     		request.getPhone(), request.getPic(), request.getTeknisi_id(), created_date, created_by, request.getUpdate_date(),
+	     		request.getUpdate_by()
+	     		});
+	}
+	
+	
+	@Override
+	public void updateRequest(Request request) {
+		String query = "update request set merchant_name=? , address=? , city=?, postal_code=?, phone=?, pic=?, "
+				+ "teknisi_id=?, update_date=?, update_by=? where request_id = ?";
+		Date update_date = new Date();
+		String update_by = "Admine";
+		getJdbcTemplate()
+     	.update(query, new Object[]{
+     		request.getMerchant_name(), request.getAddress(), request.getCity(), request.getPostal_code(), request.getPhone(),
+     		request.getPic(), request.getTeknisi_id(), update_date,
+     		update_by, request.getRequest_id()
+     		});
+	}
+
+	
+	@Override
+	public int deleteById(String request_id) {
+		return getJdbcTemplate().update("delete from request where request_id = ?", request_id);
 	}
 
 

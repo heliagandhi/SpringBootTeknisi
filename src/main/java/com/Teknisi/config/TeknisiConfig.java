@@ -4,9 +4,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
+import com.google.common.base.Predicates;
+
 import springfox.bean.validators.configuration.BeanValidatorPluginsConfiguration;
 import springfox.documentation.builders.ApiInfoBuilder;
-import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
@@ -26,11 +27,8 @@ public class TeknisiConfig {
 		return new Docket(DocumentationType.SWAGGER_12)
 				.apiInfo(apiEndInfo())
 				.select()
-				.apis(RequestHandlerSelectors
-						.basePackage("com.Teknisi.controller"))
-				.paths(PathSelectors.regex("/.*"))
-				.build()
-				;
+				.apis(Predicates.not(RequestHandlerSelectors.basePackage("org.springframework.boot")))
+				.build();
 	}
 	
 	@Bean
@@ -49,4 +47,3 @@ public class TeknisiConfig {
 	}
 	
 }
-//.apis(Predicates.not(RequestHandlerSelectors.basePackage("org.springframework.boot"))).build();
