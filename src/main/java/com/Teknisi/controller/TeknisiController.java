@@ -82,7 +82,7 @@ public class TeknisiController {
 			@ApiResponse(code = 403, message = "forbidden!!!"),
 			@ApiResponse(code = 404, message = "not found!!!") })
 	@RequestMapping(value = "/teknis/create", method = RequestMethod.POST)
-	public ResponseEntity<Object> createTeknisi(@Valid @RequestBody Teknisi teknisi, final BindingResult bindingResult) {
+	public ResponseEntity<Object> createTeknisi(@Valid @RequestBody Teknisi teknisi) {
 		if (teknisi != null && teknisi.getId() > 0) {
 			teknisiService.insert(teknisi);
 			return new ResponseEntity<>("Teknisi Created Successsfully", HttpStatus.OK);
@@ -100,7 +100,7 @@ public class TeknisiController {
 			@ApiResponse(code = 403, message = "forbidden!!!"),
 			@ApiResponse(code = 404, message = "not found!!!") })
 	@RequestMapping(value = "/teknis/update", method = RequestMethod.PUT)
-	public ResponseEntity<Object> updateTeknisi(@Valid @RequestBody Teknisi teknisi, final BindingResult bindingResult) {
+	public ResponseEntity<Object> updateTeknisi(@Valid @RequestBody Teknisi teknisi) {
 		if (teknisi != null && teknisi.getId() > 0) {
 			teknisiService.updateTeknisi(teknisi);
 			return new ResponseEntity<>("Teknisi Updated Successsfully", HttpStatus.OK);

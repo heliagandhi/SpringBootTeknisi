@@ -8,7 +8,10 @@ import java.util.List;
 import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
 
@@ -16,38 +19,44 @@ import javax.validation.constraints.Pattern;
 public class Teknisi implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@ApiModelProperty(notes = "The database generated teknisi id", name = "id", required = true, example = "10")
-	@Max(value = 1000, message = "ID should not be greater than 1000")
+	@NotNull(message = "ID cannot be blank")
+	@Max(value = 1000, message = "Id can't be less than 1 or bigger than 1000")
 	private Long id;
 	
 	@ApiModelProperty(notes = "The database generated teknisi phone", name = "phone", required = true, example = "081294749377")
+	@NotBlank(message = "Phone cannot be blank")
 	@Pattern(regexp = "^[\\d]{1,13}$", message = "Phone should not be greater than 13")
 	private String phone;
 	
-	@ApiModelProperty(notes = "The database generated teknisi name", name = "name", required = true, example = "Dika")
-	@Max(value = 50, message = "Name should not be greater than 50")
-	@Pattern(regexp = "^[\\p{Alnum}]{1,32}$") // ^[A-Za-z0-9]+$ / ^[A-Za-z0-9]*$
+	@ApiModelProperty(notes = "The database generated teknisi name", name = "name", required = true, example = "Dikas")
+	@NotBlank(message = "Name cannot be blank")
+	@Pattern(regexp = "^[A-Za-z0-9]{1,50}+$", message = "Name should have length between 1 and 50 characters") // ^[A-Za-z0-9]+$ / ^[A-Za-z0-9]*$
 	private String name;
 	
 	@ApiModelProperty(notes = "The database generated teknisi nik", name = "nik", required = true, example = "2006042600")
-	@Max(value = 16, message = "NIK should not be greater than 16")
+	@NotBlank(message = "NIK cannot be blank")
+	@Pattern(regexp="[\\d]{1,16}", message = "NIK should have length between 1 and 16 numeric")
 	private String nik;
 	
 	@ApiModelProperty(notes = "The database generated teknisi address", name = "address", required = true, example = "Jatiasih")
-	@Max(value = 50, message = "Address should not be greater than 50")
-	@Pattern(regexp = "^[\\p{Alnum}]{1,32}$")
+	@NotBlank(message = "Address cannot be blank")
+	@Pattern(regexp = "^[A-Za-z0-9]{1,50}$", message = "Address should have length between 1 and 50 characters")
 	private String address;
 	
 	@ApiModelProperty(notes = "The database generated teknisi email", name = "email", required = true, example = "dika@gmail.com")
-	@Pattern(regexp = "^[A-Za-z0-9+_.-]+@(.+)$")
+	@NotBlank(message = "Email cannot be blank")
+	@Email(message = "Email should be valid")
 	private String email;
 	
 	@ApiModelProperty(notes = "The database generated teknisi city", name = "city", required = true, example = "Bekasi")
 	@Max(value = 50, message = "City should not be greater than 50")
-	@Pattern(regexp = "^[\\p{Alnum}]{1,32}$")
+	@NotBlank(message = "City cannot be blank")
+	@Pattern(regexp = "^[A-Za-z0-9]{1,50}$", message = "City should have length between 1 and 50 characters")
 	private String city;
 	
 	@ApiModelProperty(notes = "The database generated teknisi postal_code", name = "postal_code", required = true, example = "17426")
-	@Max(value = 5, message = "Postal code should not be greater than 5")
+	@NotBlank(message = "Postal Code cannot be blank")
+	@Pattern(regexp="[\\d]{1,5}", message = "Postal Code should have length between 1 and 5 numeric")
 	private String postal_code;
 	
 	@ApiModelProperty(notes = "The database generated teknisi last_login", name = "last_login", required = true)
@@ -55,9 +64,11 @@ public class Teknisi implements Serializable {
 	private Date last_login;
 	
 	@ApiModelProperty(notes = "The database generated teknisi longitude", name = "logitudinal", required = true, example = "100000")
+	@NotBlank
 	private String longitude;
 	
 	@ApiModelProperty(notes = "The database generated teknisi latitude", name = "latitude", required = true, example = "12300")
+	@NotBlank
 	private String latitude;
 	
 	@PastOrPresent
