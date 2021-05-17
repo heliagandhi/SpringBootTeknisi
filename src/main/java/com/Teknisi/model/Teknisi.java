@@ -7,6 +7,7 @@ import java.util.List;
 
 import io.swagger.annotations.ApiModelProperty;
 
+import javax.persistence.Column;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
@@ -19,69 +20,83 @@ import javax.validation.constraints.Pattern;
 public class Teknisi implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@ApiModelProperty(notes = "The database generated teknisi id", name = "id", required = true, example = "10")
+	@Column(name="id")
 	@NotNull(message = "ID cannot be blank")
 	@Max(value = 1000, message = "Id can't be less than 1 or bigger than 1000")
 	private Long id;
 	
 	@ApiModelProperty(notes = "The database generated teknisi phone", name = "phone", required = true, example = "081294749377")
+	@Column(name="phone")
 	@NotBlank(message = "Phone cannot be blank")
 	@Pattern(regexp = "^[\\d]{1,13}$", message = "Phone should not be greater than 13")
 	private String phone;
 	
 	@ApiModelProperty(notes = "The database generated teknisi name", name = "name", required = true, example = "Dikas")
+	@Column(name="name")
 	@NotBlank(message = "Name cannot be blank")
 	@Pattern(regexp = "^[A-Za-z0-9]{1,50}+$", message = "Name should have length between 1 and 50 characters") // ^[A-Za-z0-9]+$ / ^[A-Za-z0-9]*$
 	private String name;
 	
 	@ApiModelProperty(notes = "The database generated teknisi nik", name = "nik", required = true, example = "2006042600")
+	@Column(name="nik")
 	@NotBlank(message = "NIK cannot be blank")
 	@Pattern(regexp="[\\d]{1,16}", message = "NIK should have length between 1 and 16 numeric")
 	private String nik;
 	
 	@ApiModelProperty(notes = "The database generated teknisi address", name = "address", required = true, example = "Jatiasih")
+	@Column(name="address")
 	@NotBlank(message = "Address cannot be blank")
 	@Pattern(regexp = "^[A-Za-z0-9]{1,50}$", message = "Address should have length between 1 and 50 characters")
 	private String address;
 	
 	@ApiModelProperty(notes = "The database generated teknisi email", name = "email", required = true, example = "dika@gmail.com")
+	@Column(name="email")
 	@NotBlank(message = "Email cannot be blank")
 	@Email(message = "Email should be valid")
 	private String email;
 	
 	@ApiModelProperty(notes = "The database generated teknisi city", name = "city", required = true, example = "Bekasi")
-	@Max(value = 50, message = "City should not be greater than 50")
+	@Column(name="city")
 	@NotBlank(message = "City cannot be blank")
 	@Pattern(regexp = "^[A-Za-z0-9]{1,50}$", message = "City should have length between 1 and 50 characters")
 	private String city;
 	
 	@ApiModelProperty(notes = "The database generated teknisi postal_code", name = "postal_code", required = true, example = "17426")
+	@Column(name="postal_code")
 	@NotBlank(message = "Postal Code cannot be blank")
 	@Pattern(regexp="[\\d]{1,5}", message = "Postal Code should have length between 1 and 5 numeric")
 	private String postal_code;
 	
 	@ApiModelProperty(notes = "The database generated teknisi last_login", name = "last_login", required = true)
+	@Column(name="last_login")
 	@PastOrPresent
 	private Date last_login;
 	
-	@ApiModelProperty(notes = "The database generated teknisi longitude", name = "logitudinal", required = true, example = "100000")
+	@ApiModelProperty(notes = "The database generated teknisi longitude", name = "longitude", required = true, example = "100000")
+	@Column(name="longitude")
 	@NotBlank
 	private String longitude;
 	
 	@ApiModelProperty(notes = "The database generated teknisi latitude", name = "latitude", required = true, example = "12300")
+	@Column(name="latitude")
 	@NotBlank
 	private String latitude;
 	
+	@Column(name="created_date")
 	@PastOrPresent
 	@ApiModelProperty(hidden = true)
 	private Date created_date;
 	
+	@Column(name="created_by")
 	@ApiModelProperty(hidden = true)
 	private String created_by;
 	
+	@Column(name="update_date")
 	@PastOrPresent
 	@ApiModelProperty(hidden = true)
 	private Date update_date;
 	
+	@Column(name="update_by")
 	@ApiModelProperty(hidden = true)
 	private String update_by;
 	
@@ -92,18 +107,18 @@ public class Teknisi implements Serializable {
 	
 	public Teknisi(){
 		
-	}
-	
+	}	
 
-	public Teknisi(@Max(value = 1000, message = "ID should not be greater than 1000") Long id,
-			@Pattern(regexp = "^[\\d]{1,13}$", message = "Phone should not be greater than 13") String phone,
-			@Max(value = 50, message = "Name should not be greater than 50") @Pattern(regexp = "^[\\p{Alnum}]{1,32}$") String name,
-			@Max(value = 16, message = "NIK should not be greater than 16") String nik,
-			@Max(value = 50, message = "Address should not be greater than 50") @Pattern(regexp = "^[\\p{Alnum}]{1,32}$") String address,
-			@Pattern(regexp = "^[A-Za-z0-9+_.-]+@(.+)$") String email,
-			@Max(value = 50, message = "City should not be greater than 50") @Pattern(regexp = "^[\\p{Alnum}]{1,32}$") String city,
-			@Max(value = 5, message = "Postal code should not be greater than 5") String postal_code,
-			@PastOrPresent Date last_login, String longitude, String latitude) {
+	public Teknisi(
+			@NotNull(message = "ID cannot be blank") @Max(value = 1000, message = "Id can't be less than 1 or bigger than 1000") Long id,
+			@NotBlank(message = "Phone cannot be blank") @Pattern(regexp = "^[\\d]{1,13}$", message = "Phone should not be greater than 13") String phone,
+			@NotBlank(message = "Name cannot be blank") @Pattern(regexp = "^[A-Za-z0-9]{1,50}+$", message = "Name should have length between 1 and 50 characters") String name,
+			@NotBlank(message = "NIK cannot be blank") @Pattern(regexp = "[\\d]{1,16}", message = "NIK should have length between 1 and 16 numeric") String nik,
+			@NotBlank(message = "Address cannot be blank") @Pattern(regexp = "^[A-Za-z0-9]{1,50}$", message = "Address should have length between 1 and 50 characters") String address,
+			@NotBlank(message = "Email cannot be blank") @Email(message = "Email should be valid") String email,
+			@NotBlank(message = "City cannot be blank") @Pattern(regexp = "^[A-Za-z0-9]{1,50}$", message = "City should have length between 1 and 50 characters") String city,
+			@NotBlank(message = "Postal Code cannot be blank") @Pattern(regexp = "[\\d]{1,5}", message = "Postal Code should have length between 1 and 5 numeric") String postal_code,
+			@PastOrPresent Date last_login, @NotBlank String longitude, @NotBlank String latitude) {
 		super();
 		this.id = id;
 		this.phone = phone;
