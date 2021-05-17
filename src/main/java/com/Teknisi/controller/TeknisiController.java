@@ -55,7 +55,7 @@ public class TeknisiController {
 	public ResponseEntity<Object> retrieveById(@PathVariable("id") Long id) {
 		logger.debug("Get with id : " + id);
 		if(id.equals(null)) throw new DataNotfoundException();
-		Teknisi teknisi = teknisiService.getTeknisiById(id);
+		List<Teknisi> teknisi = teknisiService.getTeknisiById(id);
 		return new ResponseEntity<>(teknisi, HttpStatus.OK);
 	}
 	

@@ -1,16 +1,14 @@
 package com.Teknisi.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.Set;
+import java.util.List;
 
 import io.swagger.annotations.ApiModelProperty;
 
-//import javax.persistence.CascadeType;
-//import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Max;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
 
@@ -62,24 +60,23 @@ public class Teknisi implements Serializable {
 	@ApiModelProperty(notes = "The database generated teknisi latitude", name = "latitude", required = true, example = "12300")
 	private String latitude;
 	
-	@ApiModelProperty(notes = "The database generated teknisi created_date", name = "created_date", required = true)
 	@PastOrPresent
+	@ApiModelProperty(hidden = true)
 	private Date created_date;
 	
-	@NotBlank
-	@ApiModelProperty(notes = "The database generated teknisi created_by", name = "created_by", required = true, example = "user")
+	@ApiModelProperty(hidden = true)
 	private String created_by;
 	
-	@ApiModelProperty(notes = "The database generated teknisi update_date", name = "update_date", required = true)
 	@PastOrPresent
+	@ApiModelProperty(hidden = true)
 	private Date update_date;
 	
-	@NotBlank
-	@ApiModelProperty(notes = "The database generated teknisi update_by", name = "update_by", required = true, example = "admin")
+	@ApiModelProperty(hidden = true)
 	private String update_by;
 	
 	@OneToMany(mappedBy="teknisidata")
-	private Set<Request> request;
+	@ApiModelProperty(hidden = true)
+    private List<Request> request = new ArrayList<Request>();
 	
 	
 	public Teknisi(){
@@ -231,11 +228,12 @@ public class Teknisi implements Serializable {
 		this.update_by = update_by;
 	}
 
-	public Set<Request> getRequest() {
+	public List<Request> getRequest() {
 		return request;
 	}
 
-	public void setRequest(Set<Request> request) {
+
+	public void setRequest(List<Request> request) {
 		this.request = request;
 	}
 

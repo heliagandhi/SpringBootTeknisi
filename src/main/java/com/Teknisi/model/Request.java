@@ -4,10 +4,7 @@ import java.util.Date;
 
 import io.swagger.annotations.ApiModelProperty;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.validation.constraints.Max;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
 
@@ -47,24 +44,22 @@ public class Request {
 	@Max(value = 1000, message = "ID should not be greater than 1000")
 	private int teknisi_id;
 	
-	@ManyToOne
-	@JoinColumn(name="teknisi_id", referencedColumnName = "id", nullable=false, insertable=false, updatable=false)
-	private Teknisi teknisidata;
+//	@ManyToOne
+//	@JoinColumn(name="teknisi_id", referencedColumnName = "id", nullable=false, insertable=false, updatable=false)
+//	private Teknisi teknisidata;
 	
-	@ApiModelProperty(notes = "The database generated request created_date", name = "created_date", required = true)
 	@PastOrPresent
+	@ApiModelProperty(hidden = true)
 	private Date created_date;
 	
-	@NotBlank
-	@ApiModelProperty(notes = "The database generated request created_by", name = "created_by", required = true, example = "Merchant")
+	@ApiModelProperty(hidden = true)
 	private String created_by;
 	
-	@ApiModelProperty(notes = "The database generated request update_date", name = "update_date", required = true)
 	@PastOrPresent
+	@ApiModelProperty(hidden = true)
 	private Date update_date;
 	
-	@NotBlank
-	@ApiModelProperty(notes = "The database generated request update_by", name = "update_by", required = true, example = "Admine")
+	@ApiModelProperty(hidden = true)
 	private String update_by;
 	
 	
@@ -171,16 +166,6 @@ public class Request {
 	}
 
 
-	public Teknisi getTeknisidata() {
-		return teknisidata;
-	}
-
-
-	public void setTeknisidata(Teknisi teknisidata) {
-		this.teknisidata = teknisidata;
-	}
-
-
 	public Date getCreated_date() {
 		return created_date;
 	}
@@ -240,8 +225,6 @@ public class Request {
 		builder.append(pic);
 		builder.append(", teknisi_id=");
 		builder.append(teknisi_id);
-		builder.append(", teknisidata=");
-		builder.append(teknisidata);
 		builder.append(", created_date=");
 		builder.append(created_date);
 		builder.append(", created_by=");
