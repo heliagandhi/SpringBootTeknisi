@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import javax.validation.constraints.Max;
@@ -117,6 +118,10 @@ public class Teknisi implements Serializable{
 	@ApiModelProperty(hidden = true)
 	@OneToMany(mappedBy="teknisi_id")
     private List<Request> request = new ArrayList<Request>();
+	
+	@ApiModelProperty(hidden = true)
+	@OneToOne(mappedBy = "teknisi")
+	private TeknisiPhoto teknisiPhoto;
 	
 	
 	public Teknisi() {
@@ -276,6 +281,13 @@ public class Teknisi implements Serializable{
 		this.request = request;
 	}
 
+	public TeknisiPhoto getTeknisiPhoto() {
+		return teknisiPhoto;
+	}
+
+	public void setTeknisiPhoto(TeknisiPhoto teknisiPhoto) {
+		this.teknisiPhoto = teknisiPhoto;
+	}
 
 	@Override
 	public String toString() {
@@ -312,6 +324,8 @@ public class Teknisi implements Serializable{
 		builder.append(update_by);
 		builder.append(", request=");
 		builder.append(request);
+		builder.append(", teknisiPhoto=");
+		builder.append(teknisiPhoto);
 		builder.append("]");
 		return builder.toString();
 	}
