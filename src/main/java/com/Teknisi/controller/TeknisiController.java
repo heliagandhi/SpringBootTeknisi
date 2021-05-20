@@ -73,7 +73,7 @@ public class TeknisiController {
 	})
 	@RequestMapping(value = "/teknis/create", method = RequestMethod.POST)
 	public ResponseEntity<Object> createTeknisi(@Valid @RequestBody Teknisi teknisi) {
-		long id = teknisi.getId();
+		Long id = teknisi.getId();
 		if(teknisiService.TeknisiIdExists(id) == true) {
 			return new ResponseEntity<>("Teknisi ID already exist", HttpStatus.BAD_REQUEST);
 		}else if (teknisi.getId() == null ) {
@@ -95,7 +95,7 @@ public class TeknisiController {
 	})
 	@RequestMapping(value = "/teknis/update", method = RequestMethod.PUT)
 	public ResponseEntity<Object> updateTeknisi(@Valid @RequestBody Teknisi teknisi) {
-		long id = teknisi.getId();
+		Long id = teknisi.getId();
 		if(teknisiService.TeknisiIdExists(id) == true) {
 			teknisiService.updateTeknisi(teknisi);
 			return new ResponseEntity<>("Teknisi Updated Successsfully", HttpStatus.OK);

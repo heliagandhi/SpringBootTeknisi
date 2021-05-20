@@ -34,9 +34,9 @@ public class TeknisiDaoImpl extends JdbcDaoSupport implements TeknisiDao{
 		String query = "select tek.id as teknisiID, tek.phone as teknisiPhone, tek.name as teknisiName, tek.nik as teknisiNIK, tek.address as teknisiAddress, tek.email as teknisiEmail, tek.city as teknisiCity, "
 				+ "tek.postal_code as teknisiPostalCode, tek.last_login as teknisiLastLogin, tek.longitude as teknisiLongitude, tek.latitude as teknisiLatitude, "
 				+ "tek.created_date as teknisiCreatedDate, tek.created_by as teknisiCreatedBy, tek.update_date as teknisiUpdateDate, tek.update_by as teknisiUpdateBy, "
-				+ "req.request_id as requestID, req.merchant_name as merchantName, req.address as requestAddress, req.city as requestCity, req.postal_code as requestPostalCode, req.phone as requestPhone, "
+				+ "req.request_id as requestID, req.teknisi_id as requestTID, req.merchant_name as merchantName, req.address as requestAddress, req.city as requestCity, req.postal_code as requestPostalCode, req.phone as requestPhone, "
 				+ "req.pic as requestPIC, req.created_date as requestCreatedDate, req.created_by as requestCreatedBy, req.update_date as requestUpdateDate, req.update_by as requestUpdateBy, "
-				+ "tp.id as teknisiPhotoID, tp.file_type as teknisiPhotoFileType, tp.name as teknisiPhotoName, tp.created_date as teknisiPhotoCreatedDate, tp.created_by as teknisiPhotoCreatedBy, "
+				+ "tp.id as teknisiPhotoID, tp.teknisi_id as teknisiPhotoTID, tp.file_type as teknisiPhotoFileType, tp.name as teknisiPhotoName, tp.created_date as teknisiPhotoCreatedDate, tp.created_by as teknisiPhotoCreatedBy, "
 				+ "tp.images as teknisiPhotoImages, tp.update_date as teknisiPhotoUpdateDate, tp.update_by as teknisiPhotoUpdateBy from teknisi tek "
 				+ "left join request req on req.teknisi_id = tek.id "
 				+ "left join teknisi_photo tp on tp.teknisi_id = tek.id";
@@ -73,7 +73,7 @@ public class TeknisiDaoImpl extends JdbcDaoSupport implements TeknisiDao{
 				request.setPostal_code(String.valueOf(teknisiColumn.get("requestPostalCode")));
 				request.setPhone(String.valueOf(teknisiColumn.get("requestPhone")));
 				request.setPic(String.valueOf(teknisiColumn.get("requestPIC")));
-				request.setTeknisi_id(Integer.valueOf(teknisiColumn.get("teknisiID").toString()));
+				request.setTeknisi_id(Long.parseLong(teknisiColumn.get("requestTID").toString()));
 				request.setCreated_date((Date)(teknisiColumn.get("requestCreatedDate")));
 				request.setCreated_by(String.valueOf(teknisiColumn.get("requestCreatedBy")));
 				request.setUpdate_date((Date)(teknisiColumn.get("requestUpdateDate")));
@@ -83,7 +83,7 @@ public class TeknisiDaoImpl extends JdbcDaoSupport implements TeknisiDao{
 			}
 			if(teknisiColumn.get("teknisiPhotoID")!=null) {
 				teknisiPhoto.setId(teknisiColumn.get("teknisiPhotoID")==null?null:Long.parseLong(teknisiColumn.get("teknisiPhotoID").toString()));
-				teknisiPhoto.setTeknisi_id(Integer.valueOf(teknisiColumn.get("teknisiID").toString()));
+				teknisiPhoto.setTeknisi_id(Long.parseLong(teknisiColumn.get("teknisiPhotoTID").toString()));
 				teknisiPhoto.setFile_type(String.valueOf(teknisiColumn.get("teknisiPhotoFileType")));
 				teknisiPhoto.setName(String.valueOf(teknisiColumn.get("teknisiPhotoName")));
 				teknisiPhoto.setCreated_date((Date)(teknisiColumn.get("teknisiPhotoCreatedDate")));
@@ -100,13 +100,13 @@ public class TeknisiDaoImpl extends JdbcDaoSupport implements TeknisiDao{
 
 	
 	@Override
-	public List<Teknisi> findTeknisiById(long id) {
+	public List<Teknisi> findTeknisiById(Long id) {
 		String query = "select tek.id as teknisiID, tek.phone as teknisiPhone, tek.name as teknisiName, tek.nik as teknisiNIK, tek.address as teknisiAddress, tek.email as teknisiEmail, tek.city as teknisiCity, "
 				+ "tek.postal_code as teknisiPostalCode, tek.last_login as teknisiLastLogin, tek.longitude as teknisiLongitude, tek.latitude as teknisiLatitude, "
 				+ "tek.created_date as teknisiCreatedDate, tek.created_by as teknisiCreatedBy, tek.update_date as teknisiUpdateDate, tek.update_by as teknisiUpdateBy, "
-				+ "req.request_id as requestID, req.merchant_name as merchantName, req.address as requestAddress, req.city as requestCity, req.postal_code as requestPostalCode, req.phone as requestPhone, "
+				+ "req.request_id as requestID, req.teknisi_id as requestTID, req.merchant_name as merchantName, req.address as requestAddress, req.city as requestCity, req.postal_code as requestPostalCode, req.phone as requestPhone, "
 				+ "req.pic as requestPIC, req.created_date as requestCreatedDate, req.created_by as requestCreatedBy, req.update_date as requestUpdateDate, req.update_by as requestUpdateBy,  "
-				+ "tp.id as teknisiPhotoID, tp.file_type as teknisiPhotoFileType, tp.name as teknisiPhotoName, tp.created_date as teknisiPhotoCreatedDate, tp.created_by as teknisiPhotoCreatedBy, "
+				+ "tp.id as teknisiPhotoID, tp.teknisi_id as teknisiPhotoTID, tp.file_type as teknisiPhotoFileType, tp.name as teknisiPhotoName, tp.created_date as teknisiPhotoCreatedDate, tp.created_by as teknisiPhotoCreatedBy, "
 				+ "tp.images as teknisiPhotoImages, tp.update_date as teknisiPhotoUpdateDate, tp.update_by as teknisiPhotoUpdateBy from teknisi tek "
 				+ "left join request req on req.teknisi_id = tek.id "
 				+ "left join teknisi_photo tp on tp.teknisi_id = tek.id "
@@ -143,7 +143,7 @@ public class TeknisiDaoImpl extends JdbcDaoSupport implements TeknisiDao{
 				request.setPostal_code(String.valueOf(teknisiColumn.get("requestPostalCode")));
 				request.setPhone(String.valueOf(teknisiColumn.get("requestPhone")));
 				request.setPic(String.valueOf(teknisiColumn.get("requestPIC")));
-				request.setTeknisi_id(Integer.valueOf(teknisiColumn.get("teknisiID").toString()));
+				request.setTeknisi_id(Long.parseLong(teknisiColumn.get("requestTID").toString()));
 				request.setCreated_date((Date)(teknisiColumn.get("requestCreatedDate")));
 				request.setCreated_by(String.valueOf(teknisiColumn.get("requestCreatedBy")));
 				request.setUpdate_date((Date)(teknisiColumn.get("requestUpdateDate")));
@@ -153,7 +153,7 @@ public class TeknisiDaoImpl extends JdbcDaoSupport implements TeknisiDao{
 			}
 			if(teknisiColumn.get("teknisiPhotoID")!=null) {
 				teknisiPhoto.setId(teknisiColumn.get("teknisiPhotoID")==null?null:Long.parseLong(teknisiColumn.get("teknisiPhotoID").toString()));
-				teknisiPhoto.setTeknisi_id(Integer.valueOf(teknisiColumn.get("teknisiID").toString()));
+				teknisiPhoto.setTeknisi_id(Long.parseLong(teknisiColumn.get("teknisiPhotoTID").toString()));
 				teknisiPhoto.setFile_type(String.valueOf(teknisiColumn.get("teknisiPhotoFileType")));
 				teknisiPhoto.setName(String.valueOf(teknisiColumn.get("teknisiPhotoName")));
 				teknisiPhoto.setCreated_date((Date)(teknisiColumn.get("teknisiPhotoCreatedDate")));
@@ -213,7 +213,7 @@ public class TeknisiDaoImpl extends JdbcDaoSupport implements TeknisiDao{
 
 
 	@Override
-	public boolean TeknisiIdExists(long id) {
+	public boolean TeknisiIdExists(Long id) {
 		String sql = "select count(*) from teknisi where id = ? limit 1";
 	    @SuppressWarnings("deprecation")
 		long count = getJdbcTemplate().queryForObject(sql, new Object[] { id }, Long.class);

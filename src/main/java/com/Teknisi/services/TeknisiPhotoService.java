@@ -11,6 +11,6 @@ public interface TeknisiPhotoService {
 	void updateTeknisiPhoto(TeknisiPhoto teknisiPhoto, String fileName, String fileType, String base64);
 	void deleteTeknisiPhotoById(Long id);
 	boolean TeknisiPhotoIdExists(Long id);
-	boolean TeknisiPhotoIdOrTeknisiIdExists(Long id, long teknisi_id);
-	boolean TeknisiPhotoIdAndTeknisiIdExists(Long id, long teknisi_id);
+	boolean TeknisiPhotoIdOrTeknisiIdExists(Long id, Long teknisi_id);
+	boolean TeknisiPhotoIdAndTeknisiIdExists(Long id, Long teknisi_id);
 }

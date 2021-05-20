@@ -31,7 +31,6 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
-@ApiOperation(value = "/teknisiPhoto", tags = "Teknisi Photo Profile Controller")
 @RestController
 public class TeknisiPhotoController {
 
@@ -39,9 +38,9 @@ public class TeknisiPhotoController {
 	@Autowired TeknisiService teknisiService;
 	@Autowired ImagesUtils imagesUtils;
 	
-	@ApiOperation(value = "Fetch All TeknisiPhoto Data")
+	@ApiOperation(value = "View All TeknisiPhoto Data")
 	@ApiResponses(value = {
-			@ApiResponse(code = 200, message = "Success", response = Iterable.class),
+			@ApiResponse(code = 200, message = "Suceess|OK", response = Iterable.class),
 			@ApiResponse(code = 401, message = "Unauthorized!"),
 			@ApiResponse(code = 403, message = "Forbidden!"),
 			@ApiResponse(code = 404, message = "Not Found")
@@ -52,9 +51,9 @@ public class TeknisiPhotoController {
 		return new ResponseEntity<>(listTeknisiPhoto, HttpStatus.OK);
 	}
 	
-	@ApiOperation(value = "Fetch TeknisiPhoto by ID")
+	@ApiOperation(value = "View TeknisiPhoto by ID")
 	@ApiResponses(value = {
-			@ApiResponse(code = 200, message = "Success", response = TeknisiPhoto.class),
+			@ApiResponse(code = 200, message = "Suceess|OK", response = TeknisiPhoto.class),
 			@ApiResponse(code = 401, message = "Unauthorized!"),
 			@ApiResponse(code = 403, message = "Forbidden!"),
 			@ApiResponse(code = 404, message = "Not Found")
@@ -85,7 +84,7 @@ public class TeknisiPhotoController {
 		byte[] fileByte =  file.getBytes();
 		String base64 = imagesUtils.convertImagesBase64(fileByte, fileType);
 		Long id = teknisiPhoto.getId();
-		long teknisi_id = teknisiPhoto.getTeknisi_id();
+		Long teknisi_id = teknisiPhoto.getTeknisi_id();
 		if(teknisiPhotoService.TeknisiPhotoIdOrTeknisiIdExists(id, teknisi_id) != true && teknisiService.TeknisiIdExists(teknisi_id) == true && teknisiPhoto.getId() != null
 				&& (fileType.equals("png") || fileType.equals("jpg") || fileType.equals("jpeg") && fileType.isEmpty() != false && fileType.isBlank() != false)) {
 			teknisiPhotoService.insertTeknisiPhoto(teknisiPhoto, fileName, fileType, base64);
@@ -115,7 +114,7 @@ public class TeknisiPhotoController {
 		byte[] fileByte =  file.getBytes();
 		String base64 = imagesUtils.convertImagesBase64(fileByte, fileType);
 		Long id = teknisiPhoto.getId();
-		long teknisi_id = teknisiPhoto.getTeknisi_id();
+		Long teknisi_id = teknisiPhoto.getTeknisi_id();
 		if(teknisiPhotoService.TeknisiPhotoIdAndTeknisiIdExists(id, teknisi_id) == true && teknisiService.TeknisiIdExists(teknisi_id) == true && teknisiPhoto.getId() != null
 				&& (fileType.equals("png") || fileType.equals("jpg") || fileType.equals("jpeg") && fileType.isEmpty() != false && fileType.isBlank() != false)) {
 			teknisiPhotoService.updateTeknisiPhoto(teknisiPhoto, fileName, fileType, base64);

@@ -40,7 +40,7 @@ public class TeknisiPhotoDaoImpl extends JdbcDaoSupport implements TeknisiPhotoD
 		for(Map<String,Object> teknisiPhotoColumn : teknisiPhotoRows){
 			TeknisiPhoto teknisiPhoto = new TeknisiPhoto();
 			teknisiPhoto.setId(Long.parseLong(teknisiPhotoColumn.get("id").toString()));
-			teknisiPhoto.setTeknisi_id(Integer.parseInt(teknisiPhotoColumn.get("teknisi_id").toString()));
+			teknisiPhoto.setTeknisi_id(Long.parseLong(teknisiPhotoColumn.get("teknisi_id").toString()));
 			teknisiPhoto.setFile_type(String.valueOf(teknisiPhotoColumn.get("file_type")));
 			teknisiPhoto.setName(String.valueOf(teknisiPhotoColumn.get("name")));
 			teknisiPhoto.setCreated_date((Date)(teknisiPhotoColumn.get("created_date")));
@@ -66,7 +66,7 @@ public class TeknisiPhotoDaoImpl extends JdbcDaoSupport implements TeknisiPhotoD
 			public TeknisiPhoto mapRow(ResultSet rs, int rowNum) throws SQLException {
 				TeknisiPhoto teknisiPhoto = new TeknisiPhoto();
 				teknisiPhoto.setId((rs.getLong("id")));
-				teknisiPhoto.setTeknisi_id((rs.getInt("teknisi_id")));
+				teknisiPhoto.setTeknisi_id((rs.getLong("teknisi_id")));
 				teknisiPhoto.setFile_type((rs.getString("file_type")));
 				teknisiPhoto.setName((rs.getString("name")));
 				teknisiPhoto.setCreated_date((rs.getDate("created_date")));
@@ -117,7 +117,7 @@ public class TeknisiPhotoDaoImpl extends JdbcDaoSupport implements TeknisiPhotoD
 	}
 
 	@Override
-	public boolean TeknisiPhotoIdExists(long id) {
+	public boolean TeknisiPhotoIdExists(Long id) {
 		String sql = "select count(*) from teknisi_photo where id= ? limit 1";
 	    @SuppressWarnings("deprecation")
 		long count = getJdbcTemplate().queryForObject(sql, new Object[] { id}, Long.class);
@@ -125,7 +125,7 @@ public class TeknisiPhotoDaoImpl extends JdbcDaoSupport implements TeknisiPhotoD
 	}
 	
 	@Override
-	public boolean TeknisiPhotoIdOrTeknisiIdExists(Long id, long teknisi_id) {
+	public boolean TeknisiPhotoIdOrTeknisiIdExists(Long id, Long teknisi_id) {
 		String sql = "select count(*) from teknisi_photo where id= ? or teknisi_id = ? limit 1";
 	    @SuppressWarnings("deprecation")
 		long count = getJdbcTemplate().queryForObject(sql, new Object[] { id, teknisi_id }, Long.class);
@@ -133,7 +133,7 @@ public class TeknisiPhotoDaoImpl extends JdbcDaoSupport implements TeknisiPhotoD
 	}
 	
 	@Override
-	public boolean TeknisiPhotoIdAndTeknisiIdExists(Long id, long teknisi_id) {
+	public boolean TeknisiPhotoIdAndTeknisiIdExists(Long id, Long teknisi_id) {
 		String sql = "select count(*) from teknisi_photo where id= ? and teknisi_id = ? limit 1";
 	    @SuppressWarnings("deprecation")
 		long count = getJdbcTemplate().queryForObject(sql, new Object[] { id, teknisi_id }, Long.class);

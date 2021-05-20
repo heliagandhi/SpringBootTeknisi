@@ -52,7 +52,7 @@ public class Request {
 	@NotNull(message = "Teknisi ID cannot be null")
 	@Max(value = 1000, message = "ID should not be greater than 1000")
 	@ApiModelProperty(notes = "The database generated request teknisi_id", name = "teknisi_id", required = true, example = "10")
-	private int teknisi_id;
+	private Long teknisi_id;
 	
 	@PastOrPresent
 	@ApiModelProperty(hidden = true)
@@ -79,7 +79,7 @@ public class Request {
 			@NotBlank(message = "Postal code cannot be blank") @Pattern(regexp = "[\\d]{1,5}", message = "Postal Code should have length between 1 and 5 numeric") String postal_code,
 			@NotBlank(message = "Phone cannot be blank") @Pattern(regexp = "[\\d]{1,13}", message = "NIK should have length between 1 and 13 numeric") String phone,
 			@NotBlank(message = "Person in charge cannot be blank") @Pattern(regexp = "^[A-Za-z0-9]{1,50}$", message = "PIC should have length between 1 and 50 characters") String pic,
-			@NotNull(message = "Teknisi ID cannot be null") @Max(value = 1000, message = "ID should not be greater than 1000") int teknisi_id) {
+			@NotNull(message = "Teknisi ID cannot be null") @Max(value = 1000, message = "ID should not be greater than 1000") Long teknisi_id) {
 		super();
 		this.request_id = request_id;
 		this.merchant_name = merchant_name;
@@ -161,12 +161,12 @@ public class Request {
 	}
 
 
-	public int getTeknisi_id() {
+	public Long getTeknisi_id() {
 		return teknisi_id;
 	}
 
 
-	public void setTeknisi_id(int teknisi_id) {
+	public void setTeknisi_id(Long teknisi_id) {
 		this.teknisi_id = teknisi_id;
 	}
 

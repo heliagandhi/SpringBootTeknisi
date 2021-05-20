@@ -49,7 +49,7 @@ public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
 			request.setPostal_code(String.valueOf(requestColumn.get("postal_code")));
 			request.setPhone(String.valueOf(requestColumn.get("phone")));
 			request.setPic(String.valueOf(requestColumn.get("pic")));
-			request.setTeknisi_id(Integer.parseInt(requestColumn.get("teknisi_id").toString()));
+			request.setTeknisi_id(Long.parseLong(requestColumn.get("teknisi_id").toString()));
 			request.setCreated_date((Date)(requestColumn.get("created_date")));
 			request.setCreated_by(String.valueOf(requestColumn.get("created_by")));
 			request.setUpdate_date((Date)(requestColumn.get("update_date")));
@@ -81,7 +81,7 @@ public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
 				request.setPostal_code(rs.getString("postal_code"));
 				request.setPhone(rs.getString("phone"));
 				request.setPic(rs.getString("pic"));
-				request.setTeknisi_id(rs.getInt("teknisi_id"));
+				request.setTeknisi_id(rs.getLong("teknisi_id"));
 				request.setCreated_date(rs.getDate("created_date"));
 				request.setCreated_by(rs.getString("created_by"));
 				request.setUpdate_date(rs.getDate("update_date"));

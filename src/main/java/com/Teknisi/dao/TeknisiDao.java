@@ -8,6 +8,6 @@ public interface TeknisiDao {
 	void insert(Teknisi teknisi);
 	int deleteById(Long id);
 	void updateTeknisi(Teknisi teknisi);
-	public List<Teknisi> findTeknisiById(long id);
-	boolean TeknisiIdExists(long id);
+	public List<Teknisi> findTeknisiById(Long id);
+	boolean TeknisiIdExists(Long id);
 }

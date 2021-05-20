@@ -62,7 +62,7 @@ public class TeknisiServiceImpl implements TeknisiService{
 
 	
 	@Override
-	public List<Teknisi> getTeknisiById(long id) {
+	public List<Teknisi> getTeknisiById(Long id) {
 		List<Teknisi> teknisiList = teknisiDao.findTeknisiById(id);
 		List<Teknisi> clearList = new ArrayList<Teknisi>();
 		Hashtable<Long, Teknisi> filterHash = new Hashtable<Long, Teknisi>();
@@ -88,7 +88,7 @@ public class TeknisiServiceImpl implements TeknisiService{
 
 
 	@Override
-	public boolean TeknisiIdExists(long id) {
+	public boolean TeknisiIdExists(Long id) {
 		return teknisiDao.TeknisiIdExists(id);
 	}
 
