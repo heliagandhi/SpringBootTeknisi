@@ -6,9 +6,11 @@ import com.Teknisi.model.TeknisiPhoto;
 
 public interface TeknisiPhotoService {
 	List<TeknisiPhoto> showAllTeknisiPhoto();
-	void insert(TeknisiPhoto tekphoto);
-	void deleteById(Long id);
-	void updateTeknisiPhoto(TeknisiPhoto tekphoto);
-	TeknisiPhoto getTeknisiPhotoById(long id);
-	boolean TeknisiPhototIdExists(long id);
+	TeknisiPhoto getTeknisiPhotoById(Long id);
+	void insertTeknisiPhoto(TeknisiPhoto teknisiPhoto, String fileName, String fileType, String base64);
+	void updateTeknisiPhoto(TeknisiPhoto teknisiPhoto, String fileName, String fileType, String base64);
+	void deleteTeknisiPhotoById(Long id);
+	boolean TeknisiPhotoIdExists(Long id);
+	boolean TeknisiPhotoIdOrTeknisiIdExists(Long id, long teknisi_id);
+	boolean TeknisiPhotoIdAndTeknisiIdExists(Long id, long teknisi_id);
 }

@@ -1,69 +1,62 @@
 package com.Teknisi.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.validation.constraints.Max;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
-import javax.validation.constraints.Pattern;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-@ApiModel(description = "teknisiPhoto Model")
-public class TeknisiPhoto {
-	
-	@NotNull(message = "ID cannot be blank")
-	@Pattern(regexp = "^[A-Za-z0-9]{1,10}$", message = "Request ID should have length between 1 and 10 Alphanumeric characters")
-	@ApiModelProperty(notes = "The database generated request request_id", name = "id", required = true, example = "10")
+
+@ApiModel(description = "Teknisi Photo Model")
+public class TeknisiPhoto implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+
+	@ApiModelProperty(notes = "ID of the Teknisi Photo", name = "id", required = true, example = "10")
+	@NotNull(message = "Teknisi Photo ID cannot be blank")
+	@Max(value = 1000, message = "ID should not be greater than 1000")
 	private Long id;
 	
-	@NotNull
+	@NotNull(message = "Teknisi ID cannot be null")
 	@Max(value = 1000, message = "ID should not be greater than 1000")
-	@ApiModelProperty(notes = "The database generated request teknisi_id", name = "teknisi_id", required = true, example = "10")
+	@ApiModelProperty(notes = "teknisi_id of the Teknisi Photo", name = "teknisi_id", required = true, example = "1")
 	private int teknisi_id;
 	
-	@NotBlank(message = "file type in charge cannot be blank")
-	@Pattern(regexp = "^[A-Za-z0-9]{1,50}$", message = "file type should have length between 1 and 50 characters")
-	@ApiModelProperty(notes = "The database generated request file type", name = "file_type", required = true, example = "Examplepic")
+	@ApiModelProperty(hidden = true)
 	private String file_type;
 	
-	@NotBlank
-	@Pattern(regexp = "^[A-Za-z0-9]{1,50}$", message = "Name should have length between 1 and 50 characters")
-	@ApiModelProperty(notes = "The database generated request merchant_name", name = "name", required = true, example = "Memey")
+	@ApiModelProperty(hidden = true)
 	private String name;
 	
 	@PastOrPresent
 	@ApiModelProperty(hidden = true)
 	private Date created_date;
 	
-	@NotBlank
-	@ApiModelProperty(hidden = true)
+    @ApiModelProperty(hidden = true)
 	private String created_by;
-	
-	@NotBlank(message = "images cannot be blank")
-	@ApiModelProperty(notes = "The database generated request images", name = "images", required = true)
+    
+    @ApiModelProperty(hidden = true)
 	private String images;
 	
 	@PastOrPresent
 	@ApiModelProperty(hidden = true)
 	private Date update_date;
 	
-    @NotBlank
     @ApiModelProperty(hidden = true)
 	private String update_by;
     
-	public TeknisiPhoto() {
-			
-	}
+    public TeknisiPhoto () {
+    	
+    }
 
 	public TeknisiPhoto(
-			@NotNull(message = "ID cannot be blank") @Pattern(regexp = "^[A-Za-z0-9]{1,10}$", message = "Request ID should have length between 1 and 10 Alphanumeric characters") Long id,
-			@NotNull @Max(value = 1000, message = "ID should not be greater than 1000") int teknisi_id,
-			@NotBlank(message = "file type in charge cannot be blank") @Pattern(regexp = "^[A-Za-z0-9]{1,50}$", message = "file type should have length between 1 and 50 characters") String file_type,
-			@NotBlank @Pattern(regexp = "^[A-Za-z0-9]{1,50}$", message = "Name should have length between 1 and 50 characters") String name,
-			@NotBlank(message = "images cannot be blank") String images) {
+			@NotNull(message = "Teknisi Photo ID cannot be blank") @Max(value = 1000, message = "ID should not be greater than 1000") Long id,
+			@NotNull(message = "Teknisi ID cannot be null") @Max(value = 1000, message = "ID should not be greater than 1000") int teknisi_id,
+			String file_type, String name, String images) {
 		super();
 		this.id = id;
 		this.teknisi_id = teknisi_id;
@@ -87,14 +80,6 @@ public class TeknisiPhoto {
 	public void setTeknisi_id(int teknisi_id) {
 		this.teknisi_id = teknisi_id;
 	}
-
-//	public Teknisi getTeknisi() {
-//		return teknisi;
-//	}
-//
-//	public void setTeknisi(Teknisi teknisi) {
-//		this.teknisi = teknisi;
-//	}
 
 	public String getFile_type() {
 		return file_type;
@@ -159,8 +144,6 @@ public class TeknisiPhoto {
 		builder.append(id);
 		builder.append(", teknisi_id=");
 		builder.append(teknisi_id);
-//		builder.append(", teknisi=");
-//		builder.append(teknisi);
 		builder.append(", file_type=");
 		builder.append(file_type);
 		builder.append(", name=");
