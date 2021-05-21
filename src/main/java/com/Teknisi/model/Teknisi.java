@@ -88,11 +88,9 @@ public class Teknisi implements Serializable{
 	private String update_by;
 
 	@ApiModelProperty(hidden = true)
-//	@OneToMany(mappedBy="teknisi_id")
     private List<Request> request = new ArrayList<Request>();
 	
 	@ApiModelProperty(hidden = true)
-//	@OneToOne(mappedBy = "teknisi")
 	private TeknisiPhoto teknisiPhoto;
 	
 	
