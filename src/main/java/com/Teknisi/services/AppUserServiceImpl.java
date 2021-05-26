@@ -3,6 +3,7 @@ package com.Teknisi.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.Teknisi.dao.AppUserDao;
@@ -12,6 +13,7 @@ import com.Teknisi.model.AppUser;
 public class AppUserServiceImpl implements AppUserService{
 	
 	@Autowired AppUserDao appUserDao;
+	@Autowired private PasswordEncoder bcryptEncoder;
 
 	@Override
 	public List<AppUser> showAllAppUser() {
@@ -25,6 +27,8 @@ public class AppUserServiceImpl implements AppUserService{
 
 	@Override
 	public void insert(AppUser appUser) {
+		appUser.setUsername(appUser.getUsername());
+		appUser.setPassword(bcryptEncoder.encode(appUser.getPassword()));
 		appUserDao.insert(appUser);
 	}
 
@@ -41,6 +45,11 @@ public class AppUserServiceImpl implements AppUserService{
 	@Override
 	public boolean AppUserIdExists(Long id) {
 		return appUserDao.AppUserIdExists(id);
+	}
+
+	@Override
+	public boolean AppUserUsernameExists(String username) {
+		return appUserDao.AppUserUsernameExists(username);
 	}
 
 }

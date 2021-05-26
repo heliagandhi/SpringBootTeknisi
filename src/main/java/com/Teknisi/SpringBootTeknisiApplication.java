@@ -24,3 +24,4 @@ public class SpringBootTeknisiApplication implements CommandLineRunner {
 }
 
 //http://localhost:8181/swagger-ui.html#/
+//http://localhost:8181/register

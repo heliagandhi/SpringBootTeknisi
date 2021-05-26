@@ -11,4 +11,6 @@ public interface AppUserDao {
 	void update(AppUser appUser);
 	int deleteById(Long id);
 	boolean AppUserIdExists(Long id);
+	boolean AppUserUsernameExists(String username);
+	public AppUser findAppUserByUsername(String username);
 }

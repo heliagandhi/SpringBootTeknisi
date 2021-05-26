@@ -11,4 +11,5 @@ public interface AppUserService {
 	void update(AppUser appUser);
 	void deleteById(Long id);
 	boolean AppUserIdExists(Long id);
+	boolean AppUserUsernameExists(String username);
 }
