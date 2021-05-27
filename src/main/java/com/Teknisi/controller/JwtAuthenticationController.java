@@ -1,5 +1,7 @@
 package com.Teknisi.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,17 +41,27 @@ public class JwtAuthenticationController {
 	private JwtUserDetailsService userDetailsService;
 
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
-	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
+	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest, HttpServletRequest request) throws Exception {
 
+		authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
+
+//		final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
+//		final String token = jwtTokenUtil.generateToken(userDetails);
+//		return ResponseEntity.ok(new JwtResponse(token));
+//	}
+		
 		authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
 		final UserDetails userDetails = userDetailsService
 				.loadUserByUsername(authenticationRequest.getUsername());
-
-		final String token = jwtTokenUtil.generateToken(userDetails);
+		String sessionId = request.getSession().getId();
+		request.getSession().setAttribute("sessionId", sessionId);
+		final String token = jwtTokenUtil.generateToken(sessionId, userDetails);
 
 		return ResponseEntity.ok(new JwtResponse(token));
 	}
+	
+	
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ResponseEntity<Object> saveAppUser(@RequestBody AppUser appUser) throws Exception {

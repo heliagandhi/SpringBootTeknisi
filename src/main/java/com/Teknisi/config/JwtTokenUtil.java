@@ -48,12 +48,24 @@ public class JwtTokenUtil implements Serializable {
 		final Date expiration = getExpirationDateFromToken(token);
 		return expiration.before(new Date());
 	}
+	
+	public String getSessionId(String token) {
+		Claims claims = getAllClaimsFromToken(token);
+		return (String) claims.get("sessionId");
+	}
 
 	//generate token for user
-	public String generateToken(UserDetails userDetails) {
+	public String generateToken(String sessionId, UserDetails userDetails) {
 		Map<String, Object> claims = new HashMap<>();
+		claims.put("sessionId", sessionId);
 		return doGenerateToken(claims, userDetails.getUsername());
 	}
+
+	//generate token for user
+//	public String generateToken(UserDetails userDetails) {
+//		Map<String, Object> claims = new HashMap<>();
+//		return doGenerateToken(claims, userDetails.getUsername());
+//	}
 
 	private String doGenerateToken(Map<String, Object> claims, String subject) {
 
