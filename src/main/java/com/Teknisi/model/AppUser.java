@@ -53,6 +53,11 @@ public class AppUser implements Serializable {
     @ApiModelProperty(hidden = true)
 	private String update_by;
     
+    @ApiModelProperty(notes = "Role of the  App User", name = "role", required = true, example = "admin")
+	@NotBlank(message = "Role cannot be blank")
+	@Pattern(regexp = "^[A-Za-z0-9]{1,50}+$", message = "Role should have length between 1 and 50 characters")
+	private String role;
+    
 	public AppUser() {
 			
 	}
@@ -61,12 +66,14 @@ public class AppUser implements Serializable {
 			@NotNull(message = "App User ID cannot be blank") @Max(value = 1000, message = "ID should not be greater than 1000") Long id,
 			@NotBlank(message = "Username cannot be blank") @Pattern(regexp = "^[A-Za-z0-9]{1,50}+$", message = "Username should have length between 1 and 50 characters") String username,
 			@NotBlank(message = "Username cannot be blank") @Pattern(regexp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\\w\\s]).{8,}$", message = "Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character") String password,
-			@NotBlank(message = "Email cannot be blank") @Email(message = "Email should be valid") String email) {
+			@NotBlank(message = "Email cannot be blank") @Email(message = "Email should be valid") String email,
+			@NotBlank(message = "Role cannot be blank") @Pattern(regexp = "^[A-Za-z0-9]{1,50}+$", message = "Role should have length between 1 and 50 characters") String role) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.email = email;
+		this.role = role;
 	}
 
 	public Long getId() {
@@ -133,6 +140,14 @@ public class AppUser implements Serializable {
 		this.update_by = update_by;
 	}
 
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -152,10 +167,10 @@ public class AppUser implements Serializable {
 		builder.append(update_date);
 		builder.append(", update_by=");
 		builder.append(update_by);
+		builder.append(", role=");
+		builder.append(role);
 		builder.append("]");
 		return builder.toString();
 	}
 	
-	
-
 }

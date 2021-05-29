@@ -1,11 +1,9 @@
 package com.Teknisi.services;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,20 +15,16 @@ import com.Teknisi.dao.AppUserDao;
 import com.Teknisi.model.AppUser;
 
 @Service
-public class JwtUserDetailsService implements UserDetailsService {
+public class AuthenticationService implements UserDetailsService {
 
-	@Autowired
-	AppUserDao appUserDao;
-
+	@Autowired AppUserDao appUserDao;
+	
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		AppUser appUser = appUserDao.findAppUserByUsername(username);
+	public UserDetails loadUserByUsername (String username) throws UsernameNotFoundException {
+		AppUser appUser = appUserDao.getUserInfo(username);
 		GrantedAuthority authority = new SimpleGrantedAuthority(appUser.getRole());
-		if (appUserDao.AppUserUsernameExists(username) == true) {
-			return new User(appUser.getUsername(), appUser.getPassword(), List.of(authority));
-		} else {
-			throw new UsernameNotFoundException("User not found with username: " + username);
-		}
+		UserDetails userDetails = (UserDetails)new User(appUser.getUsername(), 
+				appUser.getPassword(), Arrays.asList(authority));
+		return userDetails;
 	}
-
-}
+} 

@@ -19,34 +19,34 @@ import org.springframework.stereotype.Repository;
 import com.Teknisi.model.AppUser;
 
 @Repository
-public class AppUserDaoImpl extends JdbcDaoSupport implements AppUserDao{
-	
-	@Autowired 
-    DataSource dataSource;
- 
-    @PostConstruct
-    private void initialize(){
-        setDataSource(dataSource);
-    }
+public class AppUserDaoImpl extends JdbcDaoSupport implements AppUserDao {
+
+	@Autowired
+	DataSource dataSource;
+
+	@PostConstruct
+	private void initialize() {
+		setDataSource(dataSource);
+	}
 
 	@Override
 	public List<AppUser> getAllAppUser() {
-		String query =
-				"SELECT id, username, password, email, created_date, created_by, update_date, update_by from app_user";
+		String query = "SELECT * from app_user";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		List<AppUser> appUserList = new ArrayList<AppUser>();
-		
-		List<Map<String,Object>> appUserRows = jdbcTemplate.queryForList(query);
-		for(Map<String,Object> appUserColumn : appUserRows){
+
+		List<Map<String, Object>> appUserRows = jdbcTemplate.queryForList(query);
+		for (Map<String, Object> appUserColumn : appUserRows) {
 			AppUser appUser = new AppUser();
 			appUser.setId(Long.parseLong(appUserColumn.get("id").toString()));
 			appUser.setUsername(String.valueOf(appUserColumn.get("username")));
 			appUser.setPassword(String.valueOf(appUserColumn.get("password")));
 			appUser.setEmail(String.valueOf(appUserColumn.get("email")));
-			appUser.setCreated_date((Date)(appUserColumn.get("created_date")));
+			appUser.setCreated_date((Date) (appUserColumn.get("created_date")));
 			appUser.setCreated_by(String.valueOf(appUserColumn.get("created_by")));
-			appUser.setUpdate_date((Date)(appUserColumn.get("update_date")));
+			appUser.setUpdate_date((Date) (appUserColumn.get("update_date")));
 			appUser.setUpdate_by(String.valueOf(appUserColumn.get("update_by")));
+			appUser.setRole(String.valueOf(appUserColumn.get("role")));
 			appUserList.add(appUser);
 		}
 		return appUserList;
@@ -54,12 +54,11 @@ public class AppUserDaoImpl extends JdbcDaoSupport implements AppUserDao{
 
 	@Override
 	public AppUser findAppUserById(Long id) {
-		String query =
-				"SELECT id, username, password, email, created_date, created_by, update_date, update_by from app_user where id = ?";
+		String query = "SELECT * from app_user where id = ?";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-		
+
 		@SuppressWarnings("deprecation")
-		AppUser appUser = jdbcTemplate.queryForObject(query, new Object[]{id}, new RowMapper<AppUser>(){
+		AppUser appUser = jdbcTemplate.queryForObject(query, new Object[] { id }, new RowMapper<AppUser>() {
 
 			@Override
 			public AppUser mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -72,6 +71,7 @@ public class AppUserDaoImpl extends JdbcDaoSupport implements AppUserDao{
 				appUser.setCreated_by((rs.getString("created_by")));
 				appUser.setUpdate_date((rs.getDate("update_date")));
 				appUser.setUpdate_by((rs.getString("update_by")));
+				appUser.setRole((rs.getString("role")));
 				return appUser;
 			}
 		});
@@ -80,29 +80,24 @@ public class AppUserDaoImpl extends JdbcDaoSupport implements AppUserDao{
 
 	@Override
 	public void insert(AppUser AppUser) {
-		String query = 
-				"INSERT INTO app_user(id, username, password, email, created_date, created_by, update_date, update_by) "
-			  + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)" ;
-		 Date created_date = new Date();
-		 String created_by = "User";
-	     getJdbcTemplate()
-	     	.update(query, new Object[]{
-	     			AppUser.getId(), AppUser.getUsername(), AppUser.getPassword(), AppUser.getEmail(), created_date, created_by,
-	     			AppUser.getUpdate_date(), AppUser.getUpdate_by()
-	     		});
+		String query = "INSERT INTO app_user(id, username, password, email, created_date, created_by, update_date, update_by, role) "
+				+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		Date created_date = new Date();
+		String created_by = "User";
+		getJdbcTemplate().update(query,
+				new Object[] { AppUser.getId(), AppUser.getUsername(), AppUser.getPassword(), AppUser.getEmail(),
+						created_date, created_by, AppUser.getUpdate_date(), AppUser.getUpdate_by(),
+						AppUser.getRole() });
 	}
 
 	@Override
 	public void update(AppUser appUser) {
-		String query = 
-	    		 "update app_user set username=? , password=? , email=? , update_date=? , update_by=? "
-	    		 + "where id = ?" ;
+		String query = "update app_user set username=? , password=? , email=? , update_date=? , update_by=? , role=?"
+				+ "where id = ?";
 		Date update_date = new Date();
 		String update_by = "Admine";
-	     getJdbcTemplate()
-	     	.update(query, new Object[]{
-	     			appUser.getUsername(), appUser.getPassword(), appUser.getEmail(), update_date, update_by, appUser.getId()
-	     		});
+		getJdbcTemplate().update(query, new Object[] { appUser.getUsername(), appUser.getPassword(), appUser.getEmail(),
+				update_date, update_by, appUser.getRole(), appUser.getId() });
 	}
 
 	@Override
@@ -113,20 +108,27 @@ public class AppUserDaoImpl extends JdbcDaoSupport implements AppUserDao{
 	@Override
 	public boolean AppUserIdExists(Long id) {
 		String sql = "select count(*) from app_user where id= ? limit 1";
-	    @SuppressWarnings("deprecation")
-		long count = getJdbcTemplate().queryForObject(sql, new Object[] { id}, Long.class);
+		@SuppressWarnings("deprecation")
+		long count = getJdbcTemplate().queryForObject(sql, new Object[] { id }, Long.class);
+		return count > 0;
+	}
+
+	@Override
+	public boolean AppUserUsernameExists(String username) {
+		String sql = "select count(*) from app_user where username = ? limit 1";
+		@SuppressWarnings("deprecation")
+		Long count = getJdbcTemplate().queryForObject(sql, new Object[] { username }, Long.class);
 		return count > 0;
 	}
 
 	@Override
 	public AppUser findAppUserByUsername(String username) {
-		String query = "select id, username, password, email, created_date, created_by, update_date, update_by from app_user where username = ?";
+		String query = "select * from app_user where username = ?";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		@SuppressWarnings("deprecation")
-		AppUser appUser = jdbcTemplate.queryForObject(query, new Object[]{username}, new RowMapper<AppUser>(){
+		AppUser appUser = jdbcTemplate.queryForObject(query, new Object[] { username }, new RowMapper<AppUser>() {
 			@Override
-			public AppUser mapRow(ResultSet rs, int rowNum)
-					throws SQLException {
+			public AppUser mapRow(ResultSet rs, int rowNum) throws SQLException {
 				AppUser appUser = new AppUser();
 				appUser.setId(rs.getLong("id"));
 				appUser.setUsername(rs.getString("username"));
@@ -136,17 +138,35 @@ public class AppUserDaoImpl extends JdbcDaoSupport implements AppUserDao{
 				appUser.setCreated_by(rs.getString("created_by"));
 				appUser.setUpdate_date(rs.getDate("update_date"));
 				appUser.setUpdate_by(rs.getString("update_by"));
+				appUser.setRole(rs.getString("role"));
 				return appUser;
-			}});
+			}
+		});
 		return appUser;
 	}
 
 	@Override
-	public boolean AppUserUsernameExists(String username) {
-		String sql = "select count(*) from app_user where username = ? limit 1";
-	    @SuppressWarnings("deprecation")
-		Long count = getJdbcTemplate().queryForObject(sql, new Object[] {username}, Long.class);
-		return count > 0;
+	public AppUser getUserInfo(String username) {
+		String query = "select * from app_user where username = ? limit 1";
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		@SuppressWarnings("deprecation")
+		AppUser appUser = jdbcTemplate.queryForObject(query, new Object[] { username }, new RowMapper<AppUser>() {
+			@Override
+			public AppUser mapRow(ResultSet rs, int rowNum) throws SQLException {
+				AppUser appUser = new AppUser();
+				appUser.setId(rs.getLong("id"));
+				appUser.setUsername(rs.getString("username"));
+				appUser.setPassword(rs.getString("password"));
+				appUser.setEmail(rs.getString("email"));
+				appUser.setCreated_date(rs.getDate("created_date"));
+				appUser.setCreated_by(rs.getString("created_by"));
+				appUser.setUpdate_date(rs.getDate("update_date"));
+				appUser.setUpdate_by(rs.getString("update_by"));
+				appUser.setRole(rs.getString("role"));
+				return appUser;
+			}
+		});
+		return appUser;
 	}
 
 }

@@ -13,4 +13,5 @@ public interface AppUserDao {
 	boolean AppUserIdExists(Long id);
 	boolean AppUserUsernameExists(String username);
 	public AppUser findAppUserByUsername(String username);
+	public AppUser getUserInfo(String username);	
 }

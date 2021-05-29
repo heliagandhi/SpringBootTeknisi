@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 import com.Teknisi.model.Teknisi;
 import com.Teknisi.services.TeknisiService;
@@ -37,8 +38,8 @@ public class TeknisiController {
 			@ApiResponse(code = 401, message = "not authorized!"), 
 			@ApiResponse(code = 403, message = "forbidden!!!"),
 			@ApiResponse(code = 404, message = "not found!!!") })
-	
 	@RequestMapping(value = "/teknisi", method = RequestMethod.GET)
+	@PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
 	public ResponseEntity<Object> retrieveAll() {
 		List<Teknisi> listTeknisi = teknisiService.showAllTeknisi();
 		return new ResponseEntity<>(listTeknisi, HttpStatus.OK);
@@ -51,6 +52,7 @@ public class TeknisiController {
 			@ApiResponse(code = 403, message = "forbidden!!!"),
 			@ApiResponse(code = 404, message = "not found!!!") })
 	@RequestMapping(value = "/teknisi/{id}", method = RequestMethod.GET)
+	@PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
 	public ResponseEntity<Object> retrieveById(@PathVariable("id") Long id) {
 		if(teknisiService.TeknisiIdExists(id) == true) {
 			List<Teknisi> teknisi = teknisiService.getTeknisiById(id);
@@ -72,6 +74,7 @@ public class TeknisiController {
 			@ApiResponse(code = 404, message = "not found!!!")
 	})
 	@RequestMapping(value = "/teknis/create", method = RequestMethod.POST)
+	@PreAuthorize("hasAuthority('ADMIN')")
 	public ResponseEntity<Object> createTeknisi(@Valid @RequestBody Teknisi teknisi) {
 		Long id = teknisi.getId();
 		if(teknisiService.TeknisiIdExists(id) == true) {
@@ -94,6 +97,7 @@ public class TeknisiController {
 			@ApiResponse(code = 404, message = "not found!!!")
 	})
 	@RequestMapping(value = "/teknis/update", method = RequestMethod.PUT)
+	@PreAuthorize("hasAuthority('ADMIN')")
 	public ResponseEntity<Object> updateTeknisi(@Valid @RequestBody Teknisi teknisi) {
 		Long id = teknisi.getId();
 		if(teknisiService.TeknisiIdExists(id) == true) {
@@ -115,6 +119,7 @@ public class TeknisiController {
 			@ApiResponse(code = 403, message = "forbidden!!!"),
 			@ApiResponse(code = 404, message = "not found!!!") })
 	@RequestMapping(value = "/teknisi/delete/{id}", method = RequestMethod.DELETE)
+	@PreAuthorize("hasAuthority('ADMIN')")
 	public ResponseEntity<Object> delete(@PathVariable("id") Long id) {
 		teknisiService.deleteById(id);
 		return new ResponseEntity<>("Teknisi deleted successsfully", HttpStatus.OK);
