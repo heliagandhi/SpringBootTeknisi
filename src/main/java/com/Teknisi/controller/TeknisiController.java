@@ -73,7 +73,7 @@ public class TeknisiController {
 			@ApiResponse(code = 403, message = "forbidden!!!"),
 			@ApiResponse(code = 404, message = "not found!!!")
 	})
-	@RequestMapping(value = "/teknis/create", method = RequestMethod.POST)
+	@RequestMapping(value = "/teknisi/create", method = RequestMethod.POST)
 	@PreAuthorize("hasAuthority('ADMIN')")
 	public ResponseEntity<Object> createTeknisi(@Valid @RequestBody Teknisi teknisi) {
 		Long id = teknisi.getId();
@@ -96,7 +96,7 @@ public class TeknisiController {
 			@ApiResponse(code = 403, message = "forbidden!!!"),
 			@ApiResponse(code = 404, message = "not found!!!")
 	})
-	@RequestMapping(value = "/teknis/update", method = RequestMethod.PUT)
+	@RequestMapping(value = "/teknisi/update", method = RequestMethod.PUT)
 	@PreAuthorize("hasAuthority('ADMIN')")
 	public ResponseEntity<Object> updateTeknisi(@Valid @RequestBody Teknisi teknisi) {
 		Long id = teknisi.getId();

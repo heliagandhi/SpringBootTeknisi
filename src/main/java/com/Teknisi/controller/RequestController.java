@@ -95,8 +95,8 @@ public class RequestController {
 			@ApiResponse(code = 401, message = "not authorized!"), 
 			@ApiResponse(code = 403, message = "forbidden!!!"),
 			@ApiResponse(code = 404, message = "not found!!!") })
-	@PreAuthorize("hasRole('ADMIN')")
 	@RequestMapping(value = "/request/update", method = RequestMethod.PUT)
+	@PreAuthorize("hasAuthority('ADMIN')")
 	public ResponseEntity<Object> updateRequest(@Valid @RequestBody Request request) {
 		String request_id = request.getRequest_id();
 		long teknisi_id = request.getTeknisi_id();
