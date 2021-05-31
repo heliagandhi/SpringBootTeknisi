@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -46,6 +47,7 @@ public class TeknisiPhotoController {
 			@ApiResponse(code = 404, message = "Not Found")
 	})
 	@RequestMapping(value = "/teknisiPhoto/showAllTeknisiPhoto", method = RequestMethod.GET)
+	@PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
 	public ResponseEntity<Object> retrieveAllTeknisiPhoto() {
 		List<TeknisiPhoto> listTeknisiPhoto = teknisiPhotoService.showAllTeknisiPhoto();
 		return new ResponseEntity<>(listTeknisiPhoto, HttpStatus.OK);
@@ -59,6 +61,7 @@ public class TeknisiPhotoController {
 			@ApiResponse(code = 404, message = "Not Found")
 	})
 	@RequestMapping(value = "/teknisiPhoto/{id}", method = RequestMethod.GET)
+	@PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
 	public ResponseEntity<Object> retrieveTeknisiPhotoById(@Valid @PathVariable("id") Long id) {
 		if(teknisiPhotoService.TeknisiPhotoIdExists(id) == true) {
 			TeknisiPhoto teknisiPhoto = teknisiPhotoService.getTeknisiPhotoById(id);
@@ -78,6 +81,7 @@ public class TeknisiPhotoController {
 			@ApiResponse(code = 404, message = "Not Found")
 	})
 	@RequestMapping(value = "/teknisiPhoto/create", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	@PreAuthorize("hasAuthority('ADMIN')")
 	public ResponseEntity<Object> createTeknisiPhoto(@Valid @ModelAttribute TeknisiPhoto teknisiPhoto,  @RequestPart MultipartFile file) throws Exception{
 		String fileName = file.getOriginalFilename().split("\\.")[0];
 		String fileType = file.getOriginalFilename().split("\\.")[1];
@@ -108,6 +112,7 @@ public class TeknisiPhotoController {
 			@ApiResponse(code = 404, message = "Not Found")
 	})
 	@RequestMapping(value = "/teknisiPhoto/update", method = RequestMethod.PUT)
+	@PreAuthorize("hasAuthority('ADMIN')")
 	public ResponseEntity<Object> updateTeknisiPhoto(@Valid @ModelAttribute TeknisiPhoto teknisiPhoto,  @RequestPart MultipartFile file) throws Exception{
 		String fileName = file.getOriginalFilename().split("\\.")[0];
 		String fileType = file.getOriginalFilename().split("\\.")[1];
@@ -138,6 +143,7 @@ public class TeknisiPhotoController {
 			@ApiResponse(code = 404, message = "Not Found")
 	})
 	@RequestMapping(value = "/teknisiPhoto/delete/{id}", method = RequestMethod.DELETE)
+	@PreAuthorize("hasAuthority('ADMIN')")
 	public ResponseEntity<Object> deleteTeknisiPhoto(@Valid @PathVariable("id") Long id) {
 		if(teknisiPhotoService.TeknisiPhotoIdExists(id) == true) {
 			teknisiPhotoService.deleteTeknisiPhotoById(id);

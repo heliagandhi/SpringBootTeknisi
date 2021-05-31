@@ -16,6 +16,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.Teknisi.services.AuthenticationService;
 
@@ -40,7 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	Environment env;
 
 	private static final String[] AUTH_WHITELIST = { "/swagger-resources/**", "/swagger-ui.html", "/v2/api-docs",
-			"/webjars/**", "/register", "/hello", "/logout" };
+			"/webjars/**", "/register", "/hello", "/logout", "/authenticate"};
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
@@ -61,13 +62,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity.cors().and().csrf().disable()
-				.authorizeRequests().antMatchers(AUTH_WHITELIST).permitAll().antMatchers("/authenticate").permitAll()
+				.authorizeRequests().antMatchers(AUTH_WHITELIST).permitAll()
 //				.antMatchers("/teknisi", "/teknisi/", "/request", "/request/").hasAuthority("USER")
 //				.antMatchers("/teknisi", "/teknisi/*", "/request", "/request/*").hasAuthority("ADMIN")
-				
 				.anyRequest().authenticated().and()
 				.exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()
-				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+				.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+			    .logout()
+			    .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+			    .logoutSuccessUrl("/login")
+			    .permitAll();
 		httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 	}
 

@@ -9,6 +9,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -40,6 +41,7 @@ public class AppUserController {
 			@ApiResponse(code = 404, message = "not found!!!") })
 	
 	@RequestMapping(value = "/AppUser", method = RequestMethod.GET)
+	@PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
 	public ResponseEntity<Object> retrieveAll() {
 		List<AppUser> listAppUser = appUserService.showAllAppUser();
 		return new ResponseEntity<>(listAppUser, HttpStatus.OK);
@@ -52,6 +54,7 @@ public class AppUserController {
 			@ApiResponse(code = 403, message = "forbidden!!!"),
 			@ApiResponse(code = 404, message = "not found!!!") })
 	@RequestMapping(value = "/AppUser/{id}", method = RequestMethod.GET)
+	@PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
 	public ResponseEntity<Object> retrieveById(@PathVariable("id") Long id) {
 		if(appUserService.AppUserIdExists(id) == true) {
 			AppUser appUser = appUserService.getAppUserById(id);
@@ -73,6 +76,7 @@ public class AppUserController {
 			@ApiResponse(code = 404, message = "not found!!!")
 	})
 	@RequestMapping(value = "/AppUser/create", method = RequestMethod.POST)
+	@PreAuthorize("hasAuthority('ADMIN')")
 	public ResponseEntity<Object> createAppUser(@Valid @RequestBody AppUser appUser) {
 		Long id = appUser.getId();
 		if(appUserService.AppUserIdExists(id) == true) {
@@ -95,6 +99,7 @@ public class AppUserController {
 			@ApiResponse(code = 404, message = "not found!!!")
 	})
 	@RequestMapping(value = "/AppUser/update", method = RequestMethod.PUT)
+	@PreAuthorize("hasAuthority('ADMIN')")
 	public ResponseEntity<Object> updateTeknisi(@Valid @RequestBody AppUser appUser) {
 		Long id = appUser.getId();
 		if(appUserService.AppUserIdExists(id) == true) {
@@ -116,6 +121,7 @@ public class AppUserController {
 			@ApiResponse(code = 403, message = "forbidden!!!"),
 			@ApiResponse(code = 404, message = "not found!!!") })
 	@RequestMapping(value = "/AppUser/delete/{id}", method = RequestMethod.DELETE)
+	@PreAuthorize("hasAuthority('ADMIN')")
 	public ResponseEntity<Object> delete(@PathVariable("id") Long id) {
 		appUserService.deleteById(id);
 		return new ResponseEntity<>("AppUser deleted successsfully", HttpStatus.OK);
