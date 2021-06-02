@@ -3,6 +3,8 @@ package com.teknisi.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +32,7 @@ import com.teknisi.services.JwtUserDetailsService;
 @RestController
 @CrossOrigin
 public class JwtAuthenticationController {
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired AppUserService appUserService;
 	
@@ -51,7 +54,7 @@ public class JwtAuthenticationController {
 		String sessionId = request.getSession().getId();
 		request.getSession().setAttribute("sessionId", sessionId);
 		final String token = jwtTokenUtil.generateToken(sessionId, userDetails);
-
+		logger.info("Authenticate successsfully");
 		return ResponseEntity.ok(new JwtResponse(token));
 	}
 	
@@ -60,6 +63,7 @@ public class JwtAuthenticationController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ResponseEntity<Object> saveAppUser(@RequestBody AppUser appUser) throws Exception {
 		appUserService.insert(appUser);
+		logger.info("Registration successsfully");
 		return new ResponseEntity<>("Registration Successsfully", HttpStatus.OK);
 	}
 	
