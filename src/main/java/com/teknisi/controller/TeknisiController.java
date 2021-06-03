@@ -47,7 +47,7 @@ public class TeknisiController {
 	public ResponseEntity<Object> retrieveAll() {
 		logger.info("Retrieve all teknisi");
 		List<Teknisi> listTeknisi = teknisiService.showAllTeknisi();
-		logger.info("all teknisi {}", listTeknisi);
+		logger.debug("all teknisi {}", listTeknisi);
 		return new ResponseEntity<>(listTeknisi, HttpStatus.OK);
 	}
 	
@@ -63,13 +63,13 @@ public class TeknisiController {
 		if(teknisiService.TeknisiIdExists(id) == true) {
 			logger.info("Retrieve teknisi by id");
 			logger.debug("id : {}", id);
-			logger.info("Retrieve teknisi by id : {}", Long.toString(id));
+//			logger.info("Retrieve teknisi by id : {}", Long.toString(id));
 			List<Teknisi> teknisi = teknisiService.getTeknisiById(id);
 			logger.info("by id {}", teknisi);
 			return new ResponseEntity<>(teknisi, HttpStatus.OK);
 		}else if (teknisiService.TeknisiIdExists(id) == false ) {
 			logger.debug("Teknisi with id {} not exist", id);
-			logger.info("Teknisi with id {} not exist", Long.toString(id));
+//			logger.info("Teknisi with id {} not exist", Long.toString(id));
 			return new ResponseEntity<>("Teknisi ID did not exist", HttpStatus.BAD_REQUEST);
 		}else {
 			logger.error("Teknisi id cannot be empty");
@@ -90,7 +90,7 @@ public class TeknisiController {
 		logger.info("Create teknisi");
 		ObjectMapper objectMapper = new ObjectMapper();
 		logger.debug("Input {}", objectMapper.writeValueAsString(teknisi));
-		logger.info("Input {}", objectMapper.writeValueAsString(teknisi));
+//		logger.info("Input {}", objectMapper.writeValueAsString(teknisi));
 		
 		Long id = teknisi.getId();
 		logger.info(teknisi.getId().toString());
@@ -120,7 +120,7 @@ public class TeknisiController {
 		logger.info("Update teknisi");
 		ObjectMapper objectMapper = new ObjectMapper();
 		logger.debug("Input {}", objectMapper.writeValueAsString(teknisi));
-		logger.info("Input {}", objectMapper.writeValueAsString(teknisi));
+//		logger.info("Input {}", objectMapper.writeValueAsString(teknisi));
 		
 		Long id = teknisi.getId();
 		if(teknisiService.TeknisiIdExists(id) == true) {

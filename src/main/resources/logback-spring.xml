@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <property name="LOGS" value="./logs" />
+
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+       	<filter class="com.teknisi.config.CustomFilter">
+	        <levels>ERROR|INFO</levels>
+	    </filter>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+            	%d{yyyy-MM-dd HH:mm:ss} %highlight(%-5level) - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+    
+    <appender name="RollingFile"
+        class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS}/spring-boot-logging.log</file>
+        <encoder
+            class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d %p %C{1.} [%t] %m%n</Pattern>
+        </encoder>
+
+        <rollingPolicy
+            class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- rollover daily and when the file reaches 10 MegaBytes -->
+            <fileNamePattern>${LOGS}/archived/spring-boot-logging-%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+    
+    
+    <root level="error">
+        <appender-ref ref="Console" />
+        <appender-ref ref="RollingFile" />
+    </root>
+    <logger name="com.teknisi" level="error" additivity="false">
+        <appender-ref ref="Console" />
+    </logger>
+    
+
+    <root level="info">
+        <appender-ref ref="Console" />
+        <appender-ref ref="RollingFile" />
+    </root>
+    <logger name="com.teknisi" level="info" additivity="false">
+        <appender-ref ref="Console" />
+    </logger>
+    
+    
+    <logger name="com.teknisi" level="fatal" additivity="false">
+        <appender-ref ref="RollingFile" />
+    </logger>
+    
+    <logger name="com.teknisi" level="warn" additivity="false">
+        <appender-ref ref="RollingFile" />
+    </logger>
+    
+    <logger name="com.teknisi" level="debug" additivity="false">
+        <appender-ref ref="RollingFile" />
+    </logger>
+    
+    <logger name="com.teknisi" level="trace" additivity="false">
+        <appender-ref ref="RollingFile" />
+    </logger>
+</configuration>
