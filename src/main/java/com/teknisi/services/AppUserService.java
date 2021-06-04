@@ -1,6 +1,9 @@
 package com.teknisi.services;
 
+import java.io.IOException;
 import java.util.List;
+
+import javax.mail.MessagingException;
 
 import com.teknisi.model.AppUser;
 
@@ -12,5 +15,5 @@ public interface AppUserService {
 	void deleteById(Long id);
 	boolean AppUserIdExists(Long id);
 	boolean AppUserUsernameExists(String username);
-	void sendEmail(AppUser appUser);
+	void sendEmail(AppUser appUser)throws MessagingException, IOException;
 }
