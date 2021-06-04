@@ -12,4 +12,5 @@ public interface AppUserService {
 	void deleteById(Long id);
 	boolean AppUserIdExists(Long id);
 	boolean AppUserUsernameExists(String username);
+	void sendEmail(AppUser appUser);
 }

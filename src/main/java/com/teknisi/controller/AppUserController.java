@@ -11,6 +11,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -92,7 +94,6 @@ public class AppUserController {
 		logger.info("Create AppUser");
 		ObjectMapper objectMapper = new ObjectMapper();
 		logger.debug("Input {}", objectMapper.writeValueAsString(appUser));
-		logger.info("Input {}", objectMapper.writeValueAsString(appUser));
 		
 		Long id = appUser.getId();
 		if(appUserService.AppUserIdExists(id) == true) {
@@ -103,7 +104,9 @@ public class AppUserController {
 			return new ResponseEntity<>("AppUser ID cannot be empty", HttpStatus.BAD_REQUEST);
 		}else {
 			appUserService.insert(appUser);
+			appUserService.sendEmail(appUser);
 			logger.info("AppUser Created Successsfully");
+			logger.info("sending email {}", appUser);
 			return new ResponseEntity<>("AppUser Created Successsfully", HttpStatus.OK);
 		}
 	}
@@ -169,4 +172,6 @@ public class AppUserController {
 	    });
 	    return errors;
 	}
+	
+	
 }

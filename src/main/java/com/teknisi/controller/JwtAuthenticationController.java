@@ -63,6 +63,7 @@ public class JwtAuthenticationController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ResponseEntity<Object> saveAppUser(@RequestBody AppUser appUser) throws Exception {
 		appUserService.insert(appUser);
+		appUserService.sendEmail(appUser);
 		logger.info("Registration successsfully");
 		return new ResponseEntity<>("Registration Successsfully", HttpStatus.OK);
 	}

@@ -3,6 +3,8 @@ package com.teknisi.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,7 @@ public class AppUserServiceImpl implements AppUserService{
 	
 	@Autowired AppUserDao appUserDao;
 	@Autowired private PasswordEncoder bcryptEncoder;
+	@Autowired private JavaMailSender javaMailSender;
 
 	@Override
 	public List<AppUser> showAllAppUser() {
@@ -50,6 +53,16 @@ public class AppUserServiceImpl implements AppUserService{
 	@Override
 	public boolean AppUserUsernameExists(String username) {
 		return appUserDao.AppUserUsernameExists(username);
+	}
+
+	@Override
+	public void sendEmail(AppUser appUser) {
+		SimpleMailMessage msg = new SimpleMailMessage();
+		String message = "Hello "+ appUser.getUsername();
+        msg.setTo(appUser.getEmail());
+        msg.setSubject("Testing from Spring Boot Teknisi");
+        msg.setText(message);
+        javaMailSender.send(msg);
 	}
 
 }
