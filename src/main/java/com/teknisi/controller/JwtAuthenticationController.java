@@ -28,6 +28,7 @@ import com.teknisi.model.JwtRequest;
 import com.teknisi.model.JwtResponse;
 import com.teknisi.services.AppUserService;
 import com.teknisi.services.JwtUserDetailsService;
+import com.teknisi.services.MessageService;
 
 @RestController
 @CrossOrigin
@@ -35,15 +36,10 @@ public class JwtAuthenticationController {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired AppUserService appUserService;
-	
-	@Autowired
-	private AuthenticationManager authenticationManager;
-
-	@Autowired
-	private JwtTokenUtil jwtTokenUtil;
-
-	@Autowired
-	private JwtUserDetailsService userDetailsService;
+	@Autowired private AuthenticationManager authenticationManager;
+	@Autowired private JwtTokenUtil jwtTokenUtil;
+	@Autowired private JwtUserDetailsService userDetailsService;
+	@Autowired MessageService messageService;
 
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest, HttpServletRequest request) throws Exception {
@@ -63,7 +59,7 @@ public class JwtAuthenticationController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ResponseEntity<Object> saveAppUser(@RequestBody AppUser appUser) throws Exception {
 		appUserService.insert(appUser);
-		appUserService.sendEmail(appUser);
+		messageService.sendEmail(appUser);
 		logger.info("Registration successsfully");
 		return new ResponseEntity<>("Registration Successsfully", HttpStatus.OK);
 	}

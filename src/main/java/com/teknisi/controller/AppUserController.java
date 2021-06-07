@@ -11,8 +11,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
+//import org.springframework.mail.SimpleMailMessage;
+//import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.teknisi.model.AppUser;
 import com.teknisi.services.AppUserService;
+import com.teknisi.services.MessageService;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -37,6 +38,7 @@ public class AppUserController {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired AppUserService appUserService;
+	@Autowired MessageService messageService;
 	
 	@ApiOperation(value = "View all AppUser")
 	@ApiResponses(value = { 
@@ -104,7 +106,7 @@ public class AppUserController {
 			return new ResponseEntity<>("AppUser ID cannot be empty", HttpStatus.BAD_REQUEST);
 		}else {
 			appUserService.insert(appUser);
-			appUserService.sendEmail(appUser);
+			messageService.sendEmail(appUser);
 			logger.info("AppUser Created Successsfully");
 			logger.info("sending email {}", appUser);
 			return new ResponseEntity<>("AppUser Created Successsfully", HttpStatus.OK);
