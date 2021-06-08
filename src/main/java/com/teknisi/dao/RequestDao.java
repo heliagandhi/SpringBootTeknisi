@@ -9,6 +9,9 @@ public interface RequestDao {
 	void insert(Request request);
 	int deleteById(String request_id);
 	void updateRequest(Request request);
+	void updateRequestMailSent(Request request);
 	public Request findRequestById(String request_id);
 	boolean RequestIdExists(String request_id);
+	
+	List<Request> getAllStatusNewRequest(String status);
 }

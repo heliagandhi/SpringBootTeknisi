@@ -33,8 +33,7 @@ public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
 	@Override
 	public List<Request> getAllRequest() {
 		String query =
-				"SELECT request_id, merchant_name, address, city, postal_code, phone, pic, teknisi_id, created_date,"
-				+ "created_by, update_date, update_by from request";
+				"SELECT * from request";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		List<Request> requestList = new ArrayList<Request>();
 
@@ -54,6 +53,7 @@ public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
 			request.setCreated_by(String.valueOf(requestColumn.get("created_by")));
 			request.setUpdate_date((Date)(requestColumn.get("update_date")));
 			request.setUpdate_by(String.valueOf(requestColumn.get("update_by")));
+			request.setStatus(String.valueOf(requestColumn.get("status")));
 			requestList.add(request);
 		}
 		return requestList;
@@ -63,8 +63,7 @@ public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
 	@Override
 	public Request findRequestById(String request_id) {
 		String query =
-				"SELECT request_id, merchant_name, address, city, postal_code, phone, pic, teknisi_id, created_date, created_by, "
-				+ "update_date, update_by from request where request_id = ?";
+				"SELECT * from request where request_id = ?";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
 		@SuppressWarnings("deprecation")
@@ -86,6 +85,7 @@ public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
 				request.setCreated_by(rs.getString("created_by"));
 				request.setUpdate_date(rs.getDate("update_date"));
 				request.setUpdate_by(rs.getString("update_by"));
+				request.setStatus(rs.getString("status"));
 				return request;
 			}});
 		return request;
@@ -96,14 +96,15 @@ public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
 	public void insert(Request request) {
 		String query = 
 	    		 "INSERT INTO request( request_id, merchant_name, address, city, postal_code, phone, pic, teknisi_id, created_date,"
-	    		 + " created_by, update_date, update_by) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" ;
+	    		 + " created_by, update_date, update_by, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" ;
 	     Date created_date = new Date();
 		 String created_by = "Merchant";
+		 String status = "NEW";
 	     getJdbcTemplate()
 	     	.update(query, new Object[]{
 	     		request.getRequest_id(), request.getMerchant_name(), request.getAddress(), request.getCity(), request.getPostal_code(),
 	     		request.getPhone(), request.getPic(), request.getTeknisi_id(), created_date, created_by, request.getUpdate_date(),
-	     		request.getUpdate_by()
+	     		request.getUpdate_by(), status
 	     		});
 	}
 	
@@ -117,8 +118,18 @@ public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
 		getJdbcTemplate()
      	.update(query, new Object[]{
      		request.getMerchant_name(), request.getAddress(), request.getCity(), request.getPostal_code(), request.getPhone(),
-     		request.getPic(), request.getTeknisi_id(), update_date,
-     		update_by, request.getRequest_id()
+     		request.getPic(), request.getTeknisi_id(), update_date, update_by, request.getRequest_id()
+     		});
+	}
+	
+	
+	@Override
+	public void updateRequestMailSent(Request request) {
+		String query = "update request set status=? where request_id = ?";
+		String status = "MAIL_SENT";
+		getJdbcTemplate()
+     	.update(query, new Object[]{
+     		status, request.getRequest_id()
      		});
 	}
 
@@ -136,6 +147,33 @@ public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
 		long count = getJdbcTemplate().queryForObject(sql, new Object[] { request_id }, Long.class);
 		return count > 0;
 	}
-	
+
+	@Override
+	public List<Request> getAllStatusNewRequest(String status) {
+		String query = "SELECT * from request where status = ?";
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		List<Request> requestList = new ArrayList<Request>();
+
+		List<Map<String,Object>> requestRows = jdbcTemplate.queryForList(query, new Object[]{status});
+
+		for(Map<String,Object> requestColumn : requestRows){
+			Request request = new Request();
+			request.setRequest_id(String.valueOf(requestColumn.get("request_id")));
+			request.setMerchant_name(String.valueOf(requestColumn.get("merchant_name")));
+			request.setAddress(String.valueOf(requestColumn.get("address")));
+			request.setCity(String.valueOf(requestColumn.get("city")));
+			request.setPostal_code(String.valueOf(requestColumn.get("postal_code")));
+			request.setPhone(String.valueOf(requestColumn.get("phone")));
+			request.setPic(String.valueOf(requestColumn.get("pic")));
+			request.setTeknisi_id(Long.parseLong(requestColumn.get("teknisi_id").toString()));
+			request.setCreated_date((Date)(requestColumn.get("created_date")));
+			request.setCreated_by(String.valueOf(requestColumn.get("created_by")));
+			request.setUpdate_date((Date)(requestColumn.get("update_date")));
+			request.setUpdate_by(String.valueOf(requestColumn.get("update_by")));
+			request.setStatus(String.valueOf(requestColumn.get("status")));
+			requestList.add(request);
+		}
+		return requestList;
+	}
 
 }

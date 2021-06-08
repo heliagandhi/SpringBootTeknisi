@@ -1,5 +1,10 @@
 package com.teknisi.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,6 +16,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.validation.FieldError;
@@ -25,6 +31,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.teknisi.model.Request;
+import com.teknisi.model.Teknisi;
+import com.teknisi.services.MessageService;
 import com.teknisi.services.RequestService;
 import com.teknisi.services.TeknisiService;
 
@@ -36,9 +44,11 @@ import io.swagger.annotations.ApiResponses;
 @RestController
 public class RequestController {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+	private static final SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
 
 	@Autowired RequestService requestService;
 	@Autowired TeknisiService teknisiService;
+	@Autowired MessageService messageService;
 
 	@ApiOperation(value = "View all request")
 	@ApiResponses(value = { 
@@ -146,6 +156,53 @@ public class RequestController {
 		logger.info("delete id : {}", request_id);
 		return new ResponseEntity<>("Request deleted successsfully", HttpStatus.OK);
 	}
+	
+	@Scheduled(cron = "*/10 * * * * *")
+	public ResponseEntity<Object> sendEmailNewRequest() {
+		List<Request> listRequest = requestService.getAllStatusNewRequest("NEW");
+		for (Request request : listRequest) {
+			Long teknisi_id = request.getTeknisi_id();
+			List<Teknisi> listTeknisi = teknisiService.getTeknisiById(teknisi_id);
+			for(Teknisi teknisi : listTeknisi) {
+				String email = teknisi.getEmail();
+				String name = teknisi.getName();
+				messageService.sendEmail2(email, name, request, "You have new request");
+				requestService.updateRequestMailSent(request);
+			}
+		}
+		logger.info("Send all new request to each Teknisi => " + dateFormat.format(new Date()));
+		return new ResponseEntity<>(listRequest, HttpStatus.OK);
+	}
+	
+//	@Scheduled(fixedRate = 30000)
+//	public ResponseEntity<Object> sendEmailMailRequest() throws ParseException {
+//		List<Request> listRequest = requestService.getAllStatusNewRequest("MAIL_SENT");
+//		Date createdDate = listRequest.get(0).getCreated_date();
+//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//		Date date1 = sdf.parse(createdDate.toString());
+//		Date now = new Date();
+//		Calendar c = Calendar.getInstance();
+//		c.setTime(now);
+//		c.add(Calendar.HOUR, -6);
+//		Date now2 = c.getTime();
+//		//logger.info("test {}", now2);
+//		//created date < waktu sekarang - 6 jam
+//		if(date1.before(now2)) {
+//		//logger.info("jalan => " + dateFormat.format(new Date()));
+//			for (Request request : listRequest) {
+//				Long teknisi_id = request.getTeknisi_id();
+//				List<Teknisi> listTeknisi = teknisiService.getTeknisiById(teknisi_id);
+//				for(Teknisi teknisi : listTeknisi) {
+//					String email = teknisi.getEmail();
+//					String name = teknisi.getName();
+//					messageService.sendEmail2(email, name, request, "Please processnew request");
+//				}
+//			}
+//			logger.info("Send all new request to each Teknisi => " + dateFormat.format(new Date()));
+//		}
+//		return new ResponseEntity<>(listRequest, HttpStatus.OK);
+//	}
+	
 
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(MethodArgumentNotValidException.class)

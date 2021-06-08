@@ -9,6 +9,9 @@ public interface RequestService {
 	void insert(Request request);
 	void deleteById(String request_id);
 	void updateRequest(Request request);
+	void updateRequestMailSent(Request request);
 	Request getRequestById(String request_id);
 	boolean RequestIdExists(String request_id);
+	
+	List<Request> getAllStatusNewRequest(String status);
 }

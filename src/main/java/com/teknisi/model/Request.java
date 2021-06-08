@@ -68,6 +68,9 @@ public class Request {
 	@ApiModelProperty(hidden = true)
 	private String update_by;
 	
+	@ApiModelProperty(hidden = true)
+	private String status;
+	
 	
 	public Request(){	}
 
@@ -211,6 +214,15 @@ public class Request {
 	}
 
 
+	public String getStatus() {
+		return status;
+	}
+
+	
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -238,13 +250,10 @@ public class Request {
 		builder.append(update_date);
 		builder.append(", update_by=");
 		builder.append(update_by);
+		builder.append(", status=");
+		builder.append(status);
 		builder.append("]");
 		return builder.toString();
-	}
-	
-	
-
-	
-	
+	}	
 	
 }

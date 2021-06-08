@@ -36,6 +36,13 @@ public class RequestServiceImpl implements RequestService {
 	public void updateRequest(Request request) {
 		requestDao.updateRequest(request);	
 	}
+	
+	
+	@Override
+	public void updateRequestMailSent(Request request) {
+		requestDao.updateRequestMailSent(request);
+		
+	}
 
 	
 	@Override
@@ -48,6 +55,12 @@ public class RequestServiceImpl implements RequestService {
 	@Override
 	public boolean RequestIdExists(String request_id) {
 		return requestDao.RequestIdExists(request_id);
+	}
+
+
+	@Override
+	public List<Request> getAllStatusNewRequest(String status) {
+		return requestDao.getAllStatusNewRequest(status);
 	}
 
 }
