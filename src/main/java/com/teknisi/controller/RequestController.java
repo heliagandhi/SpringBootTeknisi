@@ -157,7 +157,7 @@ public class RequestController {
 		return new ResponseEntity<>("Request deleted successsfully", HttpStatus.OK);
 	}
 	
-	@Scheduled(cron = "*/10 * * * * *")
+	@Scheduled(cron = "0 0/10 * * * *")
 	public ResponseEntity<Object> sendEmailNewRequest() {
 		List<Request> listRequest = requestService.getAllStatusNewRequest("NEW");
 		for (Request request : listRequest) {
@@ -174,34 +174,34 @@ public class RequestController {
 		return new ResponseEntity<>(listRequest, HttpStatus.OK);
 	}
 	
-//	@Scheduled(fixedRate = 30000)
-//	public ResponseEntity<Object> sendEmailMailRequest() throws ParseException {
-//		List<Request> listRequest = requestService.getAllStatusNewRequest("MAIL_SENT");
-//		Date createdDate = listRequest.get(0).getCreated_date();
-//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//		Date date1 = sdf.parse(createdDate.toString());
-//		Date now = new Date();
-//		Calendar c = Calendar.getInstance();
-//		c.setTime(now);
-//		c.add(Calendar.HOUR, -6);
-//		Date now2 = c.getTime();
-//		//logger.info("test {}", now2);
-//		//created date < waktu sekarang - 6 jam
-//		if(date1.before(now2)) {
-//		//logger.info("jalan => " + dateFormat.format(new Date()));
-//			for (Request request : listRequest) {
-//				Long teknisi_id = request.getTeknisi_id();
-//				List<Teknisi> listTeknisi = teknisiService.getTeknisiById(teknisi_id);
-//				for(Teknisi teknisi : listTeknisi) {
-//					String email = teknisi.getEmail();
-//					String name = teknisi.getName();
-//					messageService.sendEmail2(email, name, request, "Please processnew request");
-//				}
-//			}
-//			logger.info("Send all new request to each Teknisi => " + dateFormat.format(new Date()));
-//		}
-//		return new ResponseEntity<>(listRequest, HttpStatus.OK);
-//	}
+	@Scheduled(fixedRate = 300000)
+	public ResponseEntity<Object> sendEmailMailRequest() throws ParseException {
+		List<Request> listRequest = requestService.getAllStatusNewRequest("MAIL_SENT");
+		Date createdDate = listRequest.get(0).getCreated_date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date date1 = sdf.parse(createdDate.toString());
+		Date now = new Date();
+		Calendar c = Calendar.getInstance();
+		c.setTime(now);
+		c.add(Calendar.HOUR, -6);
+		Date now2 = c.getTime();
+		//logger.info("test {}", now2);
+		//created date < waktu sekarang - 6 jam
+		if(date1.before(now2)) {
+		//logger.info("jalan => " + dateFormat.format(new Date()));
+			for (Request request : listRequest) {
+				Long teknisi_id = request.getTeknisi_id();
+				List<Teknisi> listTeknisi = teknisiService.getTeknisiById(teknisi_id);
+				for(Teknisi teknisi : listTeknisi) {
+					String email = teknisi.getEmail();
+					String name = teknisi.getName();
+					messageService.sendEmail2(email, name, request, "Please processnew request");
+				}
+			}
+			logger.info("Send all new request to each Teknisi => " + dateFormat.format(new Date()));
+		}
+		return new ResponseEntity<>(listRequest, HttpStatus.OK);
+	}
 	
 
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
