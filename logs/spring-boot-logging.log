@@ -1793,3 +1793,177 @@ City : Bogor
 Person in charge : Examplepic
 
 Thank you
+2021-06-09 15:20:53,713 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:20:53,714 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:20:57,207 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:20:57,207 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:20:57,207 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:20:57,209 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:21:00,881 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:21:00,882 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:21:04,508 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:21:04,510 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:21:08,269 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:21:08,270 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:21:08,271 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:21:08,273 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:21:11,942 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:21:11,942 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:21:15,532 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:21:15,533 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:21:19,041 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:21:19,041 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:21:19,041 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:21:19,042 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:21:22,822 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:21:22,822 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:21:26,174 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:21:26,175 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:21:29,911 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:21:29,911 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:21:29,911 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:21:29,912 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:21:33,491 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:21:33,491 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:21:37,049 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:21:37,050 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:21:40,624 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:21:40,624 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:21:40,624 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:21:40,626 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:21:44,187 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:21:44,188 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:21:47,837 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:21:47,838 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:21:51,427 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:21:51,427 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:21:51,427 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:21:51,429 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:21:54,999 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:21:55,000 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
