@@ -13,7 +13,6 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 import com.teknisi.model.AppUser;
-import com.teknisi.model.Request;
 
 @Service
 public class MessageServiceImpl implements MessageService{
@@ -25,15 +24,6 @@ public class MessageServiceImpl implements MessageService{
 	@Value("${template.mail.message}")
 	private String message;
 	
-//	@Value("${template.mail.subject2:You have new request}")
-//	private String subject2;
-	
-//	@Value("${template.mail.message2}")
-//	public Request setRequestData(Request request, String request_id, String merchant_name) {
-//		request.setRequest_id(request_id);
-//		request.setMerchant_name(merchant_name);
-//		return request;
-//	}
 
 	@Override
 	public void sendEmail(AppUser appUser) throws MessagingException, IOException {
@@ -45,18 +35,13 @@ public class MessageServiceImpl implements MessageService{
         javaMailSender.send(msg);
     }
 
+
 	@Override
-	public void sendEmail2(String email, String username, Request request, String subject) {
+	public void sendEmail2(String email, String name, String message, String subject) {
 		SimpleMailMessage msg = new SimpleMailMessage();
         msg.setTo(email);
-        msg.setSubject(subject);
-        msg.setText("Request ID : "+request.getRequest_id()+" \r\n"
-        		+ "Merchant : "+request.getMerchant_name()+" \r\n"
-        		+ "Address : "+request.getAddress()+" \r\n"
-        		+ "City : "+request.getCity()+" \r\n"
-        		+ "Person in charge : "+request.getPic()+"\r\n"
-        		+ "\r\n"
-        		+ "Thank you");
+        msg.setSubject(name+subject);
+        msg.setText(message);
         javaMailSender.send(msg);
 	}
 	
