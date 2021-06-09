@@ -149,30 +149,51 @@ public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
 	}
 
 	@Override
-	public List<Request> getAllStatusNewRequest(String status) {
-		String query = "SELECT * from request where status = ?";
+	public List<Request> getAllStatusNewRequest(String status, boolean created_date) {
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		List<Request> requestList = new ArrayList<Request>();
-
-		List<Map<String,Object>> requestRows = jdbcTemplate.queryForList(query, new Object[]{status});
-
-		for(Map<String,Object> requestColumn : requestRows){
-			Request request = new Request();
-			request.setRequest_id(String.valueOf(requestColumn.get("request_id")));
-			request.setMerchant_name(String.valueOf(requestColumn.get("merchant_name")));
-			request.setAddress(String.valueOf(requestColumn.get("address")));
-			request.setCity(String.valueOf(requestColumn.get("city")));
-			request.setPostal_code(String.valueOf(requestColumn.get("postal_code")));
-			request.setPhone(String.valueOf(requestColumn.get("phone")));
-			request.setPic(String.valueOf(requestColumn.get("pic")));
-			request.setTeknisi_id(Long.parseLong(requestColumn.get("teknisi_id").toString()));
-			request.setCreated_date((Date)(requestColumn.get("created_date")));
-			request.setCreated_by(String.valueOf(requestColumn.get("created_by")));
-			request.setUpdate_date((Date)(requestColumn.get("update_date")));
-			request.setUpdate_by(String.valueOf(requestColumn.get("update_by")));
-			request.setStatus(String.valueOf(requestColumn.get("status")));
-			requestList.add(request);
-		}
+		
+		if(created_date = true) {
+			String query = "SELECT * FROM request WHERE status=? and created_date < now() - interval '6 hour' order by request_id asc";
+			List<Map<String,Object>> rows = jdbcTemplate.queryForList(query, new Object[]{status});
+			for(Map<String,Object> column : rows){
+				Request request = new Request();
+				request.setRequest_id(String.valueOf(column.get("request_id")));
+				request.setMerchant_name(String.valueOf(column.get("merchant_name")));
+				request.setAddress(String.valueOf(column.get("address")));
+				request.setCity(String.valueOf(column.get("city")));
+				request.setPostal_code(String.valueOf(column.get("postal_code")));
+				request.setPhone(String.valueOf(column.get("phone")));
+				request.setPic(String.valueOf(column.get("pic")));
+				request.setTeknisi_id(Long.parseLong(column.get("teknisi_id").toString()));
+				request.setCreated_date((Date)(column.get("created_date")));
+				request.setCreated_by(String.valueOf(column.get("created_by")));
+				request.setUpdate_date((Date)(column.get("update_date")));
+				request.setUpdate_by(String.valueOf(column.get("update_by")));
+				request.setStatus(String.valueOf(column.get("status")));
+				requestList.add(request);
+			}
+		} else {
+			String query = "SELECT * FROM request WHERE status=? order by request_id asc";
+				List<Map<String,Object>> rows = jdbcTemplate.queryForList(query, new Object[]{status});
+				for(Map<String,Object> column : rows){
+					Request request = new Request();
+					request.setRequest_id(String.valueOf(column.get("request_id")));
+					request.setMerchant_name(String.valueOf(column.get("merchant_name")));
+					request.setAddress(String.valueOf(column.get("address")));
+					request.setCity(String.valueOf(column.get("city")));
+					request.setPostal_code(String.valueOf(column.get("postal_code")));
+					request.setPhone(String.valueOf(column.get("phone")));
+					request.setPic(String.valueOf(column.get("pic")));
+					request.setTeknisi_id(Long.parseLong(column.get("teknisi_id").toString()));
+					request.setCreated_date((Date)(column.get("created_date")));
+					request.setCreated_by(String.valueOf(column.get("created_by")));
+					request.setUpdate_date((Date)(column.get("update_date")));
+					request.setUpdate_by(String.valueOf(column.get("update_by")));
+					request.setStatus(String.valueOf(column.get("status")));
+					requestList.add(request);
+				}
+			}
 		return requestList;
 	}
 

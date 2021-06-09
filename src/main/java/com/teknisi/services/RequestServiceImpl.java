@@ -59,8 +59,8 @@ public class RequestServiceImpl implements RequestService {
 
 
 	@Override
-	public List<Request> getAllStatusNewRequest(String status) {
-		return requestDao.getAllStatusNewRequest(status);
+	public List<Request> getAllStatusNewRequest(String status, boolean created_date) {
+		return requestDao.getAllStatusNewRequest(status, created_date);
 	}
 
 }

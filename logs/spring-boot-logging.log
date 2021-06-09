@@ -197,3 +197,1599 @@
 2021-06-09 12:12:11,372 INFO com.teknisi.scheduler.Scheduler [scheduling-1] cek => {} Tue Jun 08 12:00:02 WIB 2021
 2021-06-09 12:12:15,164 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Send all new request to each Teknisi => 06/09/2021 12:12:15
 2021-06-09 12:12:15,167 INFO com.teknisi.scheduler.Scheduler [scheduling-1] cek => {} Tue May 25 08:54:34 WIB 2021
+2021-06-09 14:47:30,329 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-09 14:47:30,365 INFO org.springframework.boot.StartupInfoLogger [main] Starting SpringBootTeknisiApplication using Java 15.0.2 on DESKTOP-IVGJ568 with PID 11428 (D:\Ogya\SpringBootTeknisi\target\classes started by HELLO in D:\Ogya\SpringBootTeknisi)
+2021-06-09 14:47:30,366 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.5, Spring v5.3.6
+2021-06-09 14:47:30,367 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-09 14:47:32,138 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-09 14:47:32,141 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-06-09 14:47:32,167 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 19 ms. Found 0 JDBC repository interfaces.
+2021-06-09 14:47:32,182 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-09 14:47:32,185 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-09 14:47:32,199 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2021-06-09 14:47:32,773 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@75d366c2' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-09 14:47:32,779 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-09 14:47:33,229 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8181 (http)
+2021-06-09 14:47:33,247 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8181"]
+2021-06-09 14:47:33,248 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-09 14:47:33,248 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-06-09 14:47:33,436 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-09 14:47:33,437 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2954 ms
+2021-06-09 14:47:33,558 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 14:47:33,639 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'jwtRequestFilter' configured for use
+2021-06-09 14:47:33,694 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-09 14:47:34,028 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-09 14:47:34,114 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-09 14:47:34,238 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.30.Final
+2021-06-09 14:47:34,526 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-09 14:47:34,831 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-06-09 14:47:35,494 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-09 14:47:35,507 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-09 14:47:35,526 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 14:47:35,582 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-09 14:47:35,829 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 14:47:35,864 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 14:47:36,390 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-09 14:47:36,707 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@337eeceb, org.springframework.security.web.context.SecurityContextPersistenceFilter@1bb0fa38, org.springframework.security.web.header.HeaderWriterFilter@46c2189e, org.springframework.web.filter.CorsFilter@237d0625, org.springframework.security.web.authentication.logout.LogoutFilter@768e40af, com.teknisi.config.JwtRequestFilter@9263c54, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@406808eb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@32245b66, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1a5a4f8, org.springframework.security.web.session.SessionManagementFilter@6dfebd2a, org.springframework.security.web.access.ExceptionTranslationFilter@3d1b43d8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@57bfca3a]
+2021-06-09 14:47:36,840 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-09 14:47:37,087 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'taskScheduler'
+2021-06-09 14:47:37,121 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8181"]
+2021-06-09 14:47:37,167 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8181 (http) with context path ''
+2021-06-09 14:47:37,170 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-06-09 14:47:37,206 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-06-09 14:47:37,254 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-06-09 14:47:37,532 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteUsingDELETE_1
+2021-06-09 14:47:37,556 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveAllUsingGET_1
+2021-06-09 14:47:37,572 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveByIdUsingGET_1
+2021-06-09 14:47:37,616 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteUsingDELETE_2
+2021-06-09 14:47:37,623 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveAllUsingGET_2
+2021-06-09 14:47:37,653 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveByIdUsingGET_2
+2021-06-09 14:47:37,820 INFO org.springframework.boot.StartupInfoLogger [main] Started SpringBootTeknisiApplication in 8.216 seconds (JVM running for 9.017)
+2021-06-09 14:47:40,077 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for request status = NEW has been sent to email => 06/09/2021 14:47:40
+2021-06-09 14:47:45,004 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for request status = NEW has been sent to email => 06/09/2021 14:47:45
+2021-06-09 14:47:50,007 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for request status = NEW has been sent to email => 06/09/2021 14:47:50
+2021-06-09 14:47:55,005 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for request status = NEW has been sent to email => 06/09/2021 14:47:55
+2021-06-09 14:49:04,350 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-09 14:49:04,370 INFO org.springframework.boot.StartupInfoLogger [main] Starting SpringBootTeknisiApplication using Java 15.0.2 on DESKTOP-IVGJ568 with PID 12808 (D:\Ogya\SpringBootTeknisi\target\classes started by HELLO in D:\Ogya\SpringBootTeknisi)
+2021-06-09 14:49:04,372 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.5, Spring v5.3.6
+2021-06-09 14:49:04,372 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-09 14:49:06,283 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-09 14:49:06,287 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-06-09 14:49:06,310 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 17 ms. Found 0 JDBC repository interfaces.
+2021-06-09 14:49:06,326 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-09 14:49:06,328 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-09 14:49:06,343 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2021-06-09 14:49:07,007 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2047981' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-09 14:49:07,017 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-09 14:49:07,871 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8181 (http)
+2021-06-09 14:49:07,894 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8181"]
+2021-06-09 14:49:07,895 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-09 14:49:07,896 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-06-09 14:49:08,162 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-09 14:49:08,163 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3682 ms
+2021-06-09 14:49:08,356 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 14:49:08,471 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'jwtRequestFilter' configured for use
+2021-06-09 14:49:08,548 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-09 14:49:08,896 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-09 14:49:08,970 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-09 14:49:09,080 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.30.Final
+2021-06-09 14:49:09,342 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-09 14:49:09,655 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-06-09 14:49:10,286 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-09 14:49:10,297 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-09 14:49:10,317 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 14:49:10,428 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-09 14:49:10,633 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 14:49:10,665 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 14:49:11,152 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-09 14:49:11,460 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7a053795, org.springframework.security.web.context.SecurityContextPersistenceFilter@1e4d93f7, org.springframework.security.web.header.HeaderWriterFilter@61607ff0, org.springframework.web.filter.CorsFilter@328bc067, org.springframework.security.web.authentication.logout.LogoutFilter@41c88e00, com.teknisi.config.JwtRequestFilter@2e4eda17, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9f52eb7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2570851e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@337fb1a5, org.springframework.security.web.session.SessionManagementFilter@5e5d40ec, org.springframework.security.web.access.ExceptionTranslationFilter@357cdb00, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@35277c6c]
+2021-06-09 14:49:11,583 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-09 14:49:11,939 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'taskScheduler'
+2021-06-09 14:49:11,968 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8181"]
+2021-06-09 14:49:12,003 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8181 (http) with context path ''
+2021-06-09 14:49:12,005 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-06-09 14:49:12,027 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-06-09 14:49:12,063 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-06-09 14:49:12,349 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteUsingDELETE_1
+2021-06-09 14:49:12,374 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveAllUsingGET_1
+2021-06-09 14:49:12,404 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveByIdUsingGET_1
+2021-06-09 14:49:12,443 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteUsingDELETE_2
+2021-06-09 14:49:12,446 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveAllUsingGET_2
+2021-06-09 14:49:12,467 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveByIdUsingGET_2
+2021-06-09 14:49:12,591 INFO org.springframework.boot.StartupInfoLogger [main] Started SpringBootTeknisiApplication in 8.879 seconds (JVM running for 9.694)
+2021-06-09 14:49:15,075 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 14:49:21,062 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 14:49:21,074 INFO com.teknisi.scheduler.Scheduler [scheduling-1] The request status has been updated to status mail_sent
+2021-06-09 14:49:21,076 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Request {}Request [request_id=1, merchant_name=Memey, address=Malabar, city=Bogor, postal_code=18243, phone=021665786678, pic=Examplepic, teknisi_id=1, created_date=2021-05-25 08:54:34.285, created_by=Merchant, update_date=null, update_by=null, status=NEW]
+2021-06-09 14:49:21,078 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 2
+Merchant Name: Daihat
+Address : Jatirasa
+City : Bekasi
+Person in charge : Samsu
+
+Thank you
+2021-06-09 14:49:24,538 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comHelia
+2021-06-09 14:49:24,544 INFO com.teknisi.scheduler.Scheduler [scheduling-1] The request status has been updated to status mail_sent
+2021-06-09 14:49:24,545 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Request {}Request [request_id=2, merchant_name=Daihat, address=Jatirasa, city=Bekasi, postal_code=17654, phone=98765656788, pic=Samsu, teknisi_id=2, created_date=2021-06-08 16:20:00.285, created_by=Merchant, update_date=null, update_by=null, status=NEW]
+2021-06-09 14:49:24,547 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 14:49:28,082 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 14:49:28,084 INFO com.teknisi.scheduler.Scheduler [scheduling-1] The request status has been updated to status mail_sent
+2021-06-09 14:49:28,084 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Request {}Request [request_id=3, merchant_name=Memey, address=Malabar, city=Bogor, postal_code=18243, phone=021665786678, pic=Examplepic, teknisi_id=3, created_date=2021-06-08 12:00:02.913, created_by=Merchant, update_date=null, update_by=null, status=NEW]
+2021-06-09 14:49:28,085 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for request status = NEW has been sent to email => 06/09/2021 14:49:28
+2021-06-09 14:49:30,002 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for request status = NEW has been sent to email => 06/09/2021 14:49:30
+2021-06-09 14:49:35,003 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for request status = NEW has been sent to email => 06/09/2021 14:49:35
+2021-06-09 14:49:40,005 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for request status = NEW has been sent to email => 06/09/2021 14:49:40
+2021-06-09 14:49:45,004 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for request status = NEW has been sent to email => 06/09/2021 14:49:45
+2021-06-09 14:53:06,719 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-09 14:53:06,773 INFO org.springframework.boot.StartupInfoLogger [main] Starting SpringBootTeknisiApplication using Java 15.0.2 on DESKTOP-IVGJ568 with PID 1724 (D:\Ogya\SpringBootTeknisi\target\classes started by HELLO in D:\Ogya\SpringBootTeknisi)
+2021-06-09 14:53:06,774 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.5, Spring v5.3.6
+2021-06-09 14:53:06,775 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-09 14:53:08,439 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-09 14:53:08,441 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-06-09 14:53:08,467 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 20 ms. Found 0 JDBC repository interfaces.
+2021-06-09 14:53:08,482 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-09 14:53:08,483 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-09 14:53:08,497 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2021-06-09 14:53:09,024 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@456f7d9e' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-09 14:53:09,031 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-09 14:53:09,552 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8181 (http)
+2021-06-09 14:53:09,568 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8181"]
+2021-06-09 14:53:09,569 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-09 14:53:09,569 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-06-09 14:53:09,854 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-09 14:53:09,855 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2987 ms
+2021-06-09 14:53:10,024 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 14:53:10,111 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'jwtRequestFilter' configured for use
+2021-06-09 14:53:10,164 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-09 14:53:10,480 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-09 14:53:10,551 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-09 14:53:10,697 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.30.Final
+2021-06-09 14:53:10,980 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-09 14:53:11,255 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-06-09 14:53:11,980 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-09 14:53:11,996 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-09 14:53:12,015 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 14:53:12,093 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-09 14:53:12,264 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 14:53:12,295 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 14:53:12,765 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-09 14:53:13,095 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@35277c6c, org.springframework.security.web.context.SecurityContextPersistenceFilter@5e5d40ec, org.springframework.security.web.header.HeaderWriterFilter@357cdb00, org.springframework.web.filter.CorsFilter@7a364e1c, org.springframework.security.web.authentication.logout.LogoutFilter@62f305bc, com.teknisi.config.JwtRequestFilter@9263c54, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1e4d93f7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5300694d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@29a50a11, org.springframework.security.web.session.SessionManagementFilter@61648dd2, org.springframework.security.web.access.ExceptionTranslationFilter@42d7e8bc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3a359f7c]
+2021-06-09 14:53:13,172 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-09 14:53:13,420 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'taskScheduler'
+2021-06-09 14:53:13,449 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8181"]
+2021-06-09 14:53:13,480 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8181 (http) with context path ''
+2021-06-09 14:53:13,482 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-06-09 14:53:13,512 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-06-09 14:53:13,546 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-06-09 14:53:13,841 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteUsingDELETE_1
+2021-06-09 14:53:13,861 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveAllUsingGET_1
+2021-06-09 14:53:13,877 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveByIdUsingGET_1
+2021-06-09 14:53:13,919 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteUsingDELETE_2
+2021-06-09 14:53:13,925 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveAllUsingGET_2
+2021-06-09 14:53:13,943 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveByIdUsingGET_2
+2021-06-09 14:53:14,063 INFO org.springframework.boot.StartupInfoLogger [main] Started SpringBootTeknisiApplication in 7.937 seconds (JVM running for 8.805)
+2021-06-09 14:53:14,087 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 14:53:18,177 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 14:53:18,179 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 2
+Merchant Name: Daihat
+Address : Jatirasa
+City : Bekasi
+Person in charge : Samsu
+
+Thank you
+2021-06-09 14:53:21,723 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comHelia
+2021-06-09 14:53:21,725 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 14:53:25,287 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 14:53:25,289 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 14:53:28,725 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 14:53:28,727 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for request status = MAIL_SENT has been sent to email => 06/09/2021 14:53:28
+2021-06-09 14:53:28,751 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 14:53:32,341 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 14:53:32,344 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 2
+Merchant Name: Daihat
+Address : Jatirasa
+City : Bekasi
+Person in charge : Samsu
+
+Thank you
+2021-06-09 14:53:35,850 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comHelia
+2021-06-09 14:53:35,851 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 14:53:39,322 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 14:53:39,325 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 14:53:42,845 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 14:53:42,846 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for request status = MAIL_SENT has been sent to email => 06/09/2021 14:53:42
+2021-06-09 14:53:42,853 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 14:57:26,326 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-09 14:57:26,334 INFO org.springframework.boot.StartupInfoLogger [main] Starting SpringBootTeknisiApplication using Java 15.0.2 on DESKTOP-IVGJ568 with PID 14640 (D:\Ogya\SpringBootTeknisi\target\classes started by HELLO in D:\Ogya\SpringBootTeknisi)
+2021-06-09 14:57:26,337 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.5, Spring v5.3.6
+2021-06-09 14:57:26,338 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-09 14:57:28,383 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-09 14:57:28,386 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-06-09 14:57:28,414 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 23 ms. Found 0 JDBC repository interfaces.
+2021-06-09 14:57:28,434 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-09 14:57:28,436 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-09 14:57:28,448 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2021-06-09 14:57:29,241 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2047981' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-09 14:57:29,252 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-09 14:57:29,817 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8181 (http)
+2021-06-09 14:57:29,836 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8181"]
+2021-06-09 14:57:29,837 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-09 14:57:29,838 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-06-09 14:57:30,055 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-09 14:57:30,056 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3599 ms
+2021-06-09 14:57:30,180 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 14:57:30,275 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'jwtRequestFilter' configured for use
+2021-06-09 14:57:30,341 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-09 14:57:30,847 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-09 14:57:30,920 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-09 14:57:31,024 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.30.Final
+2021-06-09 14:57:31,295 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-09 14:57:31,595 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-06-09 14:57:32,252 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-09 14:57:32,268 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-09 14:57:32,293 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 14:57:32,430 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-09 14:57:32,662 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 14:57:32,697 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 14:57:33,258 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-09 14:57:33,586 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@73eae5f, org.springframework.security.web.context.SecurityContextPersistenceFilter@42d7e8bc, org.springframework.security.web.header.HeaderWriterFilter@698e1bf5, org.springframework.web.filter.CorsFilter@4902c584, org.springframework.security.web.authentication.logout.LogoutFilter@76673ed, com.teknisi.config.JwtRequestFilter@2e4eda17, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@357cdb00, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6839d03b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7698a3d9, org.springframework.security.web.session.SessionManagementFilter@3c8e4a82, org.springframework.security.web.access.ExceptionTranslationFilter@5aa334c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@328bc067]
+2021-06-09 14:57:33,726 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-09 14:57:34,008 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'taskScheduler'
+2021-06-09 14:57:34,042 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8181"]
+2021-06-09 14:57:34,072 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8181 (http) with context path ''
+2021-06-09 14:57:34,075 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-06-09 14:57:34,099 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-06-09 14:57:34,133 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-06-09 14:57:34,410 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteUsingDELETE_1
+2021-06-09 14:57:34,432 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveAllUsingGET_1
+2021-06-09 14:57:34,448 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveByIdUsingGET_1
+2021-06-09 14:57:34,493 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteUsingDELETE_2
+2021-06-09 14:57:34,500 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveAllUsingGET_2
+2021-06-09 14:57:34,521 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveByIdUsingGET_2
+2021-06-09 14:57:34,677 INFO org.springframework.boot.StartupInfoLogger [main] Started SpringBootTeknisiApplication in 8.991 seconds (JVM running for 9.821)
+2021-06-09 14:57:34,707 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 14:57:38,993 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 14:57:38,995 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 14:57:42,518 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 14:57:42,519 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for request status = MAIL_SENT has been sent to email => 06/09/2021 14:57:42
+2021-06-09 14:57:42,543 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 14:57:46,163 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 14:57:46,165 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 14:57:49,728 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 14:57:49,729 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for request status = MAIL_SENT has been sent to email => 06/09/2021 14:57:49
+2021-06-09 14:57:49,732 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 14:57:53,400 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 14:57:53,404 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:01:18,189 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-09 15:01:18,226 INFO org.springframework.boot.StartupInfoLogger [main] Starting SpringBootTeknisiApplication using Java 15.0.2 on DESKTOP-IVGJ568 with PID 6280 (D:\Ogya\SpringBootTeknisi\target\classes started by HELLO in D:\Ogya\SpringBootTeknisi)
+2021-06-09 15:01:18,228 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.5, Spring v5.3.6
+2021-06-09 15:01:18,229 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-09 15:01:19,968 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-09 15:01:19,971 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-06-09 15:01:19,998 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 20 ms. Found 0 JDBC repository interfaces.
+2021-06-09 15:01:20,015 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-09 15:01:20,016 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-09 15:01:20,028 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2021-06-09 15:01:20,582 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@456f7d9e' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-09 15:01:20,595 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-09 15:01:21,076 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8181 (http)
+2021-06-09 15:01:21,090 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8181"]
+2021-06-09 15:01:21,091 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-09 15:01:21,091 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-06-09 15:01:21,275 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-09 15:01:21,275 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2937 ms
+2021-06-09 15:01:21,377 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 15:01:21,459 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'jwtRequestFilter' configured for use
+2021-06-09 15:01:21,517 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-09 15:01:21,850 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-09 15:01:21,910 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-09 15:01:22,002 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.30.Final
+2021-06-09 15:01:22,245 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-09 15:01:22,518 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-06-09 15:01:23,205 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-09 15:01:23,216 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-09 15:01:23,234 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 15:01:23,318 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-09 15:01:23,520 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 15:01:23,549 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 15:01:24,047 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-09 15:01:24,358 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7a053795, org.springframework.security.web.context.SecurityContextPersistenceFilter@627d5f99, org.springframework.security.web.header.HeaderWriterFilter@7fd4b9ec, org.springframework.web.filter.CorsFilter@328bc067, org.springframework.security.web.authentication.logout.LogoutFilter@89465d9, com.teknisi.config.JwtRequestFilter@9263c54, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6be1f37f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b028f58, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@337fb1a5, org.springframework.security.web.session.SessionManagementFilter@a44ad33, org.springframework.security.web.access.ExceptionTranslationFilter@4f5c757c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@35277c6c]
+2021-06-09 15:01:24,435 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-09 15:01:24,727 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'taskScheduler'
+2021-06-09 15:01:24,764 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8181"]
+2021-06-09 15:01:24,798 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8181 (http) with context path ''
+2021-06-09 15:01:24,800 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-06-09 15:01:24,820 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-06-09 15:01:24,853 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-06-09 15:01:25,126 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteUsingDELETE_1
+2021-06-09 15:01:25,149 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveAllUsingGET_1
+2021-06-09 15:01:25,164 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveByIdUsingGET_1
+2021-06-09 15:01:25,207 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteUsingDELETE_2
+2021-06-09 15:01:25,214 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveAllUsingGET_2
+2021-06-09 15:01:25,234 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveByIdUsingGET_2
+2021-06-09 15:01:25,366 INFO org.springframework.boot.StartupInfoLogger [main] Started SpringBootTeknisiApplication in 7.819 seconds (JVM running for 8.711)
+2021-06-09 15:01:25,394 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:01:30,115 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 15:01:30,116 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:01:33,746 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 15:01:33,746 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for request status = MAIL_SENT has been sent to email => 06/09/2021 15:01:33
+2021-06-09 15:01:33,752 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:01:37,305 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 15:01:37,307 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:01:40,858 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 15:01:40,859 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for request status = MAIL_SENT has been sent to email => 06/09/2021 15:01:40
+2021-06-09 15:01:40,860 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:07:00,866 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-09 15:07:00,883 INFO org.springframework.boot.StartupInfoLogger [main] Starting SpringBootTeknisiApplication using Java 15.0.2 on DESKTOP-IVGJ568 with PID 12148 (D:\Ogya\SpringBootTeknisi\target\classes started by HELLO in D:\Ogya\SpringBootTeknisi)
+2021-06-09 15:07:00,885 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.5, Spring v5.3.6
+2021-06-09 15:07:00,886 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-09 15:07:02,570 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-09 15:07:02,572 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-06-09 15:07:02,614 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 34 ms. Found 0 JDBC repository interfaces.
+2021-06-09 15:07:02,649 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-09 15:07:02,651 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-09 15:07:02,662 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2021-06-09 15:07:03,214 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6c8fe7a4' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-09 15:07:03,220 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-09 15:07:03,723 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8181 (http)
+2021-06-09 15:07:03,740 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8181"]
+2021-06-09 15:07:03,741 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-09 15:07:03,741 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-06-09 15:07:03,935 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-09 15:07:03,936 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2936 ms
+2021-06-09 15:07:04,050 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 15:07:04,129 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'jwtRequestFilter' configured for use
+2021-06-09 15:07:04,186 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-09 15:07:04,501 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-09 15:07:04,583 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-09 15:07:04,696 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.30.Final
+2021-06-09 15:07:04,928 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-09 15:07:05,210 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-06-09 15:07:05,874 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-09 15:07:05,888 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-09 15:07:05,909 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 15:07:05,977 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-09 15:07:06,192 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 15:07:06,224 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 15:07:06,736 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-09 15:07:07,029 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5598dff2, org.springframework.security.web.context.SecurityContextPersistenceFilter@3ac326c0, org.springframework.security.web.header.HeaderWriterFilter@7b6854b5, org.springframework.web.filter.CorsFilter@92b1bda, org.springframework.security.web.authentication.logout.LogoutFilter@1ff23bd1, com.teknisi.config.JwtRequestFilter@693f2213, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5b028f58, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3462e99a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@57bfca3a, org.springframework.security.web.session.SessionManagementFilter@69ed96e1, org.springframework.security.web.access.ExceptionTranslationFilter@1896299b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7698a3d9]
+2021-06-09 15:07:07,105 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-09 15:07:07,373 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'taskScheduler'
+2021-06-09 15:07:07,405 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8181"]
+2021-06-09 15:07:07,442 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8181 (http) with context path ''
+2021-06-09 15:07:07,443 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-06-09 15:07:07,463 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-06-09 15:07:07,495 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-06-09 15:07:07,793 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteUsingDELETE_1
+2021-06-09 15:07:07,814 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveAllUsingGET_1
+2021-06-09 15:07:07,830 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveByIdUsingGET_1
+2021-06-09 15:07:07,871 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteUsingDELETE_2
+2021-06-09 15:07:07,877 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveAllUsingGET_2
+2021-06-09 15:07:07,896 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveByIdUsingGET_2
+2021-06-09 15:07:08,015 INFO org.springframework.boot.StartupInfoLogger [main] Started SpringBootTeknisiApplication in 7.882 seconds (JVM running for 8.754)
+2021-06-09 15:07:08,043 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:07:12,235 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 15:07:12,237 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:07:15,900 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 15:07:15,902 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:07:19,507 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 15:07:19,509 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for request status = MAIL_SENT has been sent to email => 06/09/2021 15:07:19
+2021-06-09 15:07:19,531 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:07:23,099 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 15:07:23,100 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:08:42,505 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-09 15:08:42,538 INFO org.springframework.boot.StartupInfoLogger [main] Starting SpringBootTeknisiApplication using Java 15.0.2 on DESKTOP-IVGJ568 with PID 6120 (D:\Ogya\SpringBootTeknisi\target\classes started by HELLO in D:\Ogya\SpringBootTeknisi)
+2021-06-09 15:08:42,539 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.5, Spring v5.3.6
+2021-06-09 15:08:42,540 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-09 15:08:44,249 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-09 15:08:44,252 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-06-09 15:08:44,280 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 21 ms. Found 0 JDBC repository interfaces.
+2021-06-09 15:08:44,295 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-09 15:08:44,297 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-09 15:08:44,311 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2021-06-09 15:08:44,881 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@456f7d9e' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-09 15:08:44,889 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-09 15:08:45,318 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8181 (http)
+2021-06-09 15:08:45,335 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8181"]
+2021-06-09 15:08:45,335 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-09 15:08:45,336 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-06-09 15:08:45,500 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-09 15:08:45,501 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2852 ms
+2021-06-09 15:08:45,597 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 15:08:45,675 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'jwtRequestFilter' configured for use
+2021-06-09 15:08:45,736 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-09 15:08:46,046 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-09 15:08:46,112 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-09 15:08:46,312 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.30.Final
+2021-06-09 15:08:46,646 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-09 15:08:46,973 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-06-09 15:08:47,630 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-09 15:08:47,656 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-09 15:08:47,684 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 15:08:47,795 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-09 15:08:48,008 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 15:08:48,041 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 15:08:48,505 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-09 15:08:48,808 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7f31937b, org.springframework.security.web.context.SecurityContextPersistenceFilter@7b6854b5, org.springframework.security.web.header.HeaderWriterFilter@7a85dc58, org.springframework.web.filter.CorsFilter@2f4fc18, org.springframework.security.web.authentication.logout.LogoutFilter@6d41200c, com.teknisi.config.JwtRequestFilter@9263c54, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1c0fe6c5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@a44ad33, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7187078a, org.springframework.security.web.session.SessionManagementFilter@1896299b, org.springframework.security.web.access.ExceptionTranslationFilter@17f8cad6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2e7e4480]
+2021-06-09 15:08:48,926 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-09 15:08:49,186 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'taskScheduler'
+2021-06-09 15:08:49,217 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8181"]
+2021-06-09 15:08:49,254 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8181 (http) with context path ''
+2021-06-09 15:08:49,256 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-06-09 15:08:49,282 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-06-09 15:08:49,313 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-06-09 15:08:49,579 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteUsingDELETE_1
+2021-06-09 15:08:49,601 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveAllUsingGET_1
+2021-06-09 15:08:49,616 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveByIdUsingGET_1
+2021-06-09 15:08:49,659 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteUsingDELETE_2
+2021-06-09 15:08:49,665 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveAllUsingGET_2
+2021-06-09 15:08:49,681 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveByIdUsingGET_2
+2021-06-09 15:08:49,841 INFO org.springframework.boot.StartupInfoLogger [main] Started SpringBootTeknisiApplication in 7.935 seconds (JVM running for 8.712)
+2021-06-09 15:08:49,861 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:08:54,300 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 15:08:54,303 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:08:58,021 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 15:08:58,023 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:09:01,591 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 15:09:01,592 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for request status = MAIL_SENT has been sent to email => 06/09/2021 15:09:01
+2021-06-09 15:09:01,617 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:09:05,163 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 15:09:05,164 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:09:08,825 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} Successsfullyokjustme.helia@gmail.comGandhi
+2021-06-09 15:09:08,826 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:15:11,758 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-09 15:15:11,862 INFO org.springframework.boot.StartupInfoLogger [main] Starting SpringBootTeknisiApplication using Java 15.0.2 on DESKTOP-IVGJ568 with PID 10044 (D:\Ogya\SpringBootTeknisi\target\classes started by HELLO in D:\Ogya\SpringBootTeknisi)
+2021-06-09 15:15:11,867 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.5, Spring v5.3.6
+2021-06-09 15:15:11,868 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-09 15:15:14,091 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-09 15:15:14,093 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-06-09 15:15:14,122 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 24 ms. Found 0 JDBC repository interfaces.
+2021-06-09 15:15:14,145 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-09 15:15:14,147 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-09 15:15:14,161 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2021-06-09 15:15:14,854 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3249e278' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-09 15:15:14,864 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-09 15:15:15,372 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8181 (http)
+2021-06-09 15:15:15,390 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8181"]
+2021-06-09 15:15:15,391 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-09 15:15:15,392 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-06-09 15:15:15,578 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-09 15:15:15,579 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3597 ms
+2021-06-09 15:15:15,699 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 15:15:15,847 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'jwtRequestFilter' configured for use
+2021-06-09 15:15:15,921 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-09 15:15:16,261 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-09 15:15:16,336 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-09 15:15:16,456 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.30.Final
+2021-06-09 15:15:16,762 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-09 15:15:17,065 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-06-09 15:15:17,743 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-09 15:15:17,759 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-09 15:15:17,776 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 15:15:17,853 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-09 15:15:18,076 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 15:15:18,113 INFO org.springframework.aop.framework.CglibAopProxy [main] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-06-09 15:15:18,686 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-09 15:15:19,057 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@233789d9, org.springframework.security.web.context.SecurityContextPersistenceFilter@11a7840f, org.springframework.security.web.header.HeaderWriterFilter@58ca6ba3, org.springframework.web.filter.CorsFilter@7f31937b, org.springframework.security.web.authentication.logout.LogoutFilter@46c2189e, com.teknisi.config.JwtRequestFilter@15369d73, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4f5c757c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1896299b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2f4fc18, org.springframework.security.web.session.SessionManagementFilter@66d69cd2, org.springframework.security.web.access.ExceptionTranslationFilter@53da2aec, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@51d9fd30]
+2021-06-09 15:15:19,170 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-09 15:15:19,479 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'taskScheduler'
+2021-06-09 15:15:19,518 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8181"]
+2021-06-09 15:15:19,555 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8181 (http) with context path ''
+2021-06-09 15:15:19,558 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-06-09 15:15:19,583 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-06-09 15:15:19,619 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-06-09 15:15:19,962 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteUsingDELETE_1
+2021-06-09 15:15:19,987 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveAllUsingGET_1
+2021-06-09 15:15:20,006 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveByIdUsingGET_1
+2021-06-09 15:15:20,058 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteUsingDELETE_2
+2021-06-09 15:15:20,069 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveAllUsingGET_2
+2021-06-09 15:15:20,089 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: retrieveByIdUsingGET_2
+2021-06-09 15:15:20,254 INFO org.springframework.boot.StartupInfoLogger [main] Started SpringBootTeknisiApplication in 9.219 seconds (JVM running for 10.058)
+2021-06-09 15:15:20,263 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:15:20,318 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:15:24,614 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:15:24,615 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:15:28,218 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:15:28,219 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:15:31,920 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:15:31,920 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:15:31,929 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:15:31,932 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:15:35,626 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:15:35,628 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:15:39,404 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:15:39,407 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:15:42,943 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:15:42,944 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:15:42,945 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:15:42,951 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:15:46,394 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:15:46,395 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:15:49,933 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:15:49,933 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:15:53,471 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:15:53,472 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:15:53,474 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:15:53,482 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:15:57,131 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:15:57,132 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:16:00,647 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:16:00,649 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:16:04,163 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:16:04,163 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:16:04,164 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:16:04,167 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:16:08,306 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:16:08,306 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:16:11,808 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:16:11,809 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:16:15,371 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:16:15,371 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:16:15,372 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:16:15,373 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:16:18,851 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:16:18,852 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:16:22,514 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:16:22,516 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:16:26,031 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:16:26,032 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:16:26,033 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:16:26,039 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:16:29,534 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:16:29,535 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:16:33,106 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:16:33,108 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:16:36,846 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:16:36,846 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:16:36,847 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:16:36,849 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:16:40,350 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:16:40,350 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:16:43,906 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:16:43,908 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:16:47,428 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:16:47,431 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:16:47,432 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:16:47,436 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:16:51,216 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:16:51,217 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:16:54,867 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:16:54,868 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:16:58,555 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:16:58,555 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:16:58,556 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:16:58,558 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:17:02,071 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:17:02,072 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:17:05,649 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:17:05,650 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:17:09,135 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:17:09,135 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:17:09,136 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:17:09,137 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:17:12,776 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:17:12,777 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:17:16,474 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:17:16,475 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:17:20,140 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:17:20,141 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:17:20,141 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:17:20,143 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:17:23,663 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:17:23,663 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:17:27,406 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:17:27,406 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:17:30,907 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:17:30,908 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:17:30,909 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:17:30,912 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:17:34,444 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:17:34,445 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:17:37,986 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:17:37,986 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:17:41,558 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:17:41,558 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:17:41,559 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:17:41,561 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:17:45,367 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:17:45,368 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:17:48,949 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:17:48,950 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:17:52,428 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:17:52,429 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:17:52,430 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:17:52,432 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:17:55,941 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:17:55,941 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:17:59,515 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:17:59,516 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:18:03,148 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:18:03,148 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:18:03,149 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:18:03,151 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:18:06,810 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:18:06,811 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:18:10,487 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:18:10,489 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:18:14,094 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:18:14,095 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:18:14,095 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:18:14,097 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:18:17,846 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:18:17,847 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:18:21,365 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:18:21,365 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:18:25,004 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:18:25,004 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:18:25,004 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:18:25,005 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:18:28,757 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:18:28,757 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:18:32,352 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:18:32,352 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:18:35,963 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:18:35,963 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:18:35,964 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:18:35,965 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:18:39,453 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:18:39,453 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:18:42,932 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:18:42,932 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:18:46,590 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:18:46,591 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:18:46,591 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:18:46,593 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:18:49,984 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:18:49,985 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:18:53,532 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:18:53,532 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:18:57,111 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:18:57,112 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:18:57,112 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:18:57,113 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:19:00,703 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:19:00,703 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:19:04,126 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:19:04,127 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:19:07,785 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:19:07,785 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:19:07,785 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:19:07,788 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:19:11,470 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:19:11,471 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:19:15,387 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:19:15,388 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:19:19,028 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:19:19,028 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:19:19,029 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:19:19,031 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:19:22,540 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:19:22,541 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:19:26,373 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:19:26,374 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:19:29,965 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:19:29,965 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:19:29,965 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:19:29,966 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:19:33,474 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:19:33,474 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:19:37,204 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:19:37,205 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:19:40,850 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:19:40,850 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:19:40,851 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:19:40,853 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:19:44,387 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:19:44,387 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:19:48,096 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:19:48,097 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:19:51,659 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:19:51,659 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:19:51,660 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:19:51,661 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:19:55,221 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:19:55,222 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:19:58,675 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:19:58,676 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:20:02,306 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:20:02,307 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:20:02,307 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:20:02,309 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:20:06,085 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:20:06,086 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:20:09,723 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:20:09,724 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:20:13,416 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:20:13,416 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:20:13,417 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:20:13,418 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:20:16,945 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:20:16,946 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:20:20,784 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:20:20,784 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:20:24,376 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:20:24,376 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:20:24,376 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:20:24,379 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:20:28,105 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:20:28,106 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:20:31,688 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:20:31,689 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:20:35,287 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:20:35,288 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:20:35,288 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:20:35,291 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:20:38,796 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:20:38,797 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:20:42,571 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:20:42,571 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 4
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:20:46,250 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:20:46,251 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Schedule reminder for ticket request status = mail_sent has been sent to email
+2021-06-09 15:20:46,252 INFO com.teknisi.scheduler.Scheduler [scheduling-1] Check all ticket request that has status mail_sent
+2021-06-09 15:20:46,255 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 1
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you
+2021-06-09 15:20:50,094 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Send reminder ticket request to each Teknisi {} okjustme.helia@gmail.comGandhi
+2021-06-09 15:20:50,095 DEBUG com.teknisi.scheduler.Scheduler [scheduling-1] Formatted Message {}You have new request
+Request ID : 3
+Merchant Name: Memey
+Address : Malabar
+City : Bogor
+Person in charge : Examplepic
+
+Thank you

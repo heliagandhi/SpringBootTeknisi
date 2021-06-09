@@ -13,5 +13,5 @@ public interface RequestDao {
 	public Request findRequestById(String request_id);
 	boolean RequestIdExists(String request_id);
 	
-	List<Request> getAllStatusNewRequest(String status);
+	List<Request> getAllStatusNewRequest(String status, boolean created_date);
 }
