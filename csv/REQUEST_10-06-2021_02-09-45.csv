@@ -1,0 +1,5 @@
+Teknisi ID,Request ID,Merchant Name,Address,City,PIC,Created_date,Status
+1,1,Memey,Malabar,Bogor,Examplepic,2021-06-10 11:00:02.913,NEW
+2,2,Daihat,Jatirasa,Bekasi,Samsu,2021-06-10 05:00:02.913,MAIL_SENT
+3,3,Memey,Malabar,Bogor,Examplepic,2021-06-09 07:00:02.913,PROCESSED
+4,4,Memey,Malabar,Bogor,Examplepic,2021-06-09 05:00:02.913,MAIL_SENT
