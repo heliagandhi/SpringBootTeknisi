@@ -51,6 +51,31 @@ public class AppUserDaoImpl extends JdbcDaoSupport implements AppUserDao {
 		}
 		return appUserList;
 	}
+	
+	@Override
+	public List<AppUser> getAllAppUserRole(String role) {
+		String query = 
+				"select * from app_user where role=? order by id asc";
+			JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+			List<AppUser> appUserList = new ArrayList<AppUser>();
+
+			List<Map<String,Object>> rows = jdbcTemplate.queryForList(query, new Object[] {role});
+
+			for(Map<String,Object> column : rows){
+				AppUser appUser = new AppUser();
+				appUser.setId(Long.parseLong(column.get("id").toString()));
+				appUser.setUsername(String.valueOf(column.get("username")));
+				appUser.setPassword(String.valueOf(column.get("password")));
+				appUser.setEmail(String.valueOf(column.get("email")));
+				appUser.setCreated_date((Date)(column.get("created_date")));
+				appUser.setCreated_by(String.valueOf(column.get("created_by")));
+				appUser.setUpdate_date((Date)(column.get("update_date")));
+				appUser.setUpdate_by(String.valueOf(column.get("update_by")));
+				appUser.setRole(String.valueOf(column.get("role")));
+				appUserList.add(appUser);
+			}
+			return appUserList;
+	}
 
 	@Override
 	public AppUser findAppUserById(Long id) {

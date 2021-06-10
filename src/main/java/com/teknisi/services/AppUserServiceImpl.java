@@ -19,6 +19,11 @@ public class AppUserServiceImpl implements AppUserService{
 	public List<AppUser> showAllAppUser() {
 		return appUserDao.getAllAppUser();
 	}
+	
+	@Override
+	public List<AppUser> showAllAppUserRole(String role) {
+		return appUserDao.getAllAppUserRole(role);
+	}
 
 	@Override
 	public AppUser getAppUserById(Long id) {

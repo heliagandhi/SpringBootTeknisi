@@ -18,6 +18,12 @@ public class RequestServiceImpl implements RequestService {
 	public List<Request> showAllRequest() {
 		return requestDao.getAllRequest();
 	}
+	
+	
+	@Override
+	public List<Request> showAllPendingRequest() {
+		return requestDao.getAllPendingRequest();
+	}
 
 	
 	@Override
@@ -59,8 +65,14 @@ public class RequestServiceImpl implements RequestService {
 
 
 	@Override
-	public List<Request> getAllStatusNewRequest(String status, boolean created_date) {
-		return requestDao.getAllStatusNewRequest(status, created_date);
+	public List<Request> getAllStatusRequest(String status) {
+		return requestDao.getAllStatusRequest(status);
+	}
+
+
+	@Override
+	public List<Request> getRequestByBeforeDate(String status) {
+		return requestDao.getRequestByBeforeDate(status);
 	}
 
 }

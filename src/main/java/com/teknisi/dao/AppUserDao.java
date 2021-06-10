@@ -6,6 +6,7 @@ import com.teknisi.model.AppUser;
 
 public interface AppUserDao {
 	List<AppUser> getAllAppUser();
+	List<AppUser> getAllAppUserRole(String role);
 	public AppUser findAppUserById(Long id);
 	void insert(AppUser AppUser);
 	void update(AppUser appUser);

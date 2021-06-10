@@ -1,5 +1,6 @@
 package com.teknisi.controller;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.teknisi.exporter.CsvExporter;
 import com.teknisi.model.Request;
 import com.teknisi.services.MessageService;
 import com.teknisi.services.RequestService;
@@ -41,6 +43,7 @@ public class RequestController {
 	@Autowired RequestService requestService;
 	@Autowired TeknisiService teknisiService;
 	@Autowired MessageService messageService;
+	@Autowired CsvExporter csvExporter;
 
 	@ApiOperation(value = "View all request")
 	@ApiResponses(value = { 
@@ -63,13 +66,12 @@ public class RequestController {
 			@ApiResponse(code = 401, message = "not authorized!"), 
 			@ApiResponse(code = 403, message = "forbidden!!!"),
 			@ApiResponse(code = 404, message = "not found!!!") })
-	@RequestMapping(value = "/request/{request_id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/request/id/{request_id}", method = RequestMethod.GET)
 	@PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
 	public ResponseEntity<Object> retrieveById(@PathVariable("request_id") String request_id) {
 		if (requestService.RequestIdExists(request_id) == true) {
 			logger.info("Retrieve teknisi by id");
 			logger.debug("id : {}", request_id);
-			logger.info("id : {}", request_id);
 			Request request = requestService.getRequestById(request_id);
 			logger.info("by id {}", request);
 			return new ResponseEntity<>(request, HttpStatus.OK);
@@ -80,6 +82,22 @@ public class RequestController {
 			logger.error("Request id cannot be empty");
 			return new ResponseEntity<>("Request ID cannot be empty", HttpStatus.BAD_REQUEST);
 		}
+	}
+	
+	@ApiOperation(value = "View request by Status")
+	@ApiResponses(value = { 
+			@ApiResponse(code = 200, message = "Suceess|OK", response = Request.class),
+			@ApiResponse(code = 401, message = "not authorized!"), 
+			@ApiResponse(code = 403, message = "forbidden!!!"),
+			@ApiResponse(code = 404, message = "not found!!!") })
+	@RequestMapping(value = "/request/status/{status}", method = RequestMethod.GET)
+	@PreAuthorize("hasAuthority('ADMIN')")
+	public ResponseEntity<Object> retrieveByStatus(@PathVariable("status") String status) {
+		logger.info("Retrieve teknisi by status");
+		logger.debug("id : {}", status);
+		List<Request> listRequest = requestService.getAllStatusRequest(status);
+		logger.info("by id {}", listRequest);
+		return new ResponseEntity<>(listRequest, HttpStatus.OK);
 	}
 
 	@ApiOperation(value = "Create an request")

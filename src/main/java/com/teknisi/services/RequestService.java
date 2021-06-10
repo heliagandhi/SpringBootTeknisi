@@ -6,6 +6,9 @@ import com.teknisi.model.Request;
 
 public interface RequestService {
 	List<Request> showAllRequest();
+	List<Request> showAllPendingRequest();
+	List<Request> getAllStatusRequest(String status);
+	List<Request> getRequestByBeforeDate(String status);
 	void insert(Request request);
 	void deleteById(String request_id);
 	void updateRequest(Request request);
@@ -13,5 +16,4 @@ public interface RequestService {
 	Request getRequestById(String request_id);
 	boolean RequestIdExists(String request_id);
 	
-	List<Request> getAllStatusNewRequest(String status, boolean created_date);
 }

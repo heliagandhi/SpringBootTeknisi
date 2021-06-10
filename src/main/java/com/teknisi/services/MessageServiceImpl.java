@@ -7,6 +7,7 @@ import javax.mail.internet.MimeMessage;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -17,6 +18,7 @@ import com.teknisi.model.AppUser;
 @Service
 public class MessageServiceImpl implements MessageService{
 	@Autowired private JavaMailSender javaMailSender;
+	@Autowired private FileService fileService;
 	
 	@Value("${template.mail.subject}")
 	private String subject;
@@ -35,7 +37,6 @@ public class MessageServiceImpl implements MessageService{
         javaMailSender.send(msg);
     }
 
-
 	@Override
 	public void sendEmail2(String email, String name, String message, String subject) {
 		SimpleMailMessage msg = new SimpleMailMessage();
@@ -44,5 +45,19 @@ public class MessageServiceImpl implements MessageService{
         msg.setText(message);
         javaMailSender.send(msg);
 	}
-	
+
+	@Override
+	public void sendEmailRequestWithAttachment(String email, String name, String Subject, String message)
+			throws MessagingException, IOException {
+		MimeMessage msg = javaMailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(msg, true);
+        helper.setTo(email);
+        helper.setSubject(name+subject);
+        helper.setText(message);
+        FileSystemResource file = new FileSystemResource(fileService.getLastModified());
+        helper.addAttachment(file.getFilename(), file);
+        javaMailSender.send(msg);
+		
+	}
+
 }

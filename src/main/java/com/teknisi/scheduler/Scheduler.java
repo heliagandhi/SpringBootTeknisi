@@ -1,10 +1,13 @@
 package com.teknisi.scheduler;
 
+import java.io.IOException;
 import java.text.MessageFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+
+import javax.mail.MessagingException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,9 +17,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.teknisi.model.AppUser;
 import com.teknisi.model.Request;
 import com.teknisi.model.Teknisi;
+import com.teknisi.services.AppUserService;
+import com.teknisi.services.FileService;
 import com.teknisi.services.MessageService;
 import com.teknisi.services.RequestService;
 import com.teknisi.services.TeknisiService;
@@ -30,10 +38,12 @@ public class Scheduler {
 	@Autowired RequestService requestService;
 	@Autowired TeknisiService teknisiService;
 	@Autowired MessageService messageService;
+	@Autowired AppUserService appUserService;
+	@Autowired FileService fileService;
 	
-	@Scheduled(cron = "0 0/10 * * * *") 
-	public ResponseEntity<Object> sendEmailNewRequest() {
-		List<Request> listRequest = requestService.getAllStatusNewRequest("NEW", false);
+	@Scheduled(cron = "0 0/10 * * * *")
+	public void sendEmailRequestStatusNew() {
+		List<Request> listRequest = requestService.getAllStatusRequest("NEW");
 		for (Request request : listRequest) {
 			String message = environment.getProperty("mail.template.message");
 			String formattedMessage = MessageFormat.format(message, request.getRequest_id(), 
@@ -50,12 +60,12 @@ public class Scheduler {
 			}
 		}
 		logger.info("Schedule reminder for request status = NEW has been sent to email => " + dateFormat.format(new Date()));
-		return new ResponseEntity<>(listRequest, HttpStatus.OK);
 	}
 	
 	@Scheduled(fixedRate = 300000)
-	public ResponseEntity<Object> sendEmailMailRequestV2() throws ParseException, java.text.ParseException {
-		List<Request> listRequest = requestService.getAllStatusNewRequest("MAIL_SENT", true);
+	public void sendEmailRequestStatusMailSent() throws ParseException, java.text.ParseException {
+		logger.info("Check all request that has status mail_sent");
+		List<Request> listRequest = requestService.getRequestByBeforeDate("MAIL_SENT");
 		for (Request request : listRequest) {
 			String message = environment.getProperty("mail.template.message");
 			String formattedMessage = MessageFormat.format(message, request.getRequest_id(), 
@@ -69,6 +79,23 @@ public class Scheduler {
 			}
 		}
 		logger.info("Schedule reminder for request status = MAIL_SENT has been sent to email => " + dateFormat.format(new Date()));
-		return new ResponseEntity<>(listRequest, HttpStatus.OK);
 	}
+	
+
+	@Scheduled(cron = "0 0 12 * * 1-5")
+	public void emailAllPendingStatus() throws IOException, MessagingException {
+		logger.info("Check all request that has status MAIL_SENT, NEW and PROSSESED");
+		fileService.exportToCSV();
+		logger.info("Exporting all data to CSV");
+		logger.info("Get latest CSV that will be send to Admin");
+		List<AppUser> listAppUser = appUserService.showAllAppUserRole("ADMIN");
+		for (AppUser appUser : listAppUser) {
+			String message = environment.getProperty("mail.admin.template.message");
+			String formattedMessage = MessageFormat.format(message, appUser.getUsername());
+			logger.debug("Formatted Message {}" + formattedMessage);
+			messageService.sendEmailRequestWithAttachment( appUser.getEmail(), appUser.getUsername(), ", Here Are The List Pending Request", formattedMessage);
+		}
+		logger.info("Schedule information for pending request has been sent to admin email");
+	}
+	
 }
