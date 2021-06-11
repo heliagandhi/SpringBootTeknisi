@@ -25,7 +25,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.teknisi.exporter.CsvExporter;
 import com.teknisi.model.Request;
 import com.teknisi.services.MessageService;
 import com.teknisi.services.RequestService;
@@ -43,7 +42,6 @@ public class RequestController {
 	@Autowired RequestService requestService;
 	@Autowired TeknisiService teknisiService;
 	@Autowired MessageService messageService;
-	@Autowired CsvExporter csvExporter;
 
 	@ApiOperation(value = "View all request")
 	@ApiResponses(value = { 

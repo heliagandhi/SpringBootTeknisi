@@ -1,11 +1,15 @@
 package com.teknisi.services;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +20,21 @@ import org.supercsv.prefs.CsvPreference;
 
 import com.teknisi.model.Request;
 
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.data.JRBeanArrayDataSource;
+
 @Service
 public class FileServiceImpl implements FileService{
 	@Autowired RequestService requestService;
 	
 	@Override
-	public File getLastModified() {
-		 File directory = new File("./csv");
+	public File getLastModified(String path) {
+		 File directory = new File(path);
 		    File[] files = directory.listFiles(File::isFile);
 		    long lastModifiedTime = Long.MIN_VALUE;
 		    File chosenFile = null;
@@ -41,6 +53,7 @@ public class FileServiceImpl implements FileService{
 
 		    return chosenFile;
 	}
+
 
 	@Override
 	public CsvPreference customCsvPreference() {
@@ -61,6 +74,20 @@ public class FileServiceImpl implements FileService{
             csvWriter.write(request, nameMapping);
         }
         csvWriter.close();
+	}
+
+
+	@Override
+	public void exportToPDF() throws FileNotFoundException, JRException {
+		ArrayList<Request> arrayListRequest =(ArrayList<Request>) requestService.getAllStatusRequest("FINISHED");
+		Object[] arrayObjectRequest = arrayListRequest.toArray();
+		JRBeanArrayDataSource beanCollectionDataSource = new JRBeanArrayDataSource(arrayObjectRequest);
+		JasperReport compileReport = JasperCompileManager.compileReport(new FileInputStream("./jasper/JasperRequest.jrxml"));
+		HashMap<String, Object> map = new HashMap<>();
+		JasperPrint report = JasperFillManager.fillReport(compileReport, map, beanCollectionDataSource);
+        DateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy_hh-mm-ss");
+        String currentDateTime = dateFormatter.format(new Date());
+		JasperExportManager.exportReportToPdfFile(report, "./pdf/"+"FINISHED_REQUEST_"+ currentDateTime + ".pdf");
 	}
 	
 }

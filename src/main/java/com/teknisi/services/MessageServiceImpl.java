@@ -47,14 +47,14 @@ public class MessageServiceImpl implements MessageService{
 	}
 
 	@Override
-	public void sendEmailRequestWithAttachment(String email, String name, String Subject, String message)
+	public void sendEmailRequestWithAttachment(String email, String name, String Subject, String message, String filePath)
 			throws MessagingException, IOException {
 		MimeMessage msg = javaMailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(msg, true);
         helper.setTo(email);
         helper.setSubject(name+subject);
-        helper.setText(message);
-        FileSystemResource file = new FileSystemResource(fileService.getLastModified());
+        helper.setText(message, true);
+        FileSystemResource file = new FileSystemResource(fileService.getLastModified(filePath));
         helper.addAttachment(file.getFilename(), file);
         javaMailSender.send(msg);
 		
