@@ -80,6 +80,7 @@ public class FileServiceImpl implements FileService{
 	@Override
 	public void exportToPDF() throws FileNotFoundException, JRException {
 		ArrayList<Request> arrayListRequest =(ArrayList<Request>) requestService.getAllStatusRequest("FINISHED");
+//		ArrayList<Request> arrayListRequest = new ArrayList <Request>();
 		Object[] arrayObjectRequest = arrayListRequest.toArray();
 		JRBeanArrayDataSource beanCollectionDataSource = new JRBeanArrayDataSource(arrayObjectRequest);
 		JasperReport compileReport = JasperCompileManager.compileReport(new FileInputStream("./jasper/JasperRequest.jrxml"));

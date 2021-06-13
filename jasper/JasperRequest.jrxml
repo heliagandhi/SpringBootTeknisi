@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="JasperRequest" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="238b78f7-ec71-4d33-a3de-c66c92a22d2e">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Report" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b901f051-b015-463b-a4b1-cb8bf2f69e1a">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="cmVxdWVzdCAsMTUsMTUsNmUwN2EyZTktMzQzOC00MWEyLThkY2UtOTZhZDk3Y2FlZmE0Ow=="/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
-	<queryString>
-		<![CDATA[]]>
-	</queryString>
 	<field name="teknisi_id" class="java.lang.Long"/>
 	<field name="request_id" class="java.lang.String"/>
 	<field name="merchant_name" class="java.lang.String"/>
@@ -16,208 +14,335 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch">
-			<rectangle>
-				<reportElement x="0" y="0" width="555" height="79" forecolor="#FFFFFF" uuid="9306393e-18bb-4a98-b428-eae1738d4a64">
-					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
-				</reportElement>
-			</rectangle>
+		<band height="80" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="0" width="555" height="79" uuid="bb22de20-991b-412a-8979-6da864c6ff68"/>
+				<reportElement x="0" y="1" width="555" height="79" uuid="5ec3fc72-67a8-4573-be02-9200e7d91148"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Gill Sans MT" size="30" isBold="false"/>
+					<font fontName="Gill Sans MT" size="36" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Finished Request List]]></text>
 			</staticText>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="32" splitType="Stretch">
+		<band height="55" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="2" width="555" height="30" uuid="d64661cc-7afb-4cec-ab5b-cc847c26ea63"/>
+				<reportElement x="0" y="0" width="555" height="55" uuid="fd070967-adcc-4d70-a685-54481ba0977c"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="12"/>
+					<font fontName="Gill Sans MT" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Report Date : "+new SimpleDateFormat("dd/MM/YYYY hh:mm:ss").format(new Date())]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Report Date: "+new SimpleDateFormat("dd/MM/YYYY hh:mm:ss").format(new Date())]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="51" splitType="Stretch">
+		<band height="33" splitType="Stretch">
 			<staticText>
-				<reportElement x="7" y="21" width="60" height="30" forecolor="#030303" uuid="6d17a780-d9d7-46c8-8c2f-1cd6d6f1f3d2">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+				<reportElement x="0" y="0" width="70" height="30" uuid="46e55598-8b52-4e3a-814c-8912db23a733"/>
+				<box>
 					<pen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Gill Sans MT" size="11" isBold="true"/>
+					<font fontName="Gill Sans MT" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Teknisi ID]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="67" y="21" width="60" height="30" forecolor="#030303" uuid="571d559b-3612-4fd9-9990-e7b623d5d269">
-					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+				<reportElement x="70" y="0" width="80" height="30" uuid="8f978cf0-2daa-4a96-bd3f-cba94c4b8539"/>
+				<box>
 					<pen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Gill Sans MT" size="10" isBold="true"/>
+					<font fontName="Gill Sans MT" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Request ID]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="127" y="21" width="90" height="30" forecolor="#030303" uuid="921b36ea-492e-4c68-a00d-beab534dae5e"/>
-				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+				<reportElement x="150" y="0" width="80" height="30" uuid="f5a6d6cc-1c88-4f5e-b4bf-93b5051e3463"/>
+				<box>
 					<pen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Gill Sans MT" size="11" isBold="true"/>
+					<font fontName="Gill Sans MT" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Merchant Name]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="217" y="21" width="90" height="30" forecolor="#030303" uuid="7a82276e-2fbc-43f1-8608-571a4e1952c1">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+				<reportElement x="230" y="0" width="105" height="30" uuid="4266d654-8a86-41cc-a247-d05a317b0b86"/>
+				<box>
 					<pen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Gill Sans MT" size="12" isBold="true"/>
+					<font fontName="Gill Sans MT" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Address]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="377" y="21" width="70" height="30" forecolor="#030303" uuid="675e87a7-e5f9-457b-be64-b7888f7d7de7">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+				<reportElement x="335" y="0" width="60" height="30" uuid="7ea23e88-e12c-40c4-b42a-670e6609b8f3"/>
+				<box>
 					<pen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Gill Sans MT" size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[PIC]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="307" y="21" width="70" height="30" forecolor="#030303" uuid="fe4de3ea-c851-45cc-a2e0-fe54b28d7b50">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
-					<pen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Gill Sans MT" size="11" isBold="true"/>
+					<font fontName="Gill Sans MT" isBold="true"/>
 				</textElement>
 				<text><![CDATA[City]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="447" y="21" width="100" height="30" forecolor="#030303" uuid="6032abe3-0548-4e00-802d-7577d86a35fb">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+				<reportElement x="395" y="0" width="80" height="30" uuid="e44fe358-bdfd-4ea2-a546-856a5cd4a839"/>
+				<box>
 					<pen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Gill Sans MT" size="12" isBold="true"/>
+					<font fontName="Gill Sans MT" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PIC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="0" width="80" height="30" uuid="d6052c2c-e75b-4b1e-b0d2-d5ce5b5a1688"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Created Date]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="100" splitType="Stretch">
+		<band height="56" splitType="Stretch">
 			<textField>
-				<reportElement x="7" y="0" width="60" height="30" uuid="c6c7f6e3-24f3-4fb3-8641-139b5a2700a5">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+				<reportElement x="0" y="-3" width="70" height="30" uuid="7ce2f783-05a1-4a99-97c3-2b92825e6376"/>
+				<box padding="5">
 					<pen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{teknisi_id}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="67" y="0" width="60" height="30" uuid="9cea4eb5-359b-4b2a-a716-6b48fb4b2d71">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+				<reportElement x="70" y="-3" width="80" height="30" uuid="0f5985e0-38f2-4102-8203-72221b1575e6"/>
+				<box padding="5">
 					<pen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{request_id}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="127" y="0" width="90" height="30" uuid="66bc6863-567c-4226-b3c3-d02de4ce127a">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+				<reportElement x="150" y="-3" width="80" height="30" uuid="cfccc2b8-f047-4139-9348-745992dc31ce"/>
+				<box padding="5">
 					<pen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{merchant_name}]]></textFieldExpression>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{merchant_name}.toUpperCase()]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="217" y="0" width="90" height="30" uuid="4b38aa3b-eb0b-4297-a12f-9b88a1b4b26c">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+				<reportElement x="230" y="-3" width="105" height="30" uuid="9af08c22-381a-42e7-bf77-f1241f14a2cd"/>
+				<box padding="5">
 					<pen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="307" y="0" width="70" height="30" uuid="0f535caf-2af5-43de-9d9c-f167e23e7011">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+				<reportElement x="335" y="-3" width="60" height="30" uuid="a4d00120-39fd-45c0-b6e7-0dfe2f2bbdf1"/>
+				<box padding="5">
 					<pen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{city}]]></textFieldExpression>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{city}.toUpperCase()]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="377" y="0" width="70" height="30" uuid="348ac8d6-c0b7-4e00-80d9-8280d711fa45">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+				<reportElement x="395" y="-3" width="80" height="30" uuid="fad577f8-5cbb-47df-ba61-2020292f96ec"/>
+				<box padding="5">
 					<pen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{pic}]]></textFieldExpression>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pic}.toUpperCase()]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="447" y="0" width="100" height="30" uuid="da8d25d4-9880-4f66-b3bc-3c6721b5c30f">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+				<reportElement x="475" y="-3" width="80" height="30" uuid="154fea44-fd13-4d09-a299-d8893e99ea68"/>
+				<box padding="5">
 					<pen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{created_date}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
 	<pageFooter>
 		<band height="54" splitType="Stretch">
 			<textField>
 				<reportElement x="0" y="0" width="555" height="54" uuid="969ed7fe-878f-45a1-b901-751aa87b2bf9"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="12"/>
+					<font fontName="Gill Sans MT" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageFooter>
-	<summary>
-		<band height="42" splitType="Stretch"/>
-	</summary>
+	<noData>
+		<band height="207">
+			<staticText>
+				<reportElement x="0" y="140" width="70" height="30" uuid="626560c0-7795-4a0e-9dde-872635f41031"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teknisi ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="140" width="80" height="30" uuid="dd06b640-44df-48dc-9a10-9b4ee07e8b6d"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Request ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="140" width="80" height="30" uuid="a286490f-a358-4598-b2de-3056a4f4694d"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Merchant Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="140" width="105" height="30" uuid="04b1dd96-b6d1-44ef-ab06-25703bb8a542"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="335" y="140" width="60" height="30" uuid="9f5b62b6-b4ac-43e5-abeb-6573dc47afed"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" isBold="true"/>
+				</textElement>
+				<text><![CDATA[City]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="395" y="140" width="80" height="30" uuid="5074ee7b-bda7-4e6d-8561-eb04d8b58e8f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PIC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="140" width="80" height="30" uuid="8ec7b861-9a16-4443-b149-79bc05119534"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Created Date]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="170" width="70" height="30" uuid="bf2d9ca6-edfe-46d1-8e8b-13a7965458b4"/>
+				<box padding="5">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT"/>
+				</textElement>
+			</textField>
+			<textField>
+				<reportElement x="70" y="170" width="80" height="30" uuid="5209459b-1843-4e97-9e83-aa3a413d1615"/>
+				<box padding="5">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT"/>
+				</textElement>
+			</textField>
+			<textField>
+				<reportElement x="150" y="170" width="80" height="30" uuid="516ff359-6c26-4165-b7e5-3fc350c9b97f"/>
+				<box padding="5">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT"/>
+				</textElement>
+			</textField>
+			<textField>
+				<reportElement x="230" y="170" width="105" height="30" uuid="1fb877d0-533c-46c6-bb73-e8030806fd5b"/>
+				<box padding="5">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT"/>
+				</textElement>
+			</textField>
+			<textField>
+				<reportElement x="335" y="170" width="60" height="30" uuid="d47a91c4-ea10-4ea8-9239-22327248f18e"/>
+				<box padding="5">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT"/>
+				</textElement>
+			</textField>
+			<textField>
+				<reportElement x="395" y="170" width="80" height="30" uuid="618b8155-b78b-4435-b21d-8d8ab4eddc72"/>
+				<box padding="5">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT"/>
+				</textElement>
+			</textField>
+			<textField>
+				<reportElement x="475" y="170" width="80" height="30" uuid="c6e06439-2622-42ee-801d-f060b0c4caae"/>
+				<box padding="5">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT"/>
+				</textElement>
+			</textField>
+			<textField>
+				<reportElement x="0" y="80" width="555" height="60" uuid="122e2e6b-f6fd-4e83-a8cb-f019b121f448"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Report Date: "+new SimpleDateFormat("dd/MM/YYYY hh:mm:ss").format(new Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="1" width="555" height="79" uuid="35ea1c68-c27e-46d9-ad8c-3c6c4f617aba"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Finished Request List]]></text>
+			</staticText>
+		</band>
+	</noData>
 </jasperReport>
