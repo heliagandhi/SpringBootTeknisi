@@ -1,13 +1,10 @@
 package com.teknisi.scheduler;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.MessageFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 
 import javax.mail.MessagingException;
@@ -29,12 +26,6 @@ import com.teknisi.services.RequestService;
 import com.teknisi.services.TeknisiService;
 
 import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperExportManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 @Component
 public class Scheduler {
@@ -90,7 +81,6 @@ public class Scheduler {
 	
 
 	@Scheduled(cron = "0 0 12 * * 1-5")
-//	@Scheduled(cron = "5 * * * * *")
 	public void emailAllPendingStatus() throws IOException, MessagingException {
 		logger.info("Check all request that has status MAIL_SENT, NEW and PROSSESED");
 		fileService.exportToCSV();
@@ -107,7 +97,6 @@ public class Scheduler {
 	}
 	
 	@Scheduled(cron = "0 0 17 * * 1-5")
-//	@Scheduled(cron = "5 * * * * *")
 	public void emailReportAllFinishedStatus() throws IOException, MessagingException, JRException {
 		logger.info("Check all ticket request that has status Finished");
 		logger.info("Exporting all data to PDF");
