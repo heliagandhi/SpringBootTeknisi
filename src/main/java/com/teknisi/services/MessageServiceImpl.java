@@ -61,8 +61,8 @@ public class MessageServiceImpl implements MessageService{
 	}
 	
 	@Override
-	public void sendEmailRecapRequestWithAttachment(String email, String name, String subject, String message, String filePath) throws MessagingException, IOException {
-
+	public void sendEmailRecapRequestWithAttachment(String email, String name, String subject, String message, String filePath)
+			throws MessagingException, IOException {
         MimeMessage msg = javaMailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(msg, true);
         helper.setTo(email);

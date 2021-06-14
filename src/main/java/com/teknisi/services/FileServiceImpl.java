@@ -95,8 +95,8 @@ public class FileServiceImpl implements FileService{
 
 	@Override
 	public void exportToPDF() throws FileNotFoundException, JRException {
-//		ArrayList<Request> arrayListRequest =(ArrayList<Request>) requestService.getAllStatusRequest("FINISHED");
-		ArrayList<Request> arrayListRequest = new ArrayList <Request>();
+		ArrayList<Request> arrayListRequest =(ArrayList<Request>) requestService.getAllStatusRequest("FINISHED");
+//		ArrayList<Request> arrayListRequest = new ArrayList <Request>();
 		Object[] arrayObjectRequest = arrayListRequest.toArray();
 		JRBeanArrayDataSource beanCollectionDataSource = new JRBeanArrayDataSource(arrayObjectRequest);
 		JasperReport compileReport = JasperCompileManager.compileReport(new FileInputStream("./jasper/FinishedRequestList.jrxml"));
@@ -127,7 +127,6 @@ public class FileServiceImpl implements FileService{
 		String[] xlsHeader = {"No", "Tanggal Process", "Request ID", "Merchant Name", "Address", "City", "PIC", "Teknisi ID","Teknisi Name", "Status"};
 	    
 		XSSFRow headlineHeader = sheet.createRow(0);
-		//(first row, last row, first column, last column)
 		sheet.addMergedRegion(new CellRangeAddress( 0, 0, 1, 9 ));
 		XSSFCell headlineCell = headlineHeader.createCell(1);
 		headlineCell.setCellValue("Rekapitulasi Data Request");
@@ -185,9 +184,9 @@ public class FileServiceImpl implements FileService{
         	
         	columnOne.setCellValue(index+1);
         	if(request.getUpdate_date() == null) {
-        		columnTwo.setCellValue(request.getCreated_date());
+        		columnTwo.setCellValue(new SimpleDateFormat("MM/dd/yyyy  hh:mm:ss").format(request.getCreated_date()));
         	}else {
-        		columnTwo.setCellValue(request.getUpdate_date());
+        		columnTwo.setCellValue(new SimpleDateFormat("MM/dd/yyyy  hh:mm:ss").format(request.getUpdate_date()));
         	}
         	columnThree.setCellValue(request.getRequest_id());
         	columnFour.setCellValue(request.getMerchant_name());
