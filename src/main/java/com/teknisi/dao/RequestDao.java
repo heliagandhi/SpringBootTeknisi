@@ -7,6 +7,7 @@ import com.teknisi.model.Request;
 public interface RequestDao {
 	List<Request> getAllRequest();
 	List<Request> getAllPendingRequest();
+	List<Request> getAllRecapitulationRequest();
 	List<Request> getAllStatusRequest(String status);
 	List<Request> getRequestByBeforeDate(String status);
 	void insert(Request request);

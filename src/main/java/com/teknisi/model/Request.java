@@ -71,6 +71,9 @@ public class Request {
 	@ApiModelProperty(hidden = true)
 	private String status;
 	
+    @ApiModelProperty(hidden = true)
+	private Teknisi teknisi;
+	
 	
 	public Request(){	}
 
@@ -222,7 +225,18 @@ public class Request {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	
+	
+	public Teknisi getTeknisi() {
+		return teknisi;
+	}
 
+	
+	public void setTeknisi(Teknisi teknisi) {
+		this.teknisi = teknisi;
+	}
+
+	
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
