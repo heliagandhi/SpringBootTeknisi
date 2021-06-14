@@ -75,4 +75,10 @@ public class RequestServiceImpl implements RequestService {
 		return requestDao.getRequestByBeforeDate(status);
 	}
 
+
+	@Override
+	public List<Request> showAllRecapitulationRequest() {
+		return requestDao.getAllRecapitulationRequest();
+	}
+
 }

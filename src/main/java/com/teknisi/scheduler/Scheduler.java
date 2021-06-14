@@ -97,7 +97,7 @@ public class Scheduler {
 	}
 	
 //	@Scheduled(cron = "0 0 17 * * 1-5")
-	@Scheduled(cron = "5 * * * * *")
+//	@Scheduled(cron = "5 * * * * *")
 	public void emailReportAllFinishedStatus() throws IOException, MessagingException, JRException {
 		logger.info("Check all ticket request that has status Finished");
 		logger.info("Exporting all data to PDF");
@@ -113,9 +113,21 @@ public class Scheduler {
 		logger.info("Schedule report for finished ticket request has been sent to admin email");
 	}
 	
-	@Scheduled(cron = "0 0 18 * * 5")
-	public void email() {
-		
+//	@Scheduled(cron = "0 0 18 * * 5")
+	@Scheduled(cron = "5 * * * * *")
+	public void emailRecapitulationReport() throws IOException, MessagingException, JRException {
+		logger.info("Check all ticket request for a recapitulation");
+		logger.info("Exporting all data to XLS");
+		fileService.exportToXLS();
+		logger.info("Get latest XLS that will be send to Admin");
+		List<AppUser> listAppUser = appUserService.showAllAppUserRole("ADMIN");
+		for (AppUser appUser : listAppUser) {
+			String message = environment.getProperty("mail.admin.template.recapitulation.message");
+			String formattedMessage = MessageFormat.format(message, appUser.getUsername());
+			logger.debug("Formatted Message {}" + formattedMessage);
+			messageService.sendEmailRecapRequestWithAttachment( appUser.getEmail(), appUser.getUsername(), ", Here Are The List of Recapitulation Ticket Request", formattedMessage, "./xls");
+		}
+		logger.info("Schedule recapitulation report of ticket request has been sent to admin email");
 	}
 	
 }

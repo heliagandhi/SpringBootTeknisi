@@ -253,6 +253,12 @@ public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
 			+ "    now()::date-extract(dow from now())::integer-7 "
 			+ "    and now()::date-extract(dow from now())::integer) "
 			+ "order by (case when req.update_date is null then req.created_date else req.update_date end) asc";
+//			"SELECT CASE WHEN req.update_date is null THEN req.created_date ELSE req.update_date END as dateProses, "
+//			+ "req.request_id, req.merchant_name, req.address, req.city, req.pic, req.teknisi_id, tek.name, req.status "
+//			+ "FROM teknisi tek LEFT JOIN request req on req.teknisi_id = tek.id "
+//			+ "WHERE (req.created_date between now()::date-extract(dow from now())::integer-7 and now()::date-extract(dow from now())::integer) "
+//			+ "OR (req.update_date between now()::date-extract(dow from now())::integer-7 and now()::date-extract(dow from now())::integer) "
+//			+ "ORDER BY dateProses ASC";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		List<Request> requestList = new ArrayList<Request>();
 
