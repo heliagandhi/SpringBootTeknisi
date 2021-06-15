@@ -108,26 +108,12 @@
 		    <version>2.4.0</version>
 		</dependency>
 		
-		<!-- send email pdf-->
+		<!-- send email pdf xls-->
 		<dependency>
 		    <groupId>net.sf.jasperreports</groupId>
 		    <artifactId>jasperreports</artifactId>
 		    <version>6.4.0</version>
 		</dependency>
-		
-		<!-- send email xls-->
-		<dependency>
-		    <groupId>org.apache.poi</groupId>
-		    <artifactId>poi</artifactId>
-		    <version>3.15</version>
-		</dependency>
-		
-		<dependency>
-		    <groupId>org.apache.poi</groupId>
-		    <artifactId>poi-ooxml</artifactId>
-		    <version>3.15</version>
-		</dependency>
-		
 	</dependencies>
 
 	<build>
