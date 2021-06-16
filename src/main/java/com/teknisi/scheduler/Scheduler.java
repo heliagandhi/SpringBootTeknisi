@@ -39,7 +39,7 @@ public class Scheduler {
 	@Autowired AppUserService appUserService;
 	@Autowired FileService fileService;
 	
-	@Scheduled(cron = "0 0/10 * * * *")
+//	@Scheduled(cron = "0 0/10 * * * *")
 	public void sendEmailRequestStatusNew() {
 		List<Request> listRequest = requestService.getAllStatusRequest("NEW");
 		for (Request request : listRequest) {
@@ -60,7 +60,7 @@ public class Scheduler {
 		logger.info("Schedule reminder for request status = NEW has been sent to email => " + dateFormat.format(new Date()));
 	}
 	
-	@Scheduled(fixedRate = 300000)
+//	@Scheduled(fixedRate = 300000)
 	public void sendEmailRequestStatusMailSent() throws ParseException, java.text.ParseException {
 		logger.info("Check all request that has status mail_sent");
 		List<Request> listRequest = requestService.getRequestByBeforeDate("MAIL_SENT");
@@ -80,7 +80,7 @@ public class Scheduler {
 	}
 	
 
-	@Scheduled(cron = "0 0 12 * * 1-5")
+//	@Scheduled(cron = "0 0 12 * * 1-5")
 	public void emailAllPendingStatus() throws IOException, MessagingException {
 		logger.info("Check all request that has status MAIL_SENT, NEW and PROSSESED");
 		fileService.exportToCSV();
@@ -88,15 +88,12 @@ public class Scheduler {
 		logger.info("Get latest CSV that will be send to Admin");
 		List<AppUser> listAppUser = appUserService.showAllAppUserRole("ADMIN");
 		for (AppUser appUser : listAppUser) {
-			String message = environment.getProperty("mail.admin.template.message");
-			String formattedMessage = MessageFormat.format(message, appUser.getUsername());
-			logger.debug("Formatted Message {}" + formattedMessage);
-			messageService.sendEmailRequestWithAttachment( appUser.getEmail(), appUser.getUsername(), ", Here Are The List Pending Request", formattedMessage, "./csv");
+			messageService.sendEmailRequestWithAttachment( appUser.getEmail(), appUser.getUsername(), ", Here Are The List of Pending Request", "report", "./csv");
 		}
 		logger.info("Schedule information for pending request has been sent to admin email");
 	}
 	
-	@Scheduled(cron = "0 0 17 * * 1-5")
+//	@Scheduled(cron = "0 0 17 * * 1-5")
 	public void emailReportAllFinishedStatus() throws IOException, MessagingException, JRException {
 		logger.info("Check all ticket request that has status Finished");
 		logger.info("Exporting all data to PDF");
@@ -104,26 +101,21 @@ public class Scheduler {
 		logger.info("Get latest PDF that will be send to Admin");
 		List<AppUser> listAppUser = appUserService.showAllAppUserRole("ADMIN");
 		for (AppUser appUser : listAppUser) {
-			String message = environment.getProperty("mail.admin.template.message.report");
-			String formattedMessage = MessageFormat.format(message, appUser.getUsername());
-			logger.debug("Formatted Message {}" + formattedMessage);
-			messageService.sendEmailRequestWithAttachment( appUser.getEmail(), appUser.getUsername(), ", Here Are The List of Finished Ticket Request", formattedMessage, "./pdf");
+			messageService.sendEmailRequestWithAttachment( appUser.getEmail(), appUser.getUsername(), ", Here Are The List of Finished Request", "finishedRequest", "./pdf");
 		}
 		logger.info("Schedule report for finished ticket request has been sent to admin email");
 	}
 	
-	@Scheduled(cron = "0 0 18 * * 5")
-	public void emailRecapitulationReport() throws IOException, MessagingException, JRException {
+//	@Scheduled(cron = "0 0 18 * * 5")
+	@Scheduled(cron = "5 * * * * *")
+	public void emailRecapitulationReport2() throws IOException, MessagingException, JRException {
 		logger.info("Check all ticket request for a recapitulation");
 		logger.info("Exporting all data to XLS");
 		fileService.exportToXLS();
 		logger.info("Get latest XLS that will be send to Admin");
 		List<AppUser> listAppUser = appUserService.showAllAppUserRole("ADMIN");
 		for (AppUser appUser : listAppUser) {
-			String message = environment.getProperty("mail.admin.template.recapitulation.message");
-			String formattedMessage = MessageFormat.format(message, appUser.getUsername());
-			logger.debug("Formatted Message {}" + formattedMessage);
-			messageService.sendEmailRecapRequestWithAttachment( appUser.getEmail(), appUser.getUsername(), ", Here Are The List of Recapitulation Ticket Request", formattedMessage, "./xls");
+			messageService.sendEmailRequestWithAttachment( appUser.getEmail(), appUser.getUsername(), ", Here Are The List of Recapitulation Request", "recapitulation", "./xls");
 		}
 		logger.info("Schedule recapitulation report of ticket request has been sent to admin email");
 	}

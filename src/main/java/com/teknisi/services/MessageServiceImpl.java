@@ -5,6 +5,8 @@ import java.io.IOException;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.FileSystemResource;
@@ -12,13 +14,18 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
+import org.thymeleaf.context.Context;
+import org.thymeleaf.spring5.SpringTemplateEngine;
 
 import com.teknisi.model.AppUser;
 
 @Service
 public class MessageServiceImpl implements MessageService{
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+	
 	@Autowired private JavaMailSender javaMailSender;
 	@Autowired private FileService fileService;
+	@Autowired private SpringTemplateEngine templateEngine;
 	
 	@Value("${template.mail.subject}")
 	private String subject;
@@ -47,31 +54,24 @@ public class MessageServiceImpl implements MessageService{
 	}
 
 	@Override
-	public void sendEmailRequestWithAttachment(String email, String name, String Subject, String message, String filePath)
-			throws MessagingException, IOException {
+	public void sendEmailRequestWithAttachment(String email, String name, String Subject, String templateName,
+			String attachmentPath) throws MessagingException, IOException {
 		MimeMessage msg = javaMailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(msg, true);
+        
+        Context context = new Context();
+        logger.info("setVariable for html");
+        context.setVariable("name", name);
+        logger.info("Check template");
+        String html = templateEngine.process(templateName, context);
+        logger.info("Making the email");
         helper.setTo(email);
         helper.setSubject(name+subject);
-        helper.setText(message, true);
-        FileSystemResource file = new FileSystemResource(fileService.getLastModified(filePath));
+        helper.setText(html, true);
+        FileSystemResource file = new FileSystemResource(fileService.getLastModified(attachmentPath));
         helper.addAttachment(file.getFilename(), file);
         javaMailSender.send(msg);
 		
 	}
-	
-	@Override
-	public void sendEmailRecapRequestWithAttachment(String email, String name, String subject, String message, String filePath)
-			throws MessagingException, IOException {
-        MimeMessage msg = javaMailSender.createMimeMessage();
-        MimeMessageHelper helper = new MimeMessageHelper(msg, true);
-        helper.setTo(email);
-        helper.setSubject(name+subject);
-        helper.setText(message, true);
-        FileSystemResource file = new FileSystemResource(fileService.getLastModified(filePath));
-        helper.addAttachment(file.getFilename(), file);
-        javaMailSender.send(msg);
-
-    }
 
 }

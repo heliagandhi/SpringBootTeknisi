@@ -4,16 +4,16 @@
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
-	<field name="No" class="java.lang.Integer"/>
-	<field name="tanggal_proses" class="java.sql.Date"/>
+	<field name="update_date" class="java.util.Date"/>
 	<field name="request_id" class="java.lang.String"/>
 	<field name="merchant_name" class="java.lang.String"/>
 	<field name="address" class="java.lang.String"/>
 	<field name="city" class="java.lang.String"/>
 	<field name="pic" class="java.lang.String"/>
-	<field name="teknisi_id" class="java.lang.Long"/>
-	<field name="name" class="java.lang.String"/>
+	<field name="teknisi.id" class="java.lang.Long"/>
+	<field name="teknisi.name" class="java.lang.String"/>
 	<field name="status" class="java.lang.String"/>
+	<field name="created_date" class="java.util.Date"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -144,7 +144,7 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="31" splitType="Stretch">
+		<band height="30" splitType="Stretch">
 			<textField>
 				<reportElement x="0" y="0" width="30" height="30" uuid="ae7d0a3d-a722-426e-a15a-d40ce7dee731"/>
 				<box>
@@ -156,7 +156,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Gill Sans MT"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="30" y="0" width="80" height="30" uuid="779732c5-888e-4488-8ab0-a16bc51508ee"/>
@@ -169,7 +169,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Gill Sans MT"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{tanggal_proses}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{update_date} == null?new SimpleDateFormat("dd/MM/YYYY hh:mm:ss").format($F{created_date}):new SimpleDateFormat("dd/MM/YYYY hh:mm:ss").format($F{update_date})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="110" y="0" width="60" height="30" uuid="8f5806bb-6ec8-462a-b328-2979f8d045bc"/>
@@ -247,7 +247,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Gill Sans MT"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{teknisi_id}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{teknisi.id}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="430" y="0" width="70" height="30" uuid="254ca4fa-d7a0-4591-bcd3-7f437a17f4c2"/>
@@ -260,7 +260,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Gill Sans MT"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{teknisi.name}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="500" y="0" width="54" height="30" uuid="c2c1a37d-4d54-475a-8b52-e0ef27499da0"/>
