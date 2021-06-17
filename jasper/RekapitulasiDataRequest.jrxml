@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RekapitulasiDataRequest" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0054c52e-00e8-416b-bb6d-6b20f6597c15">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RekapitulasiDataRequest" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0054c52e-00e8-416b-bb6d-6b20f6597c15">
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -289,93 +289,36 @@
 		</band>
 	</pageFooter>
 	<noData>
-		<band height="212">
-			<staticText>
-				<reportElement x="0" y="1" width="555" height="79" uuid="3ed08ea8-7720-497a-9ebd-e75d1c150f89"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Gill Sans MT" size="36" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Rekapitulasi Data Request]]></text>
-			</staticText>
+		<band height="218">
 			<textField>
-				<reportElement x="0" y="79" width="555" height="55" uuid="b76c910e-08bd-4e00-b7d3-d37da1ec100c"/>
+				<reportElement x="0" y="80" width="555" height="60" uuid="122e2e6b-f6fd-4e83-a8cb-f019b121f448"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Gill Sans MT" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Report Date: "+new SimpleDateFormat("dd/MM/YYYY hh:mm:ss").format(new Date())]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="500" y="134" width="54" height="30" uuid="3c2edae1-4b48-4fcc-bd5a-d6b20080a8ae"/>
+				<reportElement x="0" y="1" width="555" height="79" uuid="35ea1c68-c27e-46d9-ad8c-3c6c4f617aba"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rekapitulasi Data Request]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="170" width="554" height="30" uuid="e5f4cd45-7384-4cb6-8e2e-c94c81a6cd4d"/>
 				<box>
-					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Gill Sans MT" isBold="true"/>
+					<font fontName="Gill Sans MT" size="10"/>
 				</textElement>
-				<text><![CDATA[Status]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA["no data available"]]></textFieldExpression>
+			</textField>
 			<staticText>
-				<reportElement x="30" y="134" width="80" height="30" uuid="b458c70b-d41c-4ecc-bf5e-26f1f4664630"/>
-				<box>
-					<pen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Gill Sans MT" isBold="true"/>
-				</textElement>
-				<text><![CDATA[ Tanggal Proses]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="110" y="134" width="60" height="30" uuid="b05fc07e-5da2-4e35-8d01-7088526369bc"/>
-				<box>
-					<pen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Gill Sans MT" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Request ID]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="300" y="134" width="40" height="30" uuid="29e26b62-f927-490e-a977-bb1b90b33abc"/>
-				<box>
-					<pen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Gill Sans MT" isBold="true"/>
-				</textElement>
-				<text><![CDATA[City]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="170" y="134" width="80" height="30" uuid="d490ce4a-42f5-430d-9b37-0166f6904191"/>
-				<box>
-					<pen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Gill Sans MT" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Merchant Name]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="250" y="134" width="50" height="30" uuid="2ff73078-0d9b-4723-97c1-a59a1709767f"/>
-				<box>
-					<pen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Gill Sans MT" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Address]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="380" y="134" width="50" height="30" uuid="bfb2b03e-ceb4-484a-88f6-dd6fa5e5e5c6"/>
-				<box>
-					<pen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Gill Sans MT" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Teknisi ID]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="430" y="134" width="70" height="30" uuid="d3621357-ec0e-4e13-9ac7-a1b01210d720"/>
+				<reportElement x="430" y="140" width="70" height="30" uuid="d2009962-cf19-452d-94ff-7a43086d412c"/>
 				<box>
 					<pen lineWidth="1.0"/>
 				</box>
@@ -385,7 +328,57 @@
 				<text><![CDATA[Teknisi Name]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="340" y="134" width="40" height="30" uuid="720614e8-34c5-4c32-879b-6b320b017b7e"/>
+				<reportElement x="500" y="140" width="54" height="30" uuid="dac8208f-455b-4b34-b95c-4fe9d8818480"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="140" width="80" height="30" uuid="a31358ef-8626-4d44-bc23-5cf688048c49"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Tanggal Proses]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="140" width="50" height="30" uuid="978e66c7-8cea-4067-a42d-f0027c5ecb5e"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="140" width="30" height="30" uuid="4f522916-d0e9-4648-9033-4cd55722c9af"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="140" width="50" height="30" uuid="9fa27b9b-5162-4e57-8000-f435b395ff91"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teknisi ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="140" width="40" height="30" uuid="8d9e29a2-0819-4c08-8234-6bbc2f1d9ef0"/>
 				<box>
 					<pen lineWidth="1.0"/>
 				</box>
@@ -395,26 +388,35 @@
 				<text><![CDATA[PIC]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="134" width="30" height="30" uuid="069c2e1c-98d9-4e3b-94d8-078131a44426"/>
+				<reportElement x="170" y="140" width="80" height="30" uuid="d11a2985-cfd0-43e8-a73e-e9eb24e6c64c"/>
 				<box>
 					<pen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Gill Sans MT" isBold="true"/>
 				</textElement>
-				<text><![CDATA[No]]></text>
+				<text><![CDATA[Merchant Name]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="0" y="164" width="554" height="30" uuid="3e72d883-ac6e-4fab-9b2e-a8414b892514"/>
+			<staticText>
+				<reportElement x="110" y="140" width="60" height="30" uuid="f849f497-8a68-4d4a-aaf3-325a4345c0d8"/>
 				<box>
-					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<pen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA["no data available"]]></textFieldExpression>
-			</textField>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Request ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="140" width="40" height="30" uuid="2ca4989a-a5cf-4e6f-9ffd-7218fc77205c"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" isBold="true"/>
+				</textElement>
+				<text><![CDATA[City]]></text>
+			</staticText>
 		</band>
 	</noData>
 </jasperReport>
