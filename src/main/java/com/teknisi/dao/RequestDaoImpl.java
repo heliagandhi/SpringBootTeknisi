@@ -307,22 +307,18 @@ public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
 				+ "where (req.created_date between now()::date-extract(dow from now())::integer-7    \r\n"
 				+ "and now()::date-extract(dow from now())::integer) or  (req.update_date between now()::date-extract(dow from now())::integer-7  \r\n"
 				+ "and now()::date-extract(dow from now())::integer) order by (case when req.update_date is null then req.created_date else req.update_date end) asc\r\n"
-				+ ") r group by r.create_date, r.status";
+				+ ") r group by r.create_date, r.status order by create_date asc";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		List<Chart> chartList = new ArrayList<Chart>();
 
 		List<Map<String,Object>> rows = jdbcTemplate.queryForList(query);
-		logger.info("tess roww {}", rows);
 		for(Map<String,Object> column : rows){
 			Chart chart = new Chart();
-			logger.info("tes count😊 {}", column.get("count"));
-			logger.info("tes create {}", column.get("create_date"));
 			chart.setCreated_date((Date)(column.get("create_date")));
 			chart.setCount(Integer.parseInt(column.get("count").toString()));
 			chart.setStatus(String.valueOf(column.get("status")));
 			chartList.add(chart);
 		}
-		logger.info("tes chartList {}", chartList);
 		return chartList;
 	}
 

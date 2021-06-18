@@ -13,10 +13,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
+import com.teknisi.dao.RequestDaoImpl;
 import com.teknisi.model.AppUser;
+import com.teknisi.model.Chart;
 import com.teknisi.model.Request;
 import com.teknisi.model.Teknisi;
 import com.teknisi.services.AppUserService;
@@ -28,6 +36,7 @@ import com.teknisi.services.TeknisiService;
 import net.sf.jasperreports.engine.JRException;
 
 @Component
+@RestController
 public class Scheduler {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	private static final SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
@@ -38,8 +47,9 @@ public class Scheduler {
 	@Autowired MessageService messageService;
 	@Autowired AppUserService appUserService;
 	@Autowired FileService fileService;
+	@Autowired RequestDaoImpl requestDaoImpl;
 	
-	@Scheduled(cron = "0 0/10 * * * *")
+//	@Scheduled(cron = "0 0/10 * * * *")
 	public void sendEmailRequestStatusNew() {
 		List<Request> listRequest = requestService.getAllStatusRequest("NEW");
 		for (Request request : listRequest) {
@@ -60,7 +70,7 @@ public class Scheduler {
 		logger.info("Schedule reminder for request status = NEW has been sent to email => " + dateFormat.format(new Date()));
 	}
 	
-	@Scheduled(fixedRate = 300000)
+//	@Scheduled(fixedRate = 300000)
 	public void sendEmailRequestStatusMailSent() throws ParseException, java.text.ParseException {
 		logger.info("Check all request that has status mail_sent");
 		List<Request> listRequest = requestService.getRequestByBeforeDate("MAIL_SENT");
@@ -80,7 +90,7 @@ public class Scheduler {
 	}
 	
 
-	@Scheduled(cron = "0 0 12 * * 1-5")
+//	@Scheduled(cron = "0 0 12 * * 1-5")
 	public void emailAllPendingStatus() throws IOException, MessagingException {
 		logger.info("Check all request that has status MAIL_SENT, NEW and PROSSESED");
 		fileService.exportToCSV();
@@ -93,7 +103,7 @@ public class Scheduler {
 		logger.info("Schedule information for pending request has been sent to admin email");
 	}
 	
-	@Scheduled(cron = "0 0 17 * * 1-5")
+//	@Scheduled(cron = "0 0 17 * * 1-5")
 	public void emailReportAllFinishedStatus() throws IOException, MessagingException, JRException {
 		logger.info("Check all ticket request that has status Finished");
 		logger.info("Exporting all data to PDF");
@@ -106,8 +116,7 @@ public class Scheduler {
 		logger.info("Schedule report for finished ticket request has been sent to admin email");
 	}
 	
-	@Scheduled(cron = "0 0 18 * * 5")
-//	@Scheduled(cron = "5 * * * * *")
+//	@Scheduled(cron = "0 0 18 * * 5")
 	public void emailRecapitulationReport2() throws IOException, MessagingException, JRException {
 		logger.info("Check all ticket request for a recapitulation");
 		logger.info("Exporting all data to XLS");
@@ -118,6 +127,20 @@ public class Scheduler {
 			messageService.sendEmailRequestWithAttachment( appUser.getEmail(), appUser.getUsername(), ", Here Are The List of Recapitulation Request", "recapitulation", "./xls");
 		}
 		logger.info("Schedule recapitulation report of ticket request has been sent to admin email");
+	}
+	
+	
+	@Scheduled(cron = "0 0 17 * * 5")
+	public void emailRecapitulationChart() throws IOException, MessagingException, JRException {
+		logger.info("Check all request for a recapitulation chart");
+		fileService.exportToPDFChart();
+		logger.info("Exporting all data chart to PDF");
+		List<AppUser> listAppUser = appUserService.showAllAppUserRole("ADMIN");
+		logger.info("Get latest PDF that will be send to Admin");
+		for (AppUser appUser : listAppUser) {
+			messageService.sendEmailRequestWithAttachment( appUser.getEmail(), appUser.getUsername(), ", Here Are The List of Recapitulation Request", "finishedRequest", "./pdf/barChart");
+		}
+		logger.info("Schedule report for recapitulation chart request has been sent to admin email");
 	}
 	
 }

@@ -141,33 +141,23 @@ public class FileServiceImpl implements FileService{
         }
 
     }
-
-
+	
+	
 	@Override
 	public void exportToPDFChart() throws FileNotFoundException, JRException {
-//		ArrayList<Chart> arrayListRequest = new ArrayList<>();
-		List<Chart> arrReq = requestDaoImpl.getAllRequestCount();
-//		arrayListRequest.add(arrReq.get(0));
-//		logger.info("tes DATASOURCE --------> {}", arrReq);
-//		ArrayList<Request> arrayListRequest = new ArrayList <Request>();
-//		Object[] arrayObjectRequest = arrayListRequest.toArray();
-//		logger.info("tes DATASOURCE {}", arrayListRequest);
-//		logger.info("tes DATASOURCE {}", arrayObjectRequest.length);
-//		logger.info("tes DATASOURCE {}", arrayObjectRequest.getClass().getName());
-		JRDataSource beanCollectionDataSource = new JRBeanCollectionDataSource(arrReq);
+		ArrayList<Chart> arrayListRequest =(ArrayList<Chart>) requestDaoImpl.getAllRequestCount();
+//		ArrayList<Chart> arrayListRequest = new ArrayList <Chart>();
+		JRBeanCollectionDataSource beanColDataSource = new JRBeanCollectionDataSource(arrayListRequest);
 		JasperReport compileReport = JasperCompileManager.compileReport(new FileInputStream("./jasper/RecapitulationChartBar.jrxml"));
 		HashMap<String, Object> map = new HashMap<>();
-		JasperPrint report = JasperFillManager.fillReport(compileReport, map, beanCollectionDataSource);
-		DateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy_hh-mm-ss");
+		JasperPrint report = JasperFillManager.fillReport(compileReport, map, beanColDataSource);
+        DateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy");
         String currentDateTime = dateFormatter.format(new Date());
         Calendar calender = Calendar.getInstance();
         calender.add(Calendar.DATE, -7);
         Date lastWeekDate = calender.getTime();    
         String lastWeekFriday = dateFormatter.format(lastWeekDate);
-		JasperExportManager.exportReportToPdfFile(report, "./pdf/barChart/"+"REQUEST_"+lastWeekFriday+" - " +currentDateTime + ".pdf");
+		JasperExportManager.exportReportToPdfFile(report, "./pdf/barchart/"+"REQUEST_"+lastWeekFriday+" - " +currentDateTime + ".pdf");
 	}
-	
-	
-	
 	
 }
