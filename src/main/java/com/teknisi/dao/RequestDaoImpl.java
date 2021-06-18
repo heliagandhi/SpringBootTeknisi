@@ -10,17 +10,21 @@ import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 
+import com.teknisi.model.Chart;
 import com.teknisi.model.Request;
 import com.teknisi.model.Teknisi;
 
 @Repository
 public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired 
     DataSource dataSource;
@@ -253,12 +257,6 @@ public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
 			+ "    now()::date-extract(dow from now())::integer-7 "
 			+ "    and now()::date-extract(dow from now())::integer) "
 			+ "order by (case when req.update_date is null then req.created_date else req.update_date end) asc";
-//			"SELECT CASE WHEN req.update_date is null THEN req.created_date ELSE req.update_date END as dateProses, "
-//			+ "req.request_id, req.merchant_name, req.address, req.city, req.pic, req.teknisi_id, tek.name, req.status "
-//			+ "FROM teknisi tek LEFT JOIN request req on req.teknisi_id = tek.id "
-//			+ "WHERE (req.created_date between now()::date-extract(dow from now())::integer-7 and now()::date-extract(dow from now())::integer) "
-//			+ "OR (req.update_date between now()::date-extract(dow from now())::integer-7 and now()::date-extract(dow from now())::integer) "
-//			+ "ORDER BY dateProses ASC";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		List<Request> requestList = new ArrayList<Request>();
 
@@ -299,6 +297,33 @@ public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
 			requestList.add(request);
 		}
 		return requestList;
+	}
+
+
+	@Override
+	public List<Chart> getAllRequestCount() {
+		String query = "select r.create_date as create_date ,count(r.create_date) as count, r.status as status  from (\r\n"
+				+ "SELECT  date_trunc('day', created_date) create_date, status from request  req\r\n"
+				+ "where (req.created_date between now()::date-extract(dow from now())::integer-7    \r\n"
+				+ "and now()::date-extract(dow from now())::integer) or  (req.update_date between now()::date-extract(dow from now())::integer-7  \r\n"
+				+ "and now()::date-extract(dow from now())::integer) order by (case when req.update_date is null then req.created_date else req.update_date end) asc\r\n"
+				+ ") r group by r.create_date, r.status";
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		List<Chart> chartList = new ArrayList<Chart>();
+
+		List<Map<String,Object>> rows = jdbcTemplate.queryForList(query);
+		logger.info("tess roww {}", rows);
+		for(Map<String,Object> column : rows){
+			Chart chart = new Chart();
+			logger.info("tes count😊 {}", column.get("count"));
+			logger.info("tes create {}", column.get("create_date"));
+			chart.setCreated_date((Date)(column.get("create_date")));
+			chart.setCount(Integer.parseInt(column.get("count").toString()));
+			chart.setStatus(String.valueOf(column.get("status")));
+			chartList.add(chart);
+		}
+		logger.info("tes chartList {}", chartList);
+		return chartList;
 	}
 
 }

@@ -73,6 +73,9 @@ public class Request {
 	
     @ApiModelProperty(hidden = true)
 	private Teknisi teknisi;
+    
+    @ApiModelProperty(hidden = true)
+	private Chart chart;
 	
 	
 	public Request(){	}
@@ -235,8 +238,15 @@ public class Request {
 	public void setTeknisi(Teknisi teknisi) {
 		this.teknisi = teknisi;
 	}
-
 	
+	public Chart getChart() {
+		return chart;
+	}
+
+	public void setChart(Chart chart) {
+		this.chart = chart;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
