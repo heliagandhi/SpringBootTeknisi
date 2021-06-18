@@ -49,7 +49,7 @@ public class Scheduler {
 	@Autowired FileService fileService;
 	@Autowired RequestDaoImpl requestDaoImpl;
 	
-//	@Scheduled(cron = "0 0/10 * * * *")
+	@Scheduled(cron = "0 0/10 * * * *")
 	public void sendEmailRequestStatusNew() {
 		List<Request> listRequest = requestService.getAllStatusRequest("NEW");
 		for (Request request : listRequest) {
@@ -70,7 +70,7 @@ public class Scheduler {
 		logger.info("Schedule reminder for request status = NEW has been sent to email => " + dateFormat.format(new Date()));
 	}
 	
-//	@Scheduled(fixedRate = 300000)
+	@Scheduled(fixedRate = 300000)
 	public void sendEmailRequestStatusMailSent() throws ParseException, java.text.ParseException {
 		logger.info("Check all request that has status mail_sent");
 		List<Request> listRequest = requestService.getRequestByBeforeDate("MAIL_SENT");
@@ -90,7 +90,7 @@ public class Scheduler {
 	}
 	
 
-//	@Scheduled(cron = "0 0 12 * * 1-5")
+	@Scheduled(cron = "0 0 12 * * 1-5")
 	public void emailAllPendingStatus() throws IOException, MessagingException {
 		logger.info("Check all request that has status MAIL_SENT, NEW and PROSSESED");
 		fileService.exportToCSV();
@@ -103,7 +103,7 @@ public class Scheduler {
 		logger.info("Schedule information for pending request has been sent to admin email");
 	}
 	
-//	@Scheduled(cron = "0 0 17 * * 1-5")
+	@Scheduled(cron = "0 0 17 * * 1-5")
 	public void emailReportAllFinishedStatus() throws IOException, MessagingException, JRException {
 		logger.info("Check all ticket request that has status Finished");
 		logger.info("Exporting all data to PDF");
@@ -116,7 +116,7 @@ public class Scheduler {
 		logger.info("Schedule report for finished ticket request has been sent to admin email");
 	}
 	
-//	@Scheduled(cron = "0 0 18 * * 5")
+	@Scheduled(cron = "0 0 18 * * 5")
 	public void emailRecapitulationReport2() throws IOException, MessagingException, JRException {
 		logger.info("Check all ticket request for a recapitulation");
 		logger.info("Exporting all data to XLS");
