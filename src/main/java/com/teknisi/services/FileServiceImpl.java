@@ -111,6 +111,25 @@ public class FileServiceImpl implements FileService{
         JasperExportManager.exportReportToPdfStream(report,new FileOutputStream(outputFile));
 		return JasperExportManager.exportReportToPdf(report);
 	}
+	
+	
+	@Override
+	public byte[] exportPDF(Date start_date, Date end_date) throws IOException, JRException {
+		byte[] rep = null;
+		ArrayList<Request> arrayListRequest =(ArrayList<Request>) requestService.showRequestReport(start_date, end_date);
+		Object[] arrayObjectRequest = arrayListRequest.toArray();
+		JRBeanArrayDataSource beanCollectionDataSource = new JRBeanArrayDataSource(arrayObjectRequest);
+		JasperReport compileReport = JasperCompileManager.compileReport(new FileInputStream("./jasper/Report.jrxml"));
+		HashMap<String, Object> map = new HashMap<>();
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/YYYY");  
+        String stringStartDate = dateFormat.format(start_date); 
+        String stringEndDate = dateFormat.format(end_date); 
+		map.put("StartDate", stringStartDate);
+		map.put("EndDate", stringEndDate);
+		JasperPrint report = JasperFillManager.fillReport(compileReport, map, beanCollectionDataSource);
+		rep = JasperExportManager.exportReportToPdf(report);
+		return rep;
+	}
 
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })

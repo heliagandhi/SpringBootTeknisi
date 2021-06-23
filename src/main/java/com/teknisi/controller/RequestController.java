@@ -1,5 +1,10 @@
 package com.teknisi.controller;
 
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,7 +14,9 @@ import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
@@ -20,11 +27,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.teknisi.model.Request;
+import com.teknisi.services.FileService;
 import com.teknisi.services.MessageService;
 import com.teknisi.services.RequestService;
 import com.teknisi.services.TeknisiService;
@@ -32,6 +41,7 @@ import com.teknisi.services.TeknisiService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import net.sf.jasperreports.engine.JRException;
 
 @ApiOperation(value = "/request", tags = "Request Profile Controller")
 @RestController
@@ -41,6 +51,7 @@ public class RequestController {
 	@Autowired RequestService requestService;
 	@Autowired TeknisiService teknisiService;
 	@Autowired MessageService messageService;
+	@Autowired FileService fileService;
 
 	@ApiOperation(value = "View all request")
 	@ApiResponses(value = { 
@@ -162,6 +173,26 @@ public class RequestController {
 		logger.info("Teknisi deleted successsfully");
 		logger.info("delete id : {}", request_id);
 		return new ResponseEntity<>("Request deleted successsfully", HttpStatus.OK);
+	}
+	
+	
+	@RequestMapping(value = "/request/download", method = RequestMethod.GET)
+	@PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+	public ResponseEntity<byte[]> downloadReport(@RequestParam String start_date, @RequestParam String end_date) throws IOException, JRException, ParseException {
+		DateFormat sded = new SimpleDateFormat("dd-MM-yyyy");
+		logger.debug("DateFormat start date {}", sded);
+		DateFormat eded = new SimpleDateFormat("dd-MM-yyyy");
+		logger.debug("DateFormat end date {}", eded);
+		Date sd = sded.parse(start_date);
+		logger.debug("Date start date {}", sd);
+		Date ed = eded.parse(end_date);
+		logger.debug("Date end date {}", ed);
+		byte[] rep = fileService.exportPDF(sd, ed);
+		HttpHeaders httpHeaders = new HttpHeaders();
+		httpHeaders.setContentDispositionFormData("inline", "Report");
+		httpHeaders.setContentType(MediaType.parseMediaType("application/pdf"));
+		ResponseEntity<byte[]> response = new ResponseEntity<byte[]>(rep, httpHeaders, HttpStatus.OK);
+		return response;
 	}
 	
 

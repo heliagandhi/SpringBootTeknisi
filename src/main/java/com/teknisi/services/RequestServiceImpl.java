@@ -1,12 +1,19 @@
 package com.teknisi.services;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.teknisi.dao.RequestDao;
+import com.teknisi.model.Chart;
 import com.teknisi.model.Request;
+
+import net.sf.jasperreports.engine.JRException;
 
 @Service
 public class RequestServiceImpl implements RequestService {
@@ -79,6 +86,12 @@ public class RequestServiceImpl implements RequestService {
 	@Override
 	public List<Request> showAllRecapitulationRequest() {
 		return requestDao.getAllRecapitulationRequest();
+	}
+
+
+	@Override
+	public List<Request> showRequestReport(Date start_date, Date end_date){
+		return requestDao.getAllRequestReport(start_date, end_date);
 	}
 
 }

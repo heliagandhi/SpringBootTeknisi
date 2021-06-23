@@ -1,5 +1,6 @@
 package com.teknisi.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import com.teknisi.model.Chart;
@@ -12,6 +13,7 @@ public interface RequestDao {
 	List<Chart> getAllRequestCount();
 	List<Request> getAllStatusRequest(String status);
 	List<Request> getRequestByBeforeDate(String status);
+	List<Request> getAllRequestReport(Date start_date, Date end_date);
 	void insert(Request request);
 	int deleteById(String request_id);
 	void updateRequest(Request request);

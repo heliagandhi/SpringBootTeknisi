@@ -322,4 +322,32 @@ public class RequestDaoImpl extends JdbcDaoSupport implements RequestDao{
 		return chartList;
 	}
 
+
+	@Override
+	public List<Request> getAllRequestReport(Date start_date, Date end_date) {
+		String query = "SELECT * FROM request\r\n"
+				+ "WHERE date_trunc('day',created_date) >= ? AND date_trunc('day',created_date) <= ?";
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		List<Request> requestList = new ArrayList<Request>();
+		List<Map<String,Object>> rows = jdbcTemplate.queryForList(query,new Object[]{start_date,end_date});
+		for(Map<String,Object> column : rows){
+			Request request = new Request();
+			request.setRequest_id(String.valueOf(column.get("request_id")));
+			request.setMerchant_name(String.valueOf(column.get("merchant_name")));
+			request.setAddress(String.valueOf(column.get("address")));
+			request.setCity(String.valueOf(column.get("city")));
+			request.setPostal_code(String.valueOf(column.get("postal_code")));
+			request.setPhone(String.valueOf(column.get("phone")));
+			request.setPic(String.valueOf(column.get("pic")));
+			request.setTeknisi_id(Long.parseLong(column.get("teknisi_id").toString()));
+			request.setCreated_date((Date)(column.get("created_date")));
+			request.setCreated_by(String.valueOf(column.get("created_by")));
+			request.setUpdate_date((Date)(column.get("update_date")));
+			request.setUpdate_by(String.valueOf(column.get("update_by")));
+			request.setStatus(String.valueOf(column.get("status")));
+			requestList.add(request);
+		}
+		return requestList;
+	}
+
 }
