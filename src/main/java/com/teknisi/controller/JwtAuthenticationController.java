@@ -35,15 +35,21 @@ import com.teknisi.services.MessageService;
 public class JwtAuthenticationController {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@Autowired AppUserService appUserService;
-	@Autowired private AuthenticationManager authenticationManager;
-	@Autowired private JwtTokenUtil jwtTokenUtil;
-	@Autowired private JwtUserDetailsService userDetailsService;
-	@Autowired MessageService messageService;
+	@Autowired
+	AppUserService appUserService;
+	@Autowired
+	private AuthenticationManager authenticationManager;
+	@Autowired
+	private JwtTokenUtil jwtTokenUtil;
+	@Autowired
+	private JwtUserDetailsService userDetailsService;
+	@Autowired
+	MessageService messageService;
 
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
-	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest, HttpServletRequest request) throws Exception {
-		
+	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest,
+			HttpServletRequest request) throws Exception {
+
 		authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
 		final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
@@ -53,8 +59,6 @@ public class JwtAuthenticationController {
 		logger.info("Authenticate successsfully");
 		return ResponseEntity.ok(new JwtResponse(token));
 	}
-	
-	
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ResponseEntity<Object> saveAppUser(@RequestBody AppUser appUser) throws Exception {
@@ -63,16 +67,16 @@ public class JwtAuthenticationController {
 		logger.info("Registration successsfully");
 		return new ResponseEntity<>("Registration Successsfully", HttpStatus.OK);
 	}
-	
+
 	@RequestMapping(value = "/logout", method = RequestMethod.POST)
 	public ResponseEntity<?> logoutPage(final HttpServletRequest request, final HttpServletResponse response) {
-	final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		if (auth != null) {
 			new SecurityContextLogoutHandler().logout(request, response, auth);
 		}
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
-	
+
 	private void authenticate(String username, String password) throws Exception {
 		try {
 			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
